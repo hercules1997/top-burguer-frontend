@@ -3,7 +3,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import * as Yup from 'yup'
 
-import ImgBurguer from '../../assets/backgroundBurger.jpg'
+import ImgBurguer from '../../assets/backgroundCadastro.jpg'
 import logoBurguer from '../../assets/logoBurger.png'
 import {
   Container,
@@ -12,19 +12,14 @@ import {
   Logo,
   Label,
   Input,
-  ErrorMessage,
   Button,
   SingLink
 } from './style'
 
-function Login () {
+function Cadastro () {
   const schema = Yup.object().shape({
-    email: Yup.string()
-      .email('Por favor digite um e-mail válido')
-      .required('Por favor digite um e-mail válido'),
-    password: Yup.string()
-      .required('Senha obrigatória')
-      .min(8, 'Senha deve ter no mínimo 8 digitos')
+    email: Yup.string().email().required(),
+    password: Yup.string().required()
   })
 
   const {
@@ -38,25 +33,31 @@ function Login () {
   return (
     <Container>
       <Background>
-        <img src={ImgBurguer} />
+        <img src={ImgBurguer} alt />
       </Background>
 
       <ContainerItens>
         <Logo src={logoBurguer} />
 
-        <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <h1>Login</h1>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <h1>Cadastro</h1>
+          <Label>Nome</Label>
+          <Input type="text" {...register('name')} />
           <Label>E-mail</Label>
           <Input type="email" {...register('email')} />
-          <ErrorMessage>{errors.email?.message}</ErrorMessage>
 
+          <p>{errors.email?.message}</p>
           <Label>Senha</Label>
           <Input type="password" {...register('password')} />
 
-          <ErrorMessage>{errors.password?.message}</ErrorMessage>
-          <Button type="submit">Entrar</Button>
+          <p>{errors.password?.message}</p>
+          <Label>Comfirmar Senha</Label>
+          <Input type="password" {...register('password')} />
+
+          <p>{errors.password?.message}</p>
+          <Button type="submit">Cadastrar</Button>
           <SingLink>
-            Não tem cadastro ainda? <a>Cadastre-se agora!</a>
+            Já possui conta? <a>Acesse!</a>
           </SingLink>
         </form>
       </ContainerItens>
@@ -64,4 +65,4 @@ function Login () {
   )
 }
 
-export default Login
+export default Cadastro

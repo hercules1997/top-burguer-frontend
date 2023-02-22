@@ -7,7 +7,6 @@
         "plugin:react/recommended",
         "standard",
         "plugin:react-hooks/recommended"
-     
     ],
     "overrides": [],
     "parserOptions": {
@@ -18,11 +17,11 @@
         "react",
         "eslint-plugin-import-helpers",
         "react-hooks"
-        
     ],
     "rules": {
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
+        "no-unused-vars": "warn",
         "import-helpers/order-imports": [
             "warn",
             {
