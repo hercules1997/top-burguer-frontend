@@ -5,6 +5,7 @@ import * as Yup from 'yup'
 
 import ImgBurguer from '../../assets/backgroundBurger.jpg'
 import logoBurguer from '../../assets/logoBurger.png'
+import api from '../../services/api'
 import {
   Container,
   Background,
@@ -33,7 +34,13 @@ function Login () {
     formState: { errors }
   } = useForm({ resolver: yupResolver(schema) })
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async (clientData) => {
+    const response = await api.post('sessions', {
+      email: clientData.email,
+      password: clientData.password
+    })
+    console.log(response)
+  }
 
   return (
     <Container>
@@ -47,13 +54,21 @@ function Login () {
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <h1>Login</h1>
           <Label>E-mail</Label>
-          <Input type="email" {...register('email')} />
+          <Input
+            type="email"
+            {...register('email')}
+            error={errors.email?.message}
+          />
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
 
           <Label>Senha</Label>
-          <Input type="password" {...register('password')} />
-
+          <Input
+            type="password"
+            {...register('password')}
+            error={errors.password?.message}
+          />
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
+
           <Button type="submit">Entrar</Button>
           <SingLink>
             Não tem cadastro ainda? <a>Cadastre-se agora!</a>

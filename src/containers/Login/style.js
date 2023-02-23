@@ -60,7 +60,7 @@ export const Input = styled.input`
   padding: 10px;
 
   outline: none;
-  border: none;
+  border: ${(props) => (props.error ? '2px solid yellow' : 'none')};
   border-radius: 10px;
   font-size: 1.2rem;
   color: black;
