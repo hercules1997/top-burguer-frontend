@@ -2,13 +2,13 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-
+  margin-top: 80px;
   width: 100vw;
   height: 100vh;
 `
 export const Background = styled.span`
   display: flex;
-  background-color: #140d07;
+  background-color: #836543;
 
   width: 60%;
   justify-content: center;
@@ -36,19 +36,11 @@ export const ContainerItens = styled.div`
   }
 `
 export const Logo = styled.img`
-  width: 220px;
+  width: 100px;
 `
-export const ErrorMessage = styled.p`
-  text-align: start;
-  color: yellow;
-  letter-spacing: 1px;
-  margin: 2px 0 2px 9px;
-  font-weight: 700;
-`
-
 export const Label = styled.p`
   text-align: start;
-  margin: 10px 0 10px 9px;
+  margin: 10px 0 5px 9px;
   font-weight: 700;
 `
 export const Input = styled.input`
@@ -60,7 +52,9 @@ export const Input = styled.input`
   padding: 10px;
 
   outline: none;
+  border: none;
   border: ${(props) => (props.error ? '2px solid yellow' : 'none')};
+
   border-radius: 10px;
   font-size: 1.2rem;
   color: black;
@@ -71,7 +65,30 @@ export const Input = styled.input`
     background-color: #d6d6ba;
   }
 `
+export const Button = styled.button`
+  background-color: #fa9600;
+  height: 45px;
 
+  margin-top: 25px;
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: white;
+
+  cursor: pointer;
+  box-shadow: 0px 12px 35px black;
+
+  &:hover {
+    background-color: #ffb000;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+`
 export const SingLink = styled.p`
   margin-top: 20px;
   font-weight: 700;

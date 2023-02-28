@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const apiTopBurguer = axios.create({
-  baseUrl: 'http://localhost:3008'
+const apiTopBurger = axios.create({
+  baseURL: 'http://localhost:3001'
 })
 
-export default apiTopBurguer
+export default apiTopBurger

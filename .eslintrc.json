@@ -20,6 +20,7 @@
     ],
     "rules": {
         "react-hooks/rules-of-hooks": "error",
+       // "react/prop-types": 0,
         "react-hooks/exhaustive-deps": "warn",
         "no-unused-vars": "warn",
         "import-helpers/order-imports": [

@@ -1,11 +1,13 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
 import ImgBurguer from '../../assets/backgroundBurger.jpg'
 import logoBurguer from '../../assets/logoBurger.png'
-import api from '../../services/api'
+import Button from '../../components/Button/index'
+import apiTopBurger from '../../services/api'
 import {
   Container,
   Background,
@@ -14,7 +16,6 @@ import {
   Label,
   Input,
   ErrorMessage,
-  Button,
   SingLink
 } from './style'
 
@@ -22,7 +23,7 @@ function Login () {
   const schema = Yup.object().shape({
     email: Yup.string()
       .email('Por favor digite um e-mail válido')
-      .required('Por favor digite um e-mail válido'),
+      .required('E-mail é obrigatório'),
     password: Yup.string()
       .required('Senha obrigatória')
       .min(8, 'Senha deve ter no mínimo 8 digitos')
@@ -35,11 +36,17 @@ function Login () {
   } = useForm({ resolver: yupResolver(schema) })
 
   const onSubmit = async (clientData) => {
-    const response = await api.post('sessions', {
-      email: clientData.email,
-      password: clientData.password
-    })
-    console.log(response)
+    await toast.promise(
+      apiTopBurger.post('sessions', {
+        email: clientData.email,
+        password: clientData.password
+      }),
+      {
+        pending: 'Verificando dados...',
+        success: 'Seja bem-vindo(a)!',
+        error: 'Verifique os dados digitados'
+      }
+    )
   }
 
   return (
