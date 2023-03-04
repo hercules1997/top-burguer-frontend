@@ -7,6 +7,7 @@ import * as Yup from 'yup'
 import ImgBurguer from '../../assets/backgroundBurger.jpg'
 import logoBurguer from '../../assets/logoBurger.png'
 import Button from '../../components/Button/index'
+import { useUser } from '../../hooks/UserContext'
 import apiTopBurger from '../../services/api'
 import {
   Container,
@@ -20,6 +21,8 @@ import {
 } from './style'
 
 function Login () {
+  const { putUserData } = useUser()
+
   const schema = Yup.object().shape({
     email: Yup.string()
       .email('Por favor digite um e-mail válido')
@@ -36,17 +39,19 @@ function Login () {
   } = useForm({ resolver: yupResolver(schema) })
 
   const onSubmit = async (clientData) => {
-    await toast.promise(
+    const { data } = await toast.promise(
       apiTopBurger.post('sessions', {
         email: clientData.email,
         password: clientData.password
       }),
       {
-        pending: 'Verificando dados...',
+        pending: 'Verificando seus dados...',
         success: 'Seja bem-vindo(a)!',
-        error: 'Verifique os dados digitados'
+        error: 'Dados incorretos'
       }
     )
+
+    putUserData(data)
   }
 
   return (

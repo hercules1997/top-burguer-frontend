@@ -63,12 +63,13 @@ export const Input = styled.input`
   border: ${(props) => (props.error ? '2px solid yellow' : 'none')};
   border-radius: 10px;
   font-size: 1.2rem;
-  color: black;
+  color: white;
 
   box-shadow: 0px 12px 35px black;
 
   &:focus {
     background-color: #d6d6ba;
+    color: black;
   }
 `
 
