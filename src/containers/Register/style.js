@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  margin-top: 80px;
   width: 100vw;
   height: 100vh;
 `
@@ -98,7 +97,7 @@ export const SingLink = styled.p`
     cursor: pointer;
     color: white;
     margin-left: 20px;
-
+    text-decoration: none;
     &:hover {
       color: #000;
     }

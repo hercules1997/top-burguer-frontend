@@ -63,7 +63,7 @@ export const Input = styled.input`
   border: ${(props) => (props.error ? '2px solid yellow' : 'none')};
   border-radius: 10px;
   font-size: 1.2rem;
-  color: white;
+  color: #d6d6ba;
 
   box-shadow: 0px 12px 35px black;
 
@@ -82,6 +82,7 @@ export const SingLink = styled.p`
     cursor: pointer;
     color: white;
     margin-left: 20px;
+    text-decoration: none;
 
     &:hover {
       color: #000;

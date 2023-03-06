@@ -9,12 +9,12 @@ export const UserProvider = ({ children }) => {
   const putUserData = async (userInfo) => {
     setUserData(userInfo)
 
-    await localStorage.setItem('topBurger:userData', JSON.stringify(userInfo))
+    await localStorage.setItem('topBurguer:userData', JSON.stringify(userInfo))
   }
 
   useEffect(() => {
     const loadUserData = async () => {
-      const clientInfo = await localStorage.getItem('topBurger:userData')
+      const clientInfo = await localStorage.getItem('topBurguer:userData')
 
       if (clientInfo) {
         setUserData(JSON.parse(clientInfo))
