@@ -23,14 +23,44 @@ export const Container = styled.div`
 
 export const ContainerItens = styled.div`
   width: 100%;
-  margin: 20px;
+  padding: 20px;
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+export const Info = styled.p`
+  display: flex;
+  width: 281px;
+  background-color: black;
+  color: #d6d6ba;
+  font-size: 1.2rem;
+  text-align: start;
+  align-items: start;
+  justify-content: start;
+  padding: 7px;
+    box-shadow: 0px 5px 15px black;
+`
+export const Info2 = styled.p`
+  display: flex;
+  width: 281px;
+  background-color: black;
+  color: #d6d6ba;
+  font-size: 1.5rem;
+  text-align: start;
+  align-items: start;
+  justify-content: start;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 10px;
+    box-shadow: 0px 5px 15px black;
 `
 
 export const ImgCategory = styled.img`
   width: 280px;
   height: 250px;
-  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   box-shadow: 0px 5px 15px black;
 
   cursor: pointer;
@@ -39,13 +69,15 @@ export const ImgCategory = styled.img`
 export const Button = styled.button`
   background-color: #3f3f3f;
   width: 280px;
+  height: 60px;
   margin-top: 10px;
   font-weight: bold;
   border: none;
+  border-radius: 8px;
   text-align: center;
   text-decoration: none;
   box-shadow: 0px 12px 35px black;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #d6d6ba;
 
   cursor: pointer;
@@ -55,7 +87,7 @@ export const Button = styled.button`
     background-color: #d6d6ba;
   }
 
-   &:active {
+  &:active {
     opacity: 0.7;
-   }
+  }
 `

@@ -16,9 +16,22 @@ function CategoryCarousel () {
     loadCategories()
   }, [])
 
+  const brackPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 400, itemsToShow: 2 },
+    { width: 600, itemsToShow: 3 },
+    { width: 900, itemsToShow: 4 },
+    { width: 1300, itemsToShow: 5 }
+  ]
+
   return (
     <Container>
-      <Carousel itemsToShow={4} style={{ width: '90%' }}>
+      <h1>CARTEGORIAS</h1>
+
+      <Carousel
+        itemsToShow={5}
+        breakPoints={brackPoints}
+      >
         {categories &&
           categories.map((category) => (
             <ContainerItens key={category.id}>

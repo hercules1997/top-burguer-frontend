@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: #181416;
+  background-color: #3d2807;
 
   display: flex;
   flex-direction: column;
   width: 100%;
 `
 export const HomeImage = styled.img`
-  width: 80%;
+  width: 90%;
   height: 380px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 3%;
 `
 export const ContainerItens = styled.div`
