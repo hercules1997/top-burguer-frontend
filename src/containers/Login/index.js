@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
@@ -22,6 +22,7 @@ import {
 } from './style'
 
 function Login () {
+  const history = useHistory()
   const { putUserData } = useUser()
 
   const schema = Yup.object().shape({
@@ -53,6 +54,10 @@ function Login () {
     )
 
     putUserData(data)
+
+    setTimeout(() => {
+      history.push('/')
+    }, 1000)
   }
 
   return (
@@ -84,7 +89,8 @@ function Login () {
 
           <Button type="submit">Entrar</Button>
           <SingLink>
-            Não tem cadastro ainda? <Link to="/register">Cadastre-se agora!</Link>
+            Não tem cadastro ainda?{' '}
+            <Link to="/register">Cadastre-se agora!</Link>
           </SingLink>
         </form>
       </ContainerItens>

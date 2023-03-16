@@ -19,17 +19,19 @@ export const ContainerItens = styled.div`
   flex-direction: column;
   background-color: #181617;
 
-  width: 40%;
+  width: 100%;
   justify-content: center;
   text-align: center;
   align-items: center;
 
-  form {
+  h1 {
     display: flex;
+    font-size: 3rem;
     flex-direction: column;
-
+    text-align: center;
     padding: 10px;
-    color: white;
+    margin-top: 50px;
+    color: #d6d6ba;
   }
 `
 export const Logo = styled.img`
