@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 
 import ImgBurguer from '../../assets/backgroundBurger.jpg'
 import logoBurguer from '../../assets/logoBurger.png'
-import Button from '../../components/Button/index'
+import { Button } from '../../components'
 import { useUser } from '../../hooks/UserContext'
 import apiTopBurger from '../../services/api'
 import {
@@ -21,7 +21,7 @@ import {
   SingLink
 } from './style'
 
-function Login () {
+export function Login () {
   const history = useHistory()
   const { putUserData } = useUser()
 
@@ -90,12 +90,10 @@ function Login () {
           <Button type="submit">Entrar</Button>
           <SingLink>
             Não tem cadastro ainda?{' '}
-            <Link to="/register">Cadastre-se agora!</Link>
+            <Link to="/cadastro">Cadastre-se agora!</Link>
           </SingLink>
         </form>
       </ContainerItens>
     </Container>
   )
 }
-
-export default Login

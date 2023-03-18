@@ -7,12 +7,12 @@ import {
   Container,
   ContainerItens,
   ImgCategory,
-  Info,
-  Info2,
+  OfferName,
+  OfferPrice,
   Button
 } from './style'
 
-function OfersCarousel () {
+export function OffersCarousel () {
   const [offers, setOffers] = useState([])
 
   useEffect(() => {
@@ -33,9 +33,9 @@ function OfersCarousel () {
   const brackPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 400, itemsToShow: 2 },
-    { width: 600, itemsToShow: 3 },
-    { width: 900, itemsToShow: 4 },
-    { width: 1300, itemsToShow: 5 }
+    { width: 600, itemsToShow: 2 },
+    { width: 900, itemsToShow: 3 },
+    { width: 1300, itemsToShow: 3 }
   ]
 
   return (
@@ -47,8 +47,8 @@ function OfersCarousel () {
           offers.map((product) => (
             <ContainerItens key={product.id}>
               <ImgCategory src={product.url} alt="Fotos da categorias" />
-              <Info>{product.name}</Info>
-              <Info2>{product.formatedPrice}</Info2>
+              <OfferName>{product.name}</OfferName>
+              <OfferPrice>{product.formatedPrice}</OfferPrice>
               <Button>Peça Agora!</Button>
             </ContainerItens>
           ))}
@@ -56,5 +56,3 @@ function OfersCarousel () {
     </Container>
   )
 }
-
-export default OfersCarousel

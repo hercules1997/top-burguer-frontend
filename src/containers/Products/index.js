@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import ImgProductsBurguer from '../../assets/ImgProductsBurguer.png'
-import CardProduct from '../../components/CardProducts'
+import { CardProduct } from '../../components'
 import apiTopBurger from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
 import {
@@ -12,9 +12,10 @@ import {
   ContainerProducts
 } from './style'
 
-function Products () {
+export function Products () {
   const [categories, setCategories] = useState([])
   const [products, setProducts] = useState([])
+  const [filterProducts, setFilterProducts] = useState([])
   const [activeCategory, setActiveCategory] = useState([])
 
   useEffect(() => {
@@ -38,6 +39,17 @@ function Products () {
     loadCategories()
   }, [])
 
+  useEffect(() => {
+    if (activeCategory === 0) {
+      setFilterProducts(products)
+    } else {
+      const newFilterProductCategory = products.filter(
+        (product) => product.category_id === activeCategory
+      )
+      setFilterProducts(newFilterProductCategory)
+    }
+  }, [activeCategory, products])
+
   return (
     <Container>
       <HomeImage src={ImgProductsBurguer} />
@@ -58,13 +70,11 @@ function Products () {
           ))}
       </ContainerMenu>
       <ContainerProducts>
-        {products &&
-          products.map((product) => (
+        {filterProducts &&
+          filterProducts.map((product) => (
             <CardProduct key={product.id} product={product} />
           ))}
       </ContainerProducts>
     </Container>
   )
 }
-
-export default Products

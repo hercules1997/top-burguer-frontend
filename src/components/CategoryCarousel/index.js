@@ -4,7 +4,7 @@ import Carousel from 'react-elastic-carousel'
 import apiTopBurger from '../../services/api'
 import { Container, ContainerItens, ImgCategory, Button } from './style'
 
-function CategoryCarousel () {
+export function CategoryCarousel () {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
@@ -19,19 +19,16 @@ function CategoryCarousel () {
   const brackPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 400, itemsToShow: 2 },
-    { width: 600, itemsToShow: 3 },
-    { width: 900, itemsToShow: 4 },
-    { width: 1300, itemsToShow: 5 }
+    { width: 600, itemsToShow: 2 },
+    { width: 900, itemsToShow: 3 },
+    { width: 1300, itemsToShow: 3 }
   ]
 
   return (
     <Container>
       <h1>CARTEGORIAS</h1>
 
-      <Carousel
-        itemsToShow={5}
-        breakPoints={brackPoints}
-      >
+      <Carousel itemsToShow={4} breakPoints={brackPoints}>
         {categories &&
           categories.map((category) => (
             <ContainerItens key={category.id}>
@@ -43,5 +40,3 @@ function CategoryCarousel () {
     </Container>
   )
 }
-
-export default CategoryCarousel

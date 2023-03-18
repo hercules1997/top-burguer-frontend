@@ -1,18 +1,40 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: #3d2807;
+  background-color: #181416;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 
   .rec.rec-arrow {
+    background-color: transparent;
+    margin-left: 30px;
+    margin-right: 30px;
+    height: 100%;
+
+    border-radius: 0;
+  }
+
+  .rec.rec-arrow:hover {
     background-color: #3f3f3f;
   }
   .rec.rec-arrow:disabled {
     visibility: hidden;
+  }
+  .rec.rec-arrow:disabled {
+    visibility: hidden;
+  }
+
+  .cVXxbE {
+    background: white !important;
+    box-shadow: 0px 0px 8px white;
+  }
+  .ezKHIn {
+    background: transparent;
+    box-shadow: 0px 0px 3px white;
   }
 
   h1 {
@@ -28,32 +50,33 @@ export const ContainerItens = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 15px black;
 `
-export const Info = styled.p`
+export const OfferName = styled.p`
   display: flex;
   width: 281px;
   background-color: black;
   color: #d6d6ba;
   font-size: 1.2rem;
-  text-align: start;
-  align-items: start;
-  justify-content: start;
+  justify-content: center;
   padding: 7px;
-    box-shadow: 0px 5px 15px black;
+  box-shadow: 0px 5px 15px black;
 `
-export const Info2 = styled.p`
+export const OfferPrice = styled.p`
   display: flex;
   width: 281px;
   background-color: black;
-  color: #d6d6ba;
+  color: white;
   font-size: 1.5rem;
+  font-weight: bold;
   text-align: start;
   align-items: start;
   justify-content: start;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   padding: 10px;
-    box-shadow: 0px 5px 15px black;
+  box-shadow: 0px 5px 15px black;
 `
 
 export const ImgCategory = styled.img`
@@ -76,7 +99,7 @@ export const Button = styled.button`
   border-radius: 8px;
   text-align: center;
   text-decoration: none;
-  box-shadow: 0px 12px 35px black;
+  box-shadow: 0px 7px 8px black;
   font-size: 1.5rem;
   color: #d6d6ba;
 
@@ -85,6 +108,7 @@ export const Button = styled.button`
   &:hover {
     color: #000;
     background-color: #d6d6ba;
+    transition: 0.8s;
   }
 
   &:active {

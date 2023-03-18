@@ -7,6 +7,7 @@ import * as Yup from 'yup'
 
 import ImgBurguer from '../../assets/backgroundCadastro.jpg'
 import logoBurguer from '../../assets/logoBurger.png'
+import { Button } from '../../components'
 import apiTopBurger from '../../services/api'
 import { ErrorMessage } from '../Login/style'
 import {
@@ -16,11 +17,10 @@ import {
   Logo,
   Label,
   Input,
-  Button,
   SingLink
 } from './style'
 
-function Register () {
+export function Register () {
   const schema = Yup.object().shape({
     name: Yup.string().required('Seu nome é obrigatório'),
     email: Yup.string()
@@ -117,5 +117,3 @@ function Register () {
     </Container>
   )
 }
-
-export default Register

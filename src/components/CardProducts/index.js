@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Buttom from '../Button'
+import { Button } from '../../components'
 import {
   Container,
   Image,
@@ -9,20 +9,20 @@ import {
   ProductPrice,
   ContainerCard
 } from './style'
-function CardProduct ({ product }) {
+export function CardProduct ({ product }) {
   return (
     <Container>
       <Image src={product.url} alt="Imagem do produto" />
       <ContainerCard>
         <ProductName>{product.name}</ProductName>
         <ProductPrice>{product.formatedPrice}</ProductPrice>
-        <Buttom style={{ padding: '10px' }}>Adicionar</Buttom>
+        <Button style={{ padding: '10px', fontSize: '18px', marginTop: '0' }}>
+          Adicionar +
+        </Button>
       </ContainerCard>
     </Container>
   )
 }
-
-export default CardProduct
 
 CardProduct.propTypes = {
   product: PropTypes.object
