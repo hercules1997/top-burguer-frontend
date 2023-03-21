@@ -9,13 +9,18 @@ export const Container = styled.div`
   align-items: center;
   gap: 30px;
 
-  .cVXxbE {
-    background: white !important;
-    box-shadow: 0px 0px 8px white;
-  }
-  .ezKHIn {
+  .rec.rec-dot {
     background: transparent;
-    box-shadow: 0px 0px 3px white;
+    border: 1px solid gray;
+  }
+  .rec.rec-dot:hover {
+    background: black;
+    border: 1px solid #d6d6ba;
+    box-shadow: 0px 0px 12px white;
+  }
+  .rec.rec-dot_active {
+    background: white;
+    box-shadow: 0px 0px 12px white;
   }
 
   .rec.rec-arrow {

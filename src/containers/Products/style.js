@@ -2,16 +2,14 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   background-color: #181416;
-min-height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   width: 100%;
 `
 export const HomeImage = styled.img`
-
   height: 280px;
   margin-top: 3%;
-
 `
 export const ContainerMenu = styled.div`
   display: flex;

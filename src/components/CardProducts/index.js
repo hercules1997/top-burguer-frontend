@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import { Button } from '../../components'
+import { useCart } from '../../hooks/CartContex'
 import {
   Container,
   Image,
@@ -10,13 +11,18 @@ import {
   ContainerCard
 } from './style'
 export function CardProduct ({ product }) {
+  const { putProductInCart } = useCart()
+
   return (
     <Container>
       <Image src={product.url} alt="Imagem do produto" />
       <ContainerCard>
         <ProductName>{product.name}</ProductName>
         <ProductPrice>{product.formatedPrice}</ProductPrice>
-        <Button style={{ padding: '10px', fontSize: '18px', marginTop: '0' }}>
+        <Button
+          onClick={() => putProductInCart(product)}
+          style={{ padding: '10px', fontSize: '18px', marginTop: '0' }}
+        >
           Adicionar +
         </Button>
       </ContainerCard>
