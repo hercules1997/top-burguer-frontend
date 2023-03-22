@@ -25,7 +25,13 @@ export function CartItens () {
             <ProductDecription>
               {formatCurrency(product.price)}
             </ProductDecription>
-            <ProductDecription>{product.quantity}</ProductDecription>
+            <ProductDecription>
+              <div className="quantity-container">
+                <button>-</button>
+                {product.quantity}
+                <button>+</button>
+              </div>
+            </ProductDecription>
             <ProductDecription>
               {formatCurrency(product.quantity * product.price)}
             </ProductDecription>
