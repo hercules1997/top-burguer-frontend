@@ -10,7 +10,7 @@ export function CartItens () {
   return (
     <Container>
       <Header>
-        <p></p>
+        <p style={{ width: '100px' }}></p>
         <p>Name</p>
         <p>Preço</p>
         <p>Quantidade</p>

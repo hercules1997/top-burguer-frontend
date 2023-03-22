@@ -1,63 +1,54 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  /* background: #181416; */
   width: 70%;
+  margin-top: 35px;
   margin-left: 2.4%;
-  background: #d6d6ba;
-  border-radius: 15px;
-  /* box-shadow: 0px 5px 15px black; */
-  /* padding: 10px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center; */
+  background: #181416;
+  box-shadow: 8px 1px 10px -4px black;
 `
 export const Header = styled.div`
-  background: #d6d6ba;
+  background: #181416;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-
+  border-bottom: solid 1px #d6d6aa;
   text-align: center;
   p {
     font-size: 1.3rem;
+    color: #d6d6aa;
   }
 `
-// export const ImgProduct = styled.p`
-//   width: px;
-//   border: solid 2px blue;
-// `
+
 export const Img = styled.img`
   display: flex;
-  flex-direction: column;
+
   width: 100px;
   height: 120px;
   text-align: center;
   align-items: center;
   justify-content: center;
   padding: 5px;
-
+  margin-left: 20%;
+  justify-items: center;
   border-radius: 12px;
 `
 export const ProductDecription = styled.p`
-  background: #d6d6aa;
+  background: #181416;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
+  color: #d6d6aa;
   border-bottom: solid 1px gray;
 `
 
 export const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  /* justify-content: center; */
+
   margin-bottom: 2px;
   border-radius: 14px;
   font-size: 1rem;
-  /* align-items: center; */
 
   .quantity-container {
     display: flex;
@@ -71,6 +62,7 @@ export const Content = styled.div`
     padding: 2px;
     border: none;
     cursor: pointer;
+    color: #d6d6aa;
     font-size: 18px;
     background: transparent;
   }
