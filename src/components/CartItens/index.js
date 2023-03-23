@@ -1,11 +1,19 @@
 import React from 'react'
 
-import { useCart } from '../../hooks/CartContex'
+import trash from '../../assets/trash.png'
+import { useCart } from '../../hooks/CartContext'
 import formatCurrency from '../../utils/formatCurrency'
-import { Container, Img, Header, Content, ProductDecription } from './style'
-
+import {
+  Container,
+  Img,
+  Header,
+  Content,
+  ProductDecription,
+  Trash
+} from './style'
 export function CartItens () {
-  const { cartProducts } = useCart()
+  const { cartProducts, increseProducts, decreseProducts, deleteProducts } =
+    useCart()
 
   return (
     <Container>
@@ -15,6 +23,7 @@ export function CartItens () {
         <p>Preço</p>
         <p>Quantidade</p>
         <p>Total</p>
+        <p>Remover</p>
       </Header>
 
       {cartProducts &&
@@ -27,14 +36,18 @@ export function CartItens () {
             </ProductDecription>
             <ProductDecription>
               <div className="quantity-container">
-                <button>-</button>
+                <button onClick={() => decreseProducts(product.id)}>-</button>
                 {product.quantity}
-                <button>+</button>
+                <button onClick={() => increseProducts(product.id)}>+</button>
               </div>
             </ProductDecription>
             <ProductDecription>
               {formatCurrency(product.quantity * product.price)}
             </ProductDecription>
+
+            <Trash onClick={() => deleteProducts(product.id)}>
+              <img src={trash} />
+            </Trash>
           </Content>
         ))}
     </Container>

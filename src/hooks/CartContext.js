@@ -12,8 +12,6 @@ export const CartProvider = ({ children }) => {
     let newCartProducts = cartProducts
 
     if (cartIndex >= 0) {
-      //   newCartProducts = cartProducts
-
       newCartProducts[cartIndex].quantity =
         newCartProducts[cartIndex].quantity + 1
 
@@ -24,10 +22,53 @@ export const CartProvider = ({ children }) => {
       setCartProducts(newCartProducts)
     }
 
-    await localStorage.setItem(
-      'topBurguer:cartInfo',
-      JSON.stringify(newCartProducts)
+    updateLocalStorange(newCartProducts)
+  }
+
+  /*
+   FUNÇÃO DE ATUALIZAÇÃO NO LOCALSTORANGE
+  */
+  const updateLocalStorange = async (paramer) => {
+    await localStorage.setItem('topBurguer:cartInfo', JSON.stringify(paramer))
+  }
+
+  const increseProducts = async (productId) => {
+    const newCart = cartProducts.map((product) => {
+      return product.id === productId
+        ? { ...product, quantity: product.quantity + 1 }
+        : product
+    })
+
+    setCartProducts(newCart)
+
+    updateLocalStorange(newCart)
+  }
+
+  const deleteProducts = async (productId) => {
+    const newCart = cartProducts.filter((product) => product.id !== productId)
+
+    setCartProducts(newCart)
+
+    updateLocalStorange(newCart)
+  }
+
+  const decreseProducts = async (productId) => {
+    const cartIndex = cartProducts.findIndex(
+      (prodCart) => prodCart.id === productId
     )
+
+    if (cartProducts[cartIndex].quantity > 1) {
+      const newCartDecrese = cartProducts.map((product) => {
+        return product.id === productId
+          ? { ...product, quantity: product.quantity - 1 }
+          : product
+      })
+
+      setCartProducts(newCartDecrese)
+      updateLocalStorange(newCartDecrese)
+    } else {
+      deleteProducts(productId)
+    }
   }
 
   useEffect(() => {
@@ -46,7 +87,10 @@ export const CartProvider = ({ children }) => {
     <CartContext.Provider
       value={{
         putProductInCart,
-        cartProducts
+        cartProducts,
+        increseProducts,
+        decreseProducts,
+        deleteProducts
       }}
     >
       {children}

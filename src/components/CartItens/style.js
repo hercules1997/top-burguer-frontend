@@ -10,7 +10,7 @@ export const Container = styled.div`
 export const Header = styled.div`
   background: #181416;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   border-bottom: solid 1px #d6d6aa;
   text-align: center;
   p {
@@ -41,10 +41,22 @@ export const ProductDecription = styled.p`
   color: #d6d6aa;
   border-bottom: solid 1px gray;
 `
+export const Trash = styled.button`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-bottom: solid 1px gray;
+  img {
+    width: 35px;
+    
+  }
+`
 
 export const Content = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 
   margin-bottom: 2px;
   border-radius: 14px;
@@ -57,7 +69,7 @@ export const Content = styled.div`
     justify-content: center;
     gap: 20px;
   }
-
+  border-bottom: solid 1.5px gray;
   button {
     padding: 2px;
     border: none;

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import { Button } from '../../components'
-import { useCart } from '../../hooks/CartContex'
+import { useCart } from '../../hooks/CartContext'
 import {
   Container,
   Image,
