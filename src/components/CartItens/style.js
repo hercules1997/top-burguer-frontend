@@ -1,22 +1,34 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 60%;
   margin-top: 35px;
   margin-left: 2.4%;
   margin-bottom: 20px;
-  /* background: #181416; */
-  /* box-shadow: 0px 0px 8px  black; */
 `
+export const EmpyCart = styled.div`
+  color: #1e1e1c;
+  font-size: 3rem;
+  display: flex;
+  background-color: #2f2f2f;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 0px 5px black;
+  border-radius: 15px;
+
+  img {
+    width: 120px;
+  }
+`
+
 export const Header = styled.div`
-  background: #181416;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  border-bottom: solid 1px #d6d6aa;
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
-  box-shadow: 0px 0px 8px  black;
+  grid-template-columns: 100px 260px 150px 100px 110px 40px;
 
+  border-bottom: solid 1px gray;
+
+  margin-bottom: 10px;
   text-align: center;
   p {
     font-size: 1.3rem;
@@ -28,23 +40,22 @@ export const Img = styled.img`
   display: flex;
 
   width: 100px;
-  height: 120px;
+  height: 100px;
   text-align: center;
   align-items: center;
   justify-content: center;
-  padding: 5px;
-  margin-left: 20%;
-  justify-items: center;
-  border-radius: 12px;
+  padding: 10px;
+  margin-left: 10px;
+  justify-items: start;
+  border-radius: 15px;
 `
 export const ProductDecription = styled.p`
-  background: #181416;
+  background: #222222;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
   color: #d6d6aa;
-  /* border-bottom: solid 1px gray; */
 `
 export const Trash = styled.button`
   display: flex;
@@ -60,7 +71,9 @@ export const Trash = styled.button`
 
 export const Content = styled.div`
   display: grid;
+  background: #222222;
   grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 100px 280px 120px 130px 80px 60px;
   box-shadow: 0px 0px 8px black;
   margin-bottom: 5px;
   border-radius: 14px;

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import cart from '../../assets/cart.png'
 import trash from '../../assets/trash.png'
 import { useCart } from '../../hooks/CartContext'
 import formatCurrency from '../../utils/formatCurrency'
@@ -9,7 +10,8 @@ import {
   Header,
   Content,
   ProductDecription,
-  Trash
+  Trash,
+  EmpyCart
 } from './style'
 export function CartItens () {
   const { cartProducts, increseProducts, decreseProducts, deleteProducts } =
@@ -19,15 +21,16 @@ export function CartItens () {
     <Container>
       <Header>
         <p style={{ width: '100px' }}></p>
-        <p>Nome</p>
+        <p>Itens</p>
         <p>Preço</p>
-        <p>Quantidade</p>
+        <p>Qto</p>
         <p>Total</p>
-        <p>Remover</p>
+        <p></p>
       </Header>
 
-      {cartProducts &&
-        cartProducts.map((product) => (
+      {cartProducts && cartProducts.length > 0
+        ? (
+            cartProducts.map((product) => (
           <Content key={product.id}>
             <Img src={product.url} />
             <ProductDecription>{product.name}</ProductDecription>
@@ -49,7 +52,13 @@ export function CartItens () {
               <img src={trash} />
             </Trash>
           </Content>
-        ))}
+            ))
+          )
+        : (
+        <EmpyCart>
+          <img src={cart} /> Carrinho vazio
+        </EmpyCart>
+          )}
     </Container>
   )
 }
