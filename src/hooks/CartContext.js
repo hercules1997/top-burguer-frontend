@@ -6,30 +6,33 @@ const CartContext = createContext({})
 export const CartProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([])
 
+  /*
+   FUNÇÃO DE ATUALIZAÇÃO NO LOCALSTORANGE
+  */
+  const updateLocalStorange = async (products) => {
+    await localStorage.setItem('topBurguer:cartInfo', JSON.stringify(products))
+  }
+
   const putProductInCart = async (product) => {
     const cartIndex = cartProducts.findIndex((prod) => prod.id === product.id)
-
-    let newCartProducts = cartProducts
+    let newCartProducts = []
 
     if (cartIndex >= 0) {
+      newCartProducts = cartProducts
       newCartProducts[cartIndex].quantity =
         newCartProducts[cartIndex].quantity + 1
-
-      setCartProducts(newCartProducts)
     } else {
       product.quantity = 1
       newCartProducts = [...cartProducts, product]
       setCartProducts(newCartProducts)
     }
-
-    updateLocalStorange(newCartProducts)
+    await updateLocalStorange(newCartProducts)
   }
 
-  /*
-   FUNÇÃO DE ATUALIZAÇÃO NO LOCALSTORANGE
-  */
-  const updateLocalStorange = async (paramer) => {
-    await localStorage.setItem('topBurguer:cartInfo', JSON.stringify(paramer))
+  const deleteProducts = async (productId) => {
+    const newCart = cartProducts.filter((product) => product.id !== productId)
+    setCartProducts(newCart)
+    await updateLocalStorange(newCart)
   }
 
   const increseProducts = async (productId) => {
@@ -38,18 +41,8 @@ export const CartProvider = ({ children }) => {
         ? { ...product, quantity: product.quantity + 1 }
         : product
     })
-
     setCartProducts(newCart)
-
-    updateLocalStorange(newCart)
-  }
-
-  const deleteProducts = async (productId) => {
-    const newCart = cartProducts.filter((product) => product.id !== productId)
-
-    setCartProducts(newCart)
-
-    updateLocalStorange(newCart)
+    await updateLocalStorange(newCart)
   }
 
   const decreseProducts = async (productId) => {
@@ -63,9 +56,8 @@ export const CartProvider = ({ children }) => {
           ? { ...product, quantity: product.quantity - 1 }
           : product
       })
-
       setCartProducts(newCartDecrese)
-      updateLocalStorange(newCartDecrese)
+      await updateLocalStorange(newCartDecrese)
     } else {
       deleteProducts(productId)
     }
@@ -74,12 +66,10 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     const loadUserData = async () => {
       const clientCartData = await localStorage.getItem('topBurguer:cartInfo')
-
       if (clientCartData) {
         setCartProducts(JSON.parse(clientCartData))
       }
     }
-
     loadUserData()
   }, [])
 
@@ -100,7 +90,6 @@ export const CartProvider = ({ children }) => {
 
 export const useCart = () => {
   const context = useContext(CartContext)
-
   if (!context) {
     throw new Error('useCart must be used with Usercontext')
   }
