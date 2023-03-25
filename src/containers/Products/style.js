@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: #181416;
+  background-color: #2f2f2f;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,23 +14,23 @@ export const HomeImage = styled.img`
 export const ContainerMenu = styled.div`
   display: flex;
   justify-content: center;
-  background-color: #181617;
+  background-color: #2f2f2f;
   gap: 50px;
   width: 100%;
   margin-top: 25px;
   padding-top: 15px;
   text-align: center;
   align-items: center;
-  box-shadow: 0px 12px 35px black;
+  box-shadow: 0px 1px 2px black;
 `
 export const Menu = styled.button`
   cursor: pointer;
   color: ${(props) => (props.isActiveCategory ? '#FA9600' : '#d6d6ba')};
   border: none;
-  border-bottom: ${(props) => props.isActiveCategory && '4px solid #FA9600'};
+  border-bottom: ${(props) => props.isActiveCategory && '3px solid #FA9600'};
   padding-bottom: 8px;
   margin-bottom: 10px;
-  background-color: #181617;
+  background-color: transparent;
   text-align: center;
   align-items: center;
   transition: 0.5s;
@@ -39,9 +39,9 @@ export const Menu = styled.button`
   line-height: 20px;
 
   &:hover {
-    color: black;
-    transition: 0.5s;
-    border-bottom: solid 4px black;
+    transition: 0.6s;
+    border-bottom: solid 3px white;
+    color: white;
   }
 `
 export const Logo = styled.img`
@@ -53,11 +53,10 @@ export const ContainerProducts = styled.div`
   grid-template-columns: repeat(3, 1fr);
   padding: 40px;
   gap: 30px;
-  /* margin-left: 2.7%; */
   justify-items: center;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin-top: 25px;
-  box-shadow: 0px 12px 35px black;
+  box-shadow: 0 0 1px black;
 `

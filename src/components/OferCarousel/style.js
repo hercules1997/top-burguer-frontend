@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: #181416;
+  background-color: #2f2f2f;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -9,25 +9,40 @@ export const Container = styled.div`
   justify-content: center;
   gap: 20px;
 
+  /* 
+  Configuração das setas
+  */
   .rec.rec-arrow {
     background-color: transparent;
     margin-left: 30px;
     margin-right: 30px;
     height: 100%;
-
     border-radius: 0;
+    color: #3f3f3f;
   }
 
   .rec.rec-arrow:hover {
     background-color: #3f3f3f;
+    color: white;
   }
   .rec.rec-arrow:disabled {
     visibility: hidden;
   }
-  .rec.rec-arrow:disabled {
-    visibility: hidden;
+  .rec.rec-arrow:active {
+    opacity: 0.1;
+  }
+  .rec.rec-arrow-right {
+    border-right: solid 0.5px #3f3f3f;
+  }
+  .rec.rec-arrow-left {
+    border-left: solid 1px #3f3f3f;
   }
 
+
+
+  /*
+  Configuração das scroll
+  */
   .rec.rec-dot {
     background: transparent;
     border: 1px solid gray;
@@ -41,11 +56,6 @@ export const Container = styled.div`
     background: white;
     box-shadow: 0px 0px 12px white;
   }
-
-  h1 {
-    font-size: 3rem;
-    color: #d6d6ba;
-  }
 `
 
 export const ContainerItens = styled.div`
@@ -58,10 +68,18 @@ export const ContainerItens = styled.div`
   align-items: center;
   box-shadow: 0px 5px 15px black;
 `
+export const ImgCategory = styled.img`
+  width: 280px;
+  height: 220px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 0px 5px 15px black;
+  cursor: pointer;
+`
 export const OfferName = styled.p`
   display: flex;
   width: 281px;
-  background-color: black;
+  background-color: #2f2f2f;
   color: #d6d6ba;
   font-size: 1.2rem;
   justify-content: center;
@@ -71,7 +89,7 @@ export const OfferName = styled.p`
 export const OfferPrice = styled.p`
   display: flex;
   width: 281px;
-  background-color: black;
+  background-color: #2f2f2f;
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
@@ -83,17 +101,6 @@ export const OfferPrice = styled.p`
   padding: 10px;
   box-shadow: 0px 5px 15px black;
 `
-
-export const ImgCategory = styled.img`
-  width: 280px;
-  height: 250px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  box-shadow: 0px 5px 15px black;
-
-  cursor: pointer;
-`
-
 export const Button = styled.button`
   background-color: #3f3f3f;
   width: 280px;
@@ -107,7 +114,6 @@ export const Button = styled.button`
   box-shadow: 0px 7px 8px black;
   font-size: 1.5rem;
   color: #d6d6ba;
-
   cursor: pointer;
 
   &:hover {

@@ -7,10 +7,10 @@ export const Container = styled.div`
   justify-content: space-between;
   color: white;
 
-  margin-top: 35px;
+  margin-top: 75px;
   margin-bottom: 15px;
   border-radius: 12px;
-  background: #222222;
+  background: #3f3f3f;
   box-shadow: 0px 0px 8px black;
 
   .container-top {

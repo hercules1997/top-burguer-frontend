@@ -9,7 +9,7 @@ export const EmpyCart = styled.div`
   color: #1e1e1c;
   font-size: 3rem;
   display: flex;
-  background-color: #2f2f2f;
+  background-color: #3f3f3f;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -38,19 +38,20 @@ export const Header = styled.div`
 
 export const Img = styled.img`
   display: flex;
-
+  background: #3f3f3f;
   width: 100px;
   height: 100px;
   text-align: center;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   justify-items: start;
-  border-radius: 15px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
 `
 export const ProductDecription = styled.p`
-  background: #222222;
+  background: #3f3f3f;
   display: flex;
   text-align: center;
   align-items: center;
@@ -71,7 +72,7 @@ export const Trash = styled.button`
 
 export const Content = styled.div`
   display: grid;
-  background: #222222;
+  background: #3f3f3f;
   grid-template-columns: repeat(6, 1fr);
   grid-template-columns: 100px 280px 120px 130px 80px 60px;
   box-shadow: 0px 0px 8px black;

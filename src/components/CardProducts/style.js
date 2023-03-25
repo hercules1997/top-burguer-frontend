@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: #3a3426;
+  background-color: #605551;
   border-radius: 20px;
   width: 400px;
   display: flex;
   width: 400px;
-  box-shadow: 0px 12px 35px black;
+  box-shadow: 0px 10px 20px black;
 `
 export const ProductPrice = styled.p`
   font-style: normal;

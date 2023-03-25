@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: #181416;
+  background-color: #2f2f2f;
   width: 100%;
   width: 100%;
   display: flex;
@@ -29,13 +29,24 @@ export const Container = styled.div`
     margin-right: 30px;
     height: 100%;
     border-radius: 0;
+    color: #3f3f3f;
   }
 
   .rec.rec-arrow:hover {
     background-color: #3f3f3f;
+    color: white;
   }
   .rec.rec-arrow:disabled {
     visibility: hidden;
+  }
+  .rec.rec-arrow:active {
+    opacity: 0.1;
+  }
+  .rec.rec-arrow-right {
+    border-right: solid 0.5px #3f3f3f;
+  }
+  .rec.rec-arrow-left {
+    border-left: solid 1px #3f3f3f;
   }
 
   h1 {
