@@ -9,7 +9,6 @@ export const Container = styled.div`
 `
 export const HomeImage = styled.img`
   height: 280px;
-  margin-top: 3%;
 `
 export const ContainerMenu = styled.div`
   display: flex;
