@@ -7,7 +7,7 @@ import { Container, HomeImage, ContainerItens } from './style'
 export function Home () {
   return (
     <Container>
-      <Header/>
+      <Header />
       <HomeImage src={ImgHomeBurguer} />
 
       <ContainerItens>

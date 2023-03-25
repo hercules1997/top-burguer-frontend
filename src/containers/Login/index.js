@@ -89,7 +89,7 @@ export function Login () {
 
           <Button type="submit">Entrar</Button>
           <SingLink>
-            Não tem cadastro ainda?{' '}
+            Não tem cadastro ainda?
             <Link to="/cadastro">Cadastre-se agora!</Link>
           </SingLink>
         </form>

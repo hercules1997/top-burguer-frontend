@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import ImgProductsBurguer from '../../assets/ImgProductsBurguer.png'
-import { CardProduct } from '../../components'
+import { CardProduct, Header } from '../../components'
 import apiTopBurger from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
 import {
@@ -52,6 +52,7 @@ export function Products () {
 
   return (
     <Container>
+      <Header />
       <HomeImage src={ImgProductsBurguer} />
 
       <ContainerMenu>
