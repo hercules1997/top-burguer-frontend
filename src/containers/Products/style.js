@@ -35,13 +35,13 @@ export const Menu = styled.button`
   background-color: transparent;
   text-align: center;
   align-items: center;
-  transition: 0.5s;
+  /* transition: 0.2s; */
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 20px;
 
   &:hover {
-    transition: 0.6s;
+    /* transition: 0.2s; */
     border-bottom: solid 3px white;
     color: white;
   }
