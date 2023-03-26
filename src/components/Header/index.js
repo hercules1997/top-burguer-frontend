@@ -29,7 +29,6 @@ export function Header () {
           Home
         </PageLink>
         <PageLink
-          className="pageLink"
           onClick={() => push('/produtos')}
           isActive={pathname.includes('/produtos')}
         >
@@ -38,11 +37,11 @@ export function Header () {
       </ContainerLeft>
 
       <ContainerRight>
-        <PageLink className="pageLink" onClick={() => push('/carrinho')}>
+        <PageLink onClick={() => push('/carrinho')}>
           <img src={iconCart} alt="Ícone de carrinho" />
         </PageLink>
         <div className="barra"></div>
-        <PageLink className="pageLink">
+        <PageLink>
           <img src={person} alt="logo pessoa" />
         </PageLink>
 
