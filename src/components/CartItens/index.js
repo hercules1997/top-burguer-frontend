@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import cart from '../../assets/cart.png'
 import trash from '../../assets/trash.png'
+import { Button } from '../../components/Button'
 import { useCart } from '../../hooks/CartContext'
 import formatCurrency from '../../utils/formatCurrency'
 import {
@@ -55,9 +57,17 @@ export function CartItens () {
             ))
           )
         : (
-        <EmpyCart>
-          <img src={cart} /> Carrinho vazio
-        </EmpyCart>
+        <>
+          <EmpyCart>
+            <img src={cart} />
+            Carrinho vazio
+          </EmpyCart>{' '}
+          <Button style={{ marginTop: '12px', padding: '5px', fontSize: '1.2rem' }}>
+            <Link style={{ textDecoration: 'none', color: 'white' }} to="/produtos">
+              Ir para área de produtos
+            </Link>
+          </Button>
+        </>
           )}
     </Container>
   )
