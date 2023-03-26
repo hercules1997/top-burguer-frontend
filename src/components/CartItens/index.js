@@ -62,7 +62,7 @@ export function CartItens () {
             <img src={cart} />
             Carrinho vazio
           </EmpyCart>{' '}
-          <Button style={{ marginTop: '12px', padding: '5px', fontSize: '1.2rem' }}>
+          <Button>
             <Link style={{ textDecoration: 'none', color: 'white' }} to="/produtos">
               Ir para área de produtos
             </Link>
