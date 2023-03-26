@@ -21,10 +21,18 @@ export function Header () {
   return (
     <Container>
       <ContainerLeft>
-        <PageLink className="pageLink" onClick={() => push('/')} isActive={ pathname === '/' } >
+        <PageLink
+          className="pageLink"
+          onClick={() => push('/')}
+          isActive={pathname === '/'}
+        >
           Home
         </PageLink>
-        <PageLink className="pageLink" onClick={() => push('/produtos')}>
+        <PageLink
+          className="pageLink"
+          onClick={() => push('/produtos')}
+          isActive={pathname.includes('/produtos')}
+        >
           Ver Produtos
         </PageLink>
       </ContainerLeft>
