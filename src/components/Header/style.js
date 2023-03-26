@@ -3,18 +3,19 @@ import styled from 'styled-components'
 export const Container = styled.div`
   background: black;
   display: flex;
-
-  height: 52px;
+  font-size: 1.1rem;
+  height: 45px;
+  padding: 25px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 `
 export const ContainerLeft = styled.div`
   display: flex;
   gap: 30px;
-
+  margin-left: 3%;
   .pageLink {
     color: white;
-    font-size: 1.5rem;
+
     cursor: pointer;
     text-decoration: none;
     justify-content: center;
@@ -44,19 +45,22 @@ export const PageLinkExit = styled.a`
 
 export const ContainerRight = styled.div`
   display: flex;
+  margin-right: 3%;
+
+  padding: 20px;
   .pageLink {
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
     text-decoration: none;
     justify-content: center;
-
     align-items: center;
     display: flex;
     flex-direction: row;
 
     img {
       width: 40px;
+      padding: 5px;
     }
 
     &:hover {
@@ -64,21 +68,21 @@ export const ContainerRight = styled.div`
     }
   }
 
-  .traco {
+  .barra {
     border-right: 0.5px solid gray;
     height: 40px;
     box-shadow: 0px 0px 10px white;
-    margin: 0px 30px;
+    margin: 5px 30px;
     width: 0px;
-    display: flex;
   }
 `
 export const ContainerText = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 30px;
+
   p {
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 `
