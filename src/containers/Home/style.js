@@ -1,17 +1,19 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  background-color: #2f2f2f;
+import logo from '../../assets/ImgHomeBurguer.png'
 
+export const Container = styled.div`
+  background-color: url('${logo}');
+  box-shadow: 0px 12px 35px black;
   display: flex;
   flex-direction: column;
   width: 100%;
 `
 export const HomeImage = styled.img`
-  width: 100%;
-  height: 320px;
+  /* width: 100%;
+  height: 250px;
 
-  box-shadow: 0px 12px 35px black;
+ */
 `
 export const ContainerItens = styled.div`
   display: flex;
@@ -27,8 +29,7 @@ export const ContainerItens = styled.div`
     font-size: 3rem;
     flex-direction: column;
     text-align: center;
-    padding: 10px;
-    margin-top: 50px;
+    margin-top: 10px;
     color: #d6d6ba;
   }
 `

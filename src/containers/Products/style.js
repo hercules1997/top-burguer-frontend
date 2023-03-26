@@ -1,14 +1,17 @@
 import styled from 'styled-components'
 
+import logo from '../../assets/ImgProductsBurguer.png'
+
 export const Container = styled.div`
   background-color: #2f2f2f;
+  background-color: url('${logo}');
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   width: 100%;
 `
 export const HomeImage = styled.img`
-  height: 280px;
+  /* height: 280px; */
 `
 export const ContainerMenu = styled.div`
   display: flex;
