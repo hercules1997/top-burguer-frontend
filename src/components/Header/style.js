@@ -14,26 +14,29 @@ export const ContainerLeft = styled.div`
   gap: 30px;
   margin-left: 3%;
   .pageLink {
-    color: white;
-
-    cursor: pointer;
-    text-decoration: none;
-    justify-content: center;
-
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-
-    img {
-      width: 40px;
-    }
-
-    &:hover {
-      font-weight: bold;
-    }
   }
 `
 
+export const PageLink = styled.button`
+  color: white;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  justify-content: center;
+  border: none;
+
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  img {
+    width: 40px;
+    padding: 5px;
+  }
+
+  &:hover {
+    font-weight: bold;
+  }
+`
 export const PageLinkExit = styled.a`
   color: yellow;
   cursor: pointer;
@@ -48,25 +51,6 @@ export const ContainerRight = styled.div`
   margin-right: 3%;
 
   padding: 20px;
-  .pageLink {
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-
-    img {
-      width: 40px;
-      padding: 5px;
-    }
-
-    &:hover {
-      font-weight: bold;
-    }
-  }
 
   .barra {
     border-right: 0.5px solid gray;
