@@ -1,36 +1,42 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import iconCart from '../../assets/iconCart.png'
 import person from '../../assets/person.png'
 import {
   Container,
   ContainerLeft,
+  PageLink,
   PageLinkExit,
   ContainerRight,
   ContainerText
 } from './style'
 
 export function Header () {
+  const {
+    push,
+    location: { pathname }
+  } = useHistory()
+
   return (
     <Container>
       <ContainerLeft>
-        <Link className="pageLink" to="/">
+        <PageLink className="pageLink" onClick={() => push('/')} isActive={ pathname === '/' } >
           Home
-        </Link>
-        <Link className="pageLink" to="/produtos">
+        </PageLink>
+        <PageLink className="pageLink" onClick={() => push('/produtos')}>
           Ver Produtos
-        </Link>
+        </PageLink>
       </ContainerLeft>
 
       <ContainerRight>
-        <Link className="pageLink" to="/carrinho">
+        <PageLink className="pageLink" onClick={() => push('/carrinho')}>
           <img src={iconCart} alt="Ícone de carrinho" />
-        </Link>
+        </PageLink>
         <div className="barra"></div>
-        <Link className="pageLink">
+        <PageLink className="pageLink">
           <img src={person} alt="logo pessoa" />
-        </Link>
+        </PageLink>
 
         <ContainerText>
           <p>Olá, Hércules</p>
