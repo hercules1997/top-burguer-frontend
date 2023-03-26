@@ -27,7 +27,7 @@ export function Header () {
         <Link className="pageLink" to="/carrinho">
           <img src={iconCart} alt="Ícone de carrinho" />
         </Link>
-        <div className="traco"></div>
+        <div className="barra"></div>
         <Link className="pageLink">
           <img src={person} alt="logo pessoa" />
         </Link>
