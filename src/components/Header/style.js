@@ -27,6 +27,7 @@ export const PageLink = styled.button`
   font-weight:  ${(props) => (props.isActive ? 'bold' : 'normal')};
   align-items: center;
   display: flex;
+  font-size: 1.2rem;
   flex-direction: row;
   img {
     width: 40px;
