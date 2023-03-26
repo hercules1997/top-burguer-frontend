@@ -18,13 +18,13 @@ export const ContainerLeft = styled.div`
 `
 
 export const PageLink = styled.button`
-  color: white;
+  color: ${(props) => (props.isActive ? '#FA9600' : 'white')};
   background: transparent;
   cursor: pointer;
   text-decoration: none;
   justify-content: center;
   border: none;
-
+  font-weight:  ${(props) => (props.isActive ? 'bold' : 'normal')};
   align-items: center;
   display: flex;
   flex-direction: row;
