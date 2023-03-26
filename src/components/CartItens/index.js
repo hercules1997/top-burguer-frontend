@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import cart from '../../assets/cart.png'
 import trash from '../../assets/trash.png'
@@ -16,6 +16,7 @@ import {
   EmpyCart
 } from './style'
 export function CartItens () {
+  const { push } = useHistory()
   const { cartProducts, increseProducts, decreseProducts, deleteProducts } =
     useCart()
 
@@ -61,11 +62,9 @@ export function CartItens () {
           <EmpyCart>
             <img src={cart} />
             Carrinho vazio
-          </EmpyCart>{' '}
-          <Button>
-            <Link style={{ textDecoration: 'none', color: 'white' }} to="/produtos">
-              Ir para área de produtos
-            </Link>
+          </EmpyCart>
+          <Button onClick={() => push('/produtos')}>
+            Ir para área de produtos
           </Button>
         </>
           )}
