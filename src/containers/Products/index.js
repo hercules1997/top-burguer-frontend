@@ -16,7 +16,7 @@ export function Products () {
   const [categories, setCategories] = useState([])
   const [products, setProducts] = useState([])
   const [filterProducts, setFilterProducts] = useState([])
-  const [activeCategory, setActiveCategory] = useState([])
+  const [activeCategory, setActiveCategory] = useState(0)
 
   useEffect(() => {
     async function loadCategories () {
