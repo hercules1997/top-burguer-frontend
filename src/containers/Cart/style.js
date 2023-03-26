@@ -4,12 +4,13 @@ export const Container = styled.div`
   background: #2f2f2f;
 
   min-height: 100vh;
+
 `
 export const HomeImage = styled.img`
   width: 100%;
-  height: 320px;
+  height: 250px;
 
-  margin-top: 3%;
+
   box-shadow: 0px 12px 35px black;
 `
 export const Wrapper = styled.div`
