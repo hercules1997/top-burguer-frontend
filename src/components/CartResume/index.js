@@ -5,7 +5,7 @@ import { Button } from '../../components/Button'
 import { useCart } from '../../hooks/CartContext'
 import api from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
-import { Container } from './style'
+import { Container, ButtonFinish } from './style'
 
 export function CartResume () {
   const [finalPrice, setFinalPrice] = useState(0)
@@ -38,7 +38,7 @@ export function CartResume () {
 
   if (cartProducts.length > 0) {
     return (
-      <div>
+      <ButtonFinish>
         <Container>
           <div className="container-top">
             <h2 className="title">Resumo do Pedido</h2>
@@ -51,7 +51,7 @@ export function CartResume () {
 
           <div className="container-bottom">
             <p>Total</p>
-            <p>{formatCurrency(finalPrice + +deliveryTax)}</p>
+            <p>{formatCurrency(finalPrice + deliveryTax)}</p>
           </div>
         </Container>
 
@@ -67,9 +67,9 @@ export function CartResume () {
         >
           Finalizar Pedido
         </Button>
-      </div>
+      </ButtonFinish>
     )
   } else {
-    <div></div>
+    ;<div></div>
   }
 }
