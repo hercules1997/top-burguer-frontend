@@ -4,68 +4,93 @@ export const Container = styled.div`
   background: black;
   display: flex;
   font-size: 1.1rem;
-  height: 45px;
-  padding: 25px;
-  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-direction: row;
+  padding: 5px;
+  /* align-items: center; */
   justify-content: space-between;
 `
 export const ContainerLeft = styled.div`
   display: flex;
+
   gap: 30px;
   margin-left: 3%;
-  .pageLink {
-  }
 `
 
 export const PageLink = styled.button`
+  display: flex;
+
   color: ${(props) => (props.isActive ? '#FA9600' : 'white')};
   background: transparent;
   cursor: pointer;
   text-decoration: none;
-  justify-content: center;
+
   border: none;
-  font-weight:  ${(props) => (props.isActive ? 'bold' : 'normal')};
+  font-weight: ${(props) => (props.isActive ? 'bold' : 'normal')};
   align-items: center;
-  display: flex;
+
   font-size: 1.2rem;
+
   flex-direction: row;
+
   img {
     width: 40px;
-    padding: 5px;
+    padding: 3px;
   }
 
   &:hover {
     font-weight: bold;
+  }
+
+  .notficationCart {
+    color: black;
+    width: 25px;
+    background: #fa9600;
+    border-radius: 50%;
+    font-size: 1rem;
+    padding: 2px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: absolute;
+    display: flex;
+    margin-left: 27px;
+    margin-bottom: 30px;
   }
 `
-export const PageLinkExit = styled.a`
-  color: yellow;
+export const PageLinkExit = styled.button`
+  color: #fa9600;
   cursor: pointer;
-
+  background: transparent;
+  font-size: 1.2rem;
+  border: none;
   &:hover {
-    font-weight: bold;
+    font-weight: 1000;
   }
 `
 
 export const ContainerRight = styled.div`
   display: flex;
   margin-right: 3%;
-
-  padding: 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
   .barra {
     border-right: 0.5px solid gray;
     height: 40px;
     box-shadow: 0px 0px 10px white;
     margin: 5px 30px;
-    width: 0px;
   }
 `
 export const ContainerText = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
-
+  margin-left: 20px;
+  align-items: flex-start;
   p {
     color: white;
     font-size: 1.3rem;

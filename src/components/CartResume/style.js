@@ -6,6 +6,8 @@ export const Container = styled.div`
   padding: 20px;
   justify-content: space-between;
   color: white;
+  position: sticky;
+  top: 100px;
 
   margin-top: 75px;
   margin-bottom: 15px;
@@ -55,6 +57,9 @@ export const Container = styled.div`
   }
 `
 
-export const Button = styled.button`
-  box-shadow: 0px 0px 8px black;
+export const ButtonFinish = styled.div`
+  Button {
+    position: sticky;
+    top: 340px;
+  }
 `
