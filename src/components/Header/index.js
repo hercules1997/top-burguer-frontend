@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import iconCart from '../../assets/iconCart.png'
 import person from '../../assets/person.png'
+import { useCart } from '../../hooks/CartContext'
+import { useUser } from '../../hooks/UserContext'
 import {
   Container,
   ContainerLeft,
@@ -13,6 +15,18 @@ import {
 } from './style'
 
 export function Header () {
+  const { logout, userData } = useUser()
+  const { cartProducts } = useCart()
+  const [finalItems, setAllItems] = useState([])
+
+  useEffect(() => {
+    const sumAllItems = cartProducts.reduce((acc, current) => {
+      return current.quantity + acc
+    }, 0)
+
+    setAllItems(sumAllItems)
+  }, [cartProducts])
+
   const {
     push,
     location: { pathname }
@@ -21,11 +35,7 @@ export function Header () {
   return (
     <Container>
       <ContainerLeft>
-        <PageLink
-          className="pageLink"
-          onClick={() => push('/')}
-          isActive={pathname === '/'}
-        >
+        <PageLink onClick={() => push('/')} isActive={pathname === '/'}>
           Home
         </PageLink>
         <PageLink
@@ -39,6 +49,13 @@ export function Header () {
       <ContainerRight>
         <PageLink onClick={() => push('/carrinho')}>
           <img src={iconCart} alt="Ícone de carrinho" />
+          {finalItems > 0
+            ? (
+            <span className="notficationCart">{finalItems}</span>
+              )
+            : (
+            <></>
+              )}
         </PageLink>
         <div className="barra"></div>
         <PageLink>
@@ -46,8 +63,15 @@ export function Header () {
         </PageLink>
 
         <ContainerText>
-          <p>Olá, Hércules</p>
-          <PageLinkExit>Sair</PageLinkExit>
+          <p>Olá, {userData.name}</p>
+          <PageLinkExit
+            onClick={() => {
+              logout()
+              push('/login')
+            }}
+          >
+            Sair
+          </PageLinkExit>
         </ContainerText>
       </ContainerRight>
     </Container>
