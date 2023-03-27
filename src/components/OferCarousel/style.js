@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -37,8 +38,6 @@ export const Container = styled.div`
   .rec.rec-arrow-left {
     border-left: solid 1px #3f3f3f;
   }
-
-
 
   /*
   Configuração das scroll
@@ -101,19 +100,27 @@ export const OfferPrice = styled.p`
   padding: 10px;
   box-shadow: 0px 5px 15px black;
 `
-export const Button = styled.button`
+export const Button = styled(Link)`
   background-color: #3f3f3f;
   width: 280px;
-  height: 60px;
+  margin-left: 55px;
+  margin-right: 55px;
+
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
+  padding: 20px;
   font-weight: bold;
   border: none;
-  border-radius: 8px;
   text-align: center;
   text-decoration: none;
-  box-shadow: 0px 7px 8px black;
+  box-shadow: 0px 8px 10px black;
   font-size: 1.5rem;
+  border-radius: 8px;
   color: #d6d6ba;
+
   cursor: pointer;
 
   &:hover {

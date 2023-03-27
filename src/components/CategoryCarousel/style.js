@@ -1,13 +1,14 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Container = styled.div`
   background-color: #2f2f2f;
   width: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  justify-content: center;
+  gap: 20px;
 
   .rec.rec-dot {
     background: transparent;
@@ -58,8 +59,12 @@ export const Container = styled.div`
 export const ContainerItens = styled.div`
   width: 100%;
   padding: 20px;
-  box-shadow: 0px 5px 15px black;
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 15px black;
 `
 
 export const ImgCategory = styled.img`
@@ -71,11 +76,17 @@ export const ImgCategory = styled.img`
   cursor: pointer;
 `
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   background-color: #3f3f3f;
+  /* margin-left: 50px; */
+ 
   width: 280px;
   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
+  padding: 20px;
   font-weight: bold;
   border: none;
   text-align: center;
