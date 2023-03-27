@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
+import trashOpen from '../../assets/trash-open.png'
 export const Container = styled.div`
   margin-top: 35px;
   margin-left: 2.4%;
   margin-bottom: 20px;
-
   Button {
     color: white;
+    margin-top: 5px;
+    width: 100%;
   }
 `
 export const EmpyCart = styled.div`
@@ -43,6 +45,7 @@ export const Header = styled.div`
 export const Img = styled.img`
   display: flex;
   background: #3f3f3f;
+
   width: 100px;
   height: 100px;
   text-align: center;
@@ -63,14 +66,18 @@ export const ProductDecription = styled.p`
   color: #d6d6aa;
 `
 export const Trash = styled.button`
+  width: 14px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   text-align: center;
   align-items: center;
   border-bottom: solid 1px gray;
   img {
-    width: 35px;
+    &:hover {
+      background-image: url('${trashOpen}');
+    }
   }
 `
 
