@@ -39,7 +39,7 @@ export function OffersCarousel () {
     { width: 400, itemsToShow: 2 },
     { width: 600, itemsToShow: 2 },
     { width: 900, itemsToShow: 3 },
-    { width: 1300, itemsToShow: 3 }
+    { width: 1300, itemsToShow: 4 }
   ]
 
   return (
