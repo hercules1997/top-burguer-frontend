@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 
 import ImgProductsBurguer from '../../assets/ImgProductsBurguer.png'
-import { CardProduct, Header } from '../../components'
+import { CardProduct } from '../../components'
 import apiTopBurger from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
 import {
@@ -58,7 +58,6 @@ export function Products ({ location: { state } }) {
 
   return (
     <Container>
-      <Header />
       <HomeImage src={ImgProductsBurguer} />
 
       <ContainerMenu>
