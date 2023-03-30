@@ -3,7 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@hookform/resolvers": "^2.9.11",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.15",
+    "@mui/styled-engine-sc": "^5.11.11",
+    "@mui/x-data-grid": "^6.0.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -16,7 +22,7 @@
     "react-router-dom": "5",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.1",
-    "styled-components": "^5.3.6",
+    "styled-components": "^5.3.9",
     "web-vitals": "^2.1.4",
     "yup": "^1.0.0"
   },
