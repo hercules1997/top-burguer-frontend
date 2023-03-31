@@ -23,7 +23,7 @@ export function CardProduct ({ product }) {
         <ProductPrice>{product.formatedPrice}</ProductPrice>
         <Button
           onClick={() => {
-            putProductInCart(product) //! FAZER COM QUE MOSTRE UMA NOTIFICAÇÃO NA IMAGEM DE CARRINHO
+            putProductInCart(product)
             push('/carrinho')
           }}
           style={{ padding: '10px', fontSize: '18px', marginTop: '0' }}
