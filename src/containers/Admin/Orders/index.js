@@ -52,7 +52,7 @@ function Orders () {
               <TableCell>Pedido</TableCell>
               <TableCell>Cliente</TableCell>
               <TableCell>Data do pedido</TableCell>
-              <TableCell>Status</TableCell>
+              <TableCell>Status do Pedido</TableCell>
             </TableRow>
           </TableHead>
           <TableBody className="tbory">
