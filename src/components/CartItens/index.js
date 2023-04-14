@@ -3,8 +3,6 @@ import { useHistory } from 'react-router-dom'
 
 import cart from '../../assets/cart.png'
 import close from '../../assets/trash-close.png'
-
-// import trash from '../../assets/trash.png'
 import { Button } from '../../components/Button'
 import { useCart } from '../../hooks/CartContext'
 import formatCurrency from '../../utils/formatCurrency'
