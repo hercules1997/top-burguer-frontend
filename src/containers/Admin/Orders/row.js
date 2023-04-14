@@ -12,10 +12,30 @@ import Typography from '@mui/material/Typography'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { ProductsImg } from './style'
+import apiTopBurger from '../../../services/api'
+import status from './order-startus'
+import { ProductsImg, ReactSelectStyle } from './style'
 
-function Row ({ row }) {
+function Row ({ row, setOrders, orders }) {
   const [open, setOpen] = React.useState(false)
+  const [lisLoading, setLisLoading] = React.useState(false)
+
+  async function setNewStatus (id, status) {
+    setLisLoading(true)
+
+    try {
+      await apiTopBurger.put(`orders/${id}`, { status })
+
+      const newOrders = orders.map((ord) => {
+        return ord._id === id ? { ...ord, status } : ord
+      })
+      setOrders(newOrders)
+    } catch (error) {
+      console.error(error)
+    } finally {
+      setLisLoading(false)
+    }
+  }
 
   return (
     <React.Fragment>
@@ -34,7 +54,20 @@ function Row ({ row }) {
         </TableCell>
         <TableCell>{row.name}</TableCell>
         <TableCell>{row.date}</TableCell>
-        <TableCell>{row.status}</TableCell>
+        <TableCell>
+          <ReactSelectStyle
+            options={status.filter((sts) => sts.value !== 'Todos')}
+            menuPortalTarget={document.body}
+            placeholder="Status"
+            defaultValue={status.find(
+              (option) => option.value === row.status || null
+            )}
+            onChange={(newStatus) => {
+              setNewStatus(row.orderId, newStatus.value)
+            }}
+            isLoading={lisLoading}
+          />
+        </TableCell>
         <TableCell></TableCell>
       </TableRow>
       <TableRow>
@@ -52,7 +85,7 @@ function Row ({ row }) {
                     <TableCell>Categoria</TableCell>
                   </TableRow>
                 </TableHead>
-                <TableBody>
+                <TableBody className="table">
                   {row.products.map((productRow) => (
                     <TableRow key={productRow.id}>
                       <TableCell component="th" scope="row">
@@ -79,6 +112,8 @@ function Row ({ row }) {
 }
 
 Row.propTypes = {
+  orders: PropTypes.array,
+  setOrders: PropTypes.func,
   row: PropTypes.shape({
     name: PropTypes.string.isRequired,
     orderId: PropTypes.string.isRequired,
