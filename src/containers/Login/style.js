@@ -38,13 +38,6 @@ export const ContainerItens = styled.div`
 export const Logo = styled.img`
   width: 220px;
 `
-export const ErrorMessage = styled.p`
-  text-align: start;
-  color: yellow;
-  letter-spacing: 1px;
-  margin: 2px 0 2px 9px;
-  font-weight: 700;
-`
 
 export const Label = styled.p`
   text-align: start;

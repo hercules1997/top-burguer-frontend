@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 
 import ImgBurguer from '../../assets/backgroundBurger.jpg'
 import logoBurguer from '../../assets/logoBurger.png'
-import { Button } from '../../components'
+import { Button, ErrorMessage } from '../../components'
 import { useUser } from '../../hooks/UserContext'
 import apiTopBurger from '../../services/api'
 import {
@@ -17,7 +17,6 @@ import {
   Logo,
   Label,
   Input,
-  ErrorMessage,
   SingLink
 } from './style'
 

@@ -7,9 +7,8 @@ import * as Yup from 'yup'
 
 import ImgBurguer from '../../assets/backgroundCadastro.jpg'
 import logoBurguer from '../../assets/logoBurger.png'
-import { Button } from '../../components'
+import { Button, ErrorMessage } from '../../components'
 import apiTopBurger from '../../services/api'
-import { ErrorMessage } from '../Login/style'
 import {
   Container,
   Background,
