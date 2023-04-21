@@ -3,9 +3,13 @@ import React from 'react'
 
 import { SideMenuAdmin } from '../../components'
 import paths from '../../constants/paths'
-import ListProducts from './ListProducts'
-import NewProducts from './NewProducts'
-import Orders from './Orders'
+import {
+  EditProducts,
+  HomeInit,
+  ListProducts,
+  NewProducts,
+  Orders
+} from '../../containers'
 import { Container, ContainerItems } from './style'
 
 export function Admin ({ match: { path } }) {
@@ -13,10 +17,12 @@ export function Admin ({ match: { path } }) {
     <Container>
       <SideMenuAdmin path={path} />
       <ContainerItems>
-        {path === paths.Order && <ListProducts />}
-        {path === paths.Products && <Orders />}
+        {path === paths.Order && <Orders />}
+        {path === paths.ListProducts && <ListProducts />}
         {path === paths.NewProducts && <NewProducts />}
+        {path === paths.EditProducts && <EditProducts />}
       </ContainerItems>
+      {path === paths.Home && <HomeInit />}
     </Container>
   )
 }
