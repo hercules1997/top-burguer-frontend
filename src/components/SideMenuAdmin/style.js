@@ -3,13 +3,14 @@ import styled from 'styled-components'
 
 export const ContainerMenu = styled.div`
   flex-direction: column;
-  width: 320px;
+  position: fixed;
+  width: 280px;
   color: white;
 
   min-height: 100vh;
   padding: 70px 45px 70px 15px;
   background-color: #292929;
-    box-shadow: 1px 0px 40px 20px #292929;
+    box-shadow: 0px 0px 10px #292929;
 `
 export const ContainerItems = styled.div`
   margin-top: 15px;
