@@ -61,6 +61,21 @@ export const PageLink = styled.button`
     margin-bottom: 30px;
   }
 `
+export const PageLinkAdmin = styled.button`
+  display: flex;
+  color: white;
+  display: ${(props) => (props.isAdmin ? 'active' : 'none')};
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  font-weight: ${(props) => (props.isActive ? 'bold' : 'normal')};
+  align-items: center;
+
+  font-size: 1.2rem;
+
+  flex-direction: row;
+`
 export const PageLinkExit = styled.button`
   color: #fa9600;
   cursor: pointer;
