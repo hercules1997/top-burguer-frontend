@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import cart from '../../assets/cart.png'
 import close from '../../assets/trash-close.png'
 import { Button } from '../../components/Button'
+import paths from '../../constants/paths'
 import { useCart } from '../../hooks/CartContext'
 import formatCurrency from '../../utils/formatCurrency'
 import {
@@ -62,11 +63,11 @@ export function CartItens () {
             <img src={cart} />
             Carrinho vazio
           </EmpyCart>
-          <Button onClick={() => push('/produtos')}>
-            Ir para área de produtos
-          </Button>
         </>
           )}
+      <Button onClick={() => push(paths.Products)}>
+        Ir para área de produtos
+      </Button>
     </Container>
   )
 }
