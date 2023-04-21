@@ -1,19 +1,23 @@
 import Paper from '@mui/material/Paper'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
 import React, { useEffect, useState } from 'react'
 
 import apiTopBurger from '../../../services/api'
 import formatDate from '../../../utils/formatDate'
 import status from './order-startus'
 import Row from './row'
-import { Container, Menu, LinkMenu } from './style'
+import {
+  Container,
+  Menu,
+  LinkMenu,
+  TableContainerStyle,
+  TableStyle,
+  TableHeadStyle,
+  TableRowStyle,
+  TableCellStyle,
+  TableBodyStyle
+} from './style'
 
-function Orders () {
+export function Orders () {
   const [orders, setOrders] = useState([])
   const [filteredOrders, setFilteredOrders] = useState([])
   const [activeStatus, setActiveStatus] = useState(0)
@@ -82,18 +86,18 @@ function Orders () {
             </LinkMenu>
           ))}
       </Menu>
-      <TableContainer component={Paper}>
-        <Table aria-label="collapsible table">
-          <TableHead>
-            <TableRow>
-              <TableCell />
-              <TableCell>Pedido</TableCell>
-              <TableCell>Cliente</TableCell>
-              <TableCell>Data do pedido</TableCell>
-              <TableCell>Status do Pedido</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody className="tbory">
+      <TableContainerStyle component={Paper}>
+        <TableStyle aria-label="collapsible table">
+          <TableHeadStyle>
+            <TableRowStyle>
+              <TableCellStyle />
+              <TableCellStyle>Pedido</TableCellStyle>
+              <TableCellStyle>Cliente</TableCellStyle>
+              <TableCellStyle>Data do pedido</TableCellStyle>
+              <TableCellStyle>Status do Pedido</TableCellStyle>
+            </TableRowStyle>
+          </TableHeadStyle>
+          <TableBodyStyle className="tbory">
             {rows.map((row) => (
               <Row
                 key={row.orderId}
@@ -102,10 +106,9 @@ function Orders () {
                 orders={orders}
               />
             ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+          </TableBodyStyle>
+        </TableStyle>
+      </TableContainerStyle>
     </Container>
   )
 }
-export default Orders

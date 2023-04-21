@@ -1,20 +1,23 @@
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
-import Box from '@mui/material/Box'
-import Collapse from '@mui/material/Collapse'
 import IconButton from '@mui/material/IconButton'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
-import Typography from '@mui/material/Typography'
 import PropTypes from 'prop-types'
 import React from 'react'
 
 import apiTopBurger from '../../../services/api'
 import status from './order-startus'
-import { ProductsImg, ReactSelectStyle } from './style'
+import {
+  BoxStyle,
+  CollapseStyle,
+  ProductsImg,
+  ReactSelectStyle,
+  TableBodyStyle,
+  TableCellStyle,
+  TableHeadStyle,
+  TableRowStyle,
+  TableStyle,
+  TypographyStyle
+} from './style'
 
 function Row ({ row, setOrders, orders }) {
   const [open, setOpen] = React.useState(false)
@@ -39,8 +42,8 @@ function Row ({ row, setOrders, orders }) {
 
   return (
     <React.Fragment>
-      <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-        <TableCell>
+      <TableRowStyle sx={{ '& > *': { borderBottom: 'unset' } }}>
+        <TableCellStyle>
           <IconButton
             aria-label="expand row"
             size="small"
@@ -48,14 +51,16 @@ function Row ({ row, setOrders, orders }) {
           >
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
-        </TableCell>
-        <TableCell component="th" scope="row">
+        </TableCellStyle>
+        <TableCellStyle component="th" scope="row">
           {row.orderId}
-        </TableCell>
-        <TableCell>{row.name}</TableCell>
-        <TableCell>{row.date}</TableCell>
-        <TableCell>
+        </TableCellStyle>
+        <TableCellStyle>{row.name}</TableCellStyle>
+        <TableCellStyle>{row.date}</TableCellStyle>
+        <TableCellStyle>
           <ReactSelectStyle
+            className="react-select-container"
+            classNamePrefix="react-select"
             options={status.filter((sts) => sts.value !== 'Todos')}
             menuPortalTarget={document.body}
             placeholder="Status"
@@ -67,46 +72,46 @@ function Row ({ row, setOrders, orders }) {
             }}
             isLoading={lisLoading}
           />
-        </TableCell>
-        <TableCell></TableCell>
-      </TableRow>
-      <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box sx={{ margin: 1 }}>
-              <Typography variant="h6" gutterBottom component="div">
+        </TableCellStyle>
+        <TableCellStyle></TableCellStyle>
+      </TableRowStyle>
+      <TableRowStyle>
+        <TableCellStyle style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+          <CollapseStyle in={open} timeout="auto" unmountOnExit>
+            <BoxStyle sx={{ margin: 1 }}>
+              <TypographyStyle variant="h6" gutterBottom component="div">
                 Pedido
-              </Typography>
-              <Table size="small" aria-label="purchases">
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Quantidade</TableCell>
-                    <TableCell>Produto</TableCell>
-                    <TableCell>Categoria</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody className="table">
+              </TypographyStyle>
+              <TableStyle size="small" aria-label="purchases">
+                <TableHeadStyle>
+                  <TableRowStyle>
+                    <TableCellStyle>Quantidade</TableCellStyle>
+                    <TableCellStyle>Produto</TableCellStyle>
+                    <TableCellStyle>Categoria</TableCellStyle>
+                  </TableRowStyle>
+                </TableHeadStyle>
+                <TableBodyStyle className="table">
                   {row.products.map((productRow) => (
-                    <TableRow key={productRow.id}>
-                      <TableCell component="th" scope="row">
+                    <TableRowStyle key={productRow.id}>
+                      <TableCellStyle component="th" scope="row">
                         {productRow.quantity}
-                      </TableCell>
-                      <TableCell> {productRow.name}</TableCell>
-                      <TableCell> {productRow.category}</TableCell>
-                      <TableCell>
+                      </TableCellStyle>
+                      <TableCellStyle> {productRow.name}</TableCellStyle>
+                      <TableCellStyle> {productRow.category}</TableCellStyle>
+                      <TableCellStyle>
                         <ProductsImg
                           src={productRow.url}
                           alt="Imagem do produto"
                         />
-                      </TableCell>
-                    </TableRow>
+                      </TableCellStyle>
+                    </TableRowStyle>
                   ))}
-                </TableBody>
-              </Table>
-            </Box>
-          </Collapse>
-        </TableCell>
-      </TableRow>
+                </TableBodyStyle>
+              </TableStyle>
+            </BoxStyle>
+          </CollapseStyle>
+        </TableCellStyle>
+      </TableRowStyle>
     </React.Fragment>
   )
 }
