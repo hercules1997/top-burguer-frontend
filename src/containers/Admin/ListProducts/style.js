@@ -1,11 +1,15 @@
 import ModeEditIcon from '@mui/icons-material/ModeEdit'
+import Table from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
 import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
   text-align: center;
-  min-height: 100vh;
-
   .checkYes {
     color: green;
     border-radius: 28px;
@@ -14,23 +18,10 @@ export const Container = styled.div`
     color: red;
     border-radius: 28px;
   }
-
-  .table-row {
-    font-weight: bold;
-    color: whitesmoke;
-    height: 50px;
-    
-    background-color: black;
-  }
-  .table-container {
-   border-radius: 15px;
-
-    box-shadow: 0 0px 10px 7px #292929;
-  }
 `
 export const Img = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 8px;
 `
 export const ModeEditIconStyle = styled(ModeEditIcon)`
@@ -39,6 +30,22 @@ export const ModeEditIconStyle = styled(ModeEditIcon)`
   cursor: pointer;
   &:hover {
     font-weight: bold;
-    color: black;
+    color: yellow;
   }
 `
+export const TableRowStyle = styled(TableRow)`
+  font-weight: bold;
+  height: 50px;
+  background-color: black;
+`
+export const TableCellStyle = styled(TableCell)`
+  width: 20px;
+  color: whitesmoke !important;
+  font-size: 1.2rem !important;
+`
+
+//* TAGS PARA ESTYLIZAÇÃO DA TAEBELA SIMPLES
+export const TableHeadStyle = styled(TableHead)``
+export const TableContainerStyle = styled(TableContainer)``
+export const TableBodyStyle = styled(TableBody)``
+export const TableStyle = styled(Table)``
