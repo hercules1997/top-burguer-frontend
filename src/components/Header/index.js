@@ -11,7 +11,8 @@ import {
   PageLink,
   PageLinkExit,
   ContainerRight,
-  ContainerText
+  ContainerText,
+  PageLinkAdmin
 } from './style'
 
 export function Header () {
@@ -35,6 +36,12 @@ export function Header () {
   return (
     <Container>
       <ContainerLeft>
+        <PageLinkAdmin
+          onClick={() => push('/pedidos')}
+          isAdmin={userData.admin}
+        >
+          Administrador
+        </PageLinkAdmin>
         <PageLink onClick={() => push('/')} isActive={pathname === '/'}>
           Home
         </PageLink>
