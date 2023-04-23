@@ -5,7 +5,6 @@ import paths from '../constants/paths'
 import { Home, Login, Products, Register, Cart, Admin } from '../containers'
 import { PrivateRoute } from './private-route'
 
-// TODO Colocar todas as rotas em paths */
 function AllRoutes () {
   return (
     <Router>
