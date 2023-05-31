@@ -105,7 +105,7 @@ export const Button = styled(Link)`
   width: 280px;
   margin-left: 55px;
   margin-right: 55px;
-
+    transition: 0.8s;
   height: 50px;
   display: flex;
   justify-content: center;

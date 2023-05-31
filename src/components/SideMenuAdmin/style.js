@@ -38,12 +38,15 @@ export const ListLink = styled(Link)`
   border-radius: 6px;
   align-items: center;
   background-color: ${(props) => (props.isActive ? '#fa9600' : 'none')};
- 
+   transition: 1s;
   .icon {
     margin-right: 15px;
   }
 
   &:hover {
     font-weight: bold;
+      transition: 0.8s;
+    color: #000;
+    background-color: #d6d6ba;
   }
 `

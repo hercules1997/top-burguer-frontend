@@ -28,7 +28,7 @@ export function EditProducts (props) {
     }
   } = useHistory()
 
-  console.log(props)
+  // console.log(props)
 
   const schema = Yup.object().shape({
     name: Yup.string().required('Digite o nome do produto'),
@@ -63,7 +63,7 @@ export function EditProducts (props) {
 
     setTimeout(() => {
       push('/listar-produtos')
-    }, 3000)
+    }, 1000)
   }
 
   useEffect(() => {

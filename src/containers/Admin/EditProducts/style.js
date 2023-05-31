@@ -37,6 +37,10 @@ export const Input = styled.input`
   border-radius: 10px;
   border: none;
   border: ${(props) => (props.error ? '2px solid yellow' : 'none')};
+
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 `
 export const InputCheckBox = styled.input`
   margin-right: 10px;

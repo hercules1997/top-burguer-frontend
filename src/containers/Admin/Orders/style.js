@@ -48,6 +48,7 @@ export const LinkMenu = styled.a`
   text-decoration: none;
   align-items: center;
   font-size: 14px;
+  transition: 0.7s;
   font-weight: ${(props) => (props.isActiveStatus ? 'bold' : 'normal')};
   color: ${(props) => (props.isActiveStatus ? '#fa9600' : 'whitesmoke')};
   border-bottom: ${(props) =>
@@ -56,55 +57,45 @@ export const LinkMenu = styled.a`
 `
 
 export const ReactSelectStyle = styled(ReactSelect)`
-  color: black;
-  background: black !important;
+  color: white;
 
-  .css-10wo9uf-option {
-    background: black !important;
+  .react-select {
+  }
+
+  .ilBAIQ .css-13cymwt-control {
+    background: #292929 !important;
     outline: none;
 
     color: white;
   }
-
   .css-13cymwt-control {
+    background: gray;
+  }
+
+  
+
+  &::-webkit-backdrop-filter {
+    -webkit-appearance: none;
     background: black;
   }
 
-  /* .react-select-container {
-    background: green !important;
-  }
-  .react-select__value-container {
-    background: green !important;
-  }
-
-  .react-select__menu {
-    background: green !important;
-  }
-  .react-select__menu-list {
-    background: green !important;
-  }
-
-  .react-select__control {
-    background: green !important;
-  }
-  .react-select__option {
-    background: green !important;
-  }
-
-  .react-select__indicators {
-  } */
 `
 //* TAGS PARA ESTYLIZAÇÃO DA TAEBELA SIMPLES
 export const TableRowStyle = styled(TableRow)`
   font-weight: bold;
-  height: 50px;
+  height: 40px;
+
   color: whitesmoke !important;
-  background-color: black;
+  background: #292929 !important;
 `
 export const TableCellStyle = styled(TableCell)`
+  .css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root {
+    color: white;
+  }
+
   color: whitesmoke !important;
   font-size: 1.2rem !important;
-  background: gray !important;
+  background: #292929 !important;
 `
 export const TableHeadStyle = styled(TableHead)`
   width: 100% !important;
@@ -112,10 +103,13 @@ export const TableHeadStyle = styled(TableHead)`
   background: blue !important;
 `
 export const TableContainerStyle = styled(TableContainer)`
-  background-color: black !important;
-  color: whitesmoke !important;
+  background: #292929 !important;
+  color: black !important;
   width: 100% !important;
-  background: orange !important;
+
+  .css-1ex1afd-MuiTableCell-root {
+    border-bottom: black solid 1px !important;
+  }
 `
 export const TableBodyStyle = styled(TableBody)`
   color: whitesmoke !important;
@@ -123,20 +117,16 @@ export const TableBodyStyle = styled(TableBody)`
   background: pink !important;
 `
 export const TableStyle = styled(Table)`
-  color: whitesmoke !important;
+  color: black !important;
   width: 100% !important;
-  background: green !important;
 `
 export const TypographyStyle = styled(Typography)`
-  color: whitesmoke !important;
-  background: red !important;
+  color: #fa9600 !important;
+  font-weight: bold;
   width: 100% !important;
 `
-export const BoxStyle = styled(Box)`
-  background: yellow !important;
-`
+export const BoxStyle = styled(Box)``
 export const CollapseStyle = styled(Collapse)`
   color: whitesmoke !important;
   width: 100% !important;
-  background: green !important;
 `

@@ -3,6 +3,7 @@ import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefault'
 import Paper from '@mui/material/Paper'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 import paths from '../../../constants/paths'
 import apiTopBurguer from '../../../services/api'
@@ -16,7 +17,8 @@ import {
   TableContainerStyle,
   TableHeadStyle,
   TableRowStyle,
-  TableStyle
+  TableStyle,
+  DeleteForeverIconStyle
 } from './style'
 
 export function ListProducts () {
@@ -31,7 +33,7 @@ export function ListProducts () {
     }
 
     loadOrders()
-  }, [])
+  }, [products])
 
   function isOffer (offerStatus) {
     if (offerStatus) {
@@ -42,6 +44,15 @@ export function ListProducts () {
 
   function editProduct (product) {
     push(paths.EditProducts, { product })
+  }
+
+  const deleteProduct = async (product) => {
+    console.log(product)
+    await toast.promise(apiTopBurguer.delete(`products/${product.id}`), {
+      pending: 'Deletando produto...',
+      success: 'Produto deletado com sucesso!',
+      error: 'Falha ao deletar produto, por favor tente novamente'
+    })
   }
 
   return (
@@ -69,6 +80,9 @@ export function ListProducts () {
               <TableCellStyle align="center" className="table-row">
                 Editar
               </TableCellStyle>
+              <TableCellStyle align="center" className="table-row">
+                Deletar
+              </TableCellStyle>
             </TableRowStyle>
           </TableHeadStyle>
           <TableBodyStyle>
@@ -90,6 +104,11 @@ export function ListProducts () {
                   </TableCellStyle>
                   <TableCellStyle align="center">
                     <ModeEditIconStyle onClick={() => editProduct(prod)} />
+                  </TableCellStyle>
+                  <TableCellStyle align="center">
+                    <DeleteForeverIconStyle
+                      onClick={() => deleteProduct(prod)}
+                    />
                   </TableCellStyle>
                 </TableRowStyle>
               ))}

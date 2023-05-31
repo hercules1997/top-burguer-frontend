@@ -37,6 +37,10 @@ export const Input = styled.input`
   border-radius: 10px;
   border: none;
   border: ${(props) => (props.error ? '2px solid yellow' : 'none')};
+
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 `
 export const ButtonStyle = styled(Button)`
   font-size: 16px;
@@ -62,15 +66,13 @@ export const LabelUpload = styled.label`
 `
 export const ReactSelectStyles = styled(ReactSelect)`
   color: black;
-    background: black !important;
+  background: black !important;
 
   .css-10wo9uf-option {
     background: black !important;
     outline: none;
 
     color: white;
-
-
   }
 
   .css-13cymwt-control {

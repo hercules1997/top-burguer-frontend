@@ -56,7 +56,6 @@ export function NewProducts (props) {
     productDataFormData.append('category_id', data.category.id)
     productDataFormData.append('file', data.file[0])
 
-    console.log(data.category_id)
     await toast.promise(apiTopBurguer.post('products', productDataFormData), {
       pending: 'Criando novo produto...',
       success: 'Produto criado com sucesso!',
