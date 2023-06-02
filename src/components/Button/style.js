@@ -4,17 +4,17 @@ export const ComponentButton = styled.button`
   background-color: #fa9600;
   height: 45px;
 
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 1.5rem;
   font-weight: 700;
 
   outline: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   color: white;
 
   cursor: pointer;
-  box-shadow: 0px 12px 35px black;
+  /* box-shadow: 0px 12px 35px black; */
 
   &:hover {
     background-color: #ffb000;

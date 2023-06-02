@@ -7,15 +7,16 @@ import * as Yup from 'yup'
 
 import ImgBurguer from '../../assets/backgroundCadastro.jpg'
 import logoBurguer from '../../assets/logoBurger.png'
-import { Button, ErrorMessage } from '../../components'
+import { ErrorMessage } from '../../components'
 import apiTopBurger from '../../services/api'
+import { Input } from '../Login/style'
 import {
   Container,
   Background,
   ContainerItens,
   Logo,
   Label,
-  Input,
+  ButtonStyle,
   SingLink
 } from './style'
 
@@ -107,7 +108,7 @@ export function Register () {
           />
           <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
 
-          <Button type="submit">Cadastrar</Button>
+          <ButtonStyle type="submit">Cadastrar</ButtonStyle>
           <SingLink>
             Já possui conta? <Link to="/login">Acesse!</Link>
           </SingLink>
