@@ -1,9 +1,16 @@
 import styled from 'styled-components'
 
+import { Button } from '../../components'
+
 export const Container = styled.div`
   display: flex;
   width: 100vw;
   height: 100vh;
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    width: 100%;
+  }
 `
 export const Background = styled.span`
   display: flex;
@@ -14,6 +21,10 @@ export const Background = styled.span`
 
   img {
     width: 60%;
+  }
+
+  @media screen and (max-width: 993px) {
+    display: none;
   }
 `
 export const ContainerItens = styled.div`
@@ -26,6 +37,9 @@ export const ContainerItens = styled.div`
   text-align: center;
   align-items: center;
 
+  h1 {
+    margin: 0;
+  }
   form {
     display: flex;
     flex-direction: column;
@@ -33,9 +47,19 @@ export const ContainerItens = styled.div`
     padding: 10px;
     color: white;
   }
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    width: 100%;
+  }
 `
 export const Logo = styled.img`
   width: 100px;
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    width: 300px;
+  }
 `
 export const Label = styled.p`
   text-align: start;
@@ -64,21 +88,21 @@ export const Input = styled.input`
     background-color: #d6d6ba;
   }
 `
-export const Button = styled.button`
+export const ButtonStyle = styled(Button)`
   background-color: #fa9600;
-  height: 45px;
+  height: 35px;
 
-  margin-top: 25px;
-  font-size: 1.5rem;
+  margin-top: 15px;
+  font-size: 1.4rem;
   font-weight: 700;
 
   outline: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   color: white;
 
   cursor: pointer;
-  box-shadow: 0px 12px 35px black;
+  /* box-shadow: 0px 12px 35px black; */
 
   &:hover {
     background-color: #ffb000;

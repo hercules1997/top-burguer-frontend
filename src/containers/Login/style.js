@@ -2,9 +2,13 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-
   width: 100vw;
   height: 100vh;
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    width: 100%;
+  }
 `
 export const Background = styled.span`
   display: flex;
@@ -15,6 +19,10 @@ export const Background = styled.span`
 
   img {
     width: 60%;
+  }
+
+  @media screen and (max-width: 993px) {
+    display: none;
   }
 `
 export const ContainerItens = styled.div`
@@ -34,35 +42,51 @@ export const ContainerItens = styled.div`
     padding: 10px;
     color: white;
   }
+
+  h1 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    width: 100%;
+  }
 `
 export const Logo = styled.img`
-  width: 220px;
+  width: 150px;
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    width: 300px;
+  }
 `
 
 export const Label = styled.p`
   text-align: start;
-  margin: 10px 0 10px 9px;
+  margin: 6px 0 6px 6px;
   font-weight: 700;
 `
 export const Input = styled.input`
-  background-color: #3f3f3f;
+  background-color: rgb(91 91 91);
 
-  width: 400px;
-  height: 45px;
+  width: 350px;
+  height: 35px;
   align-items: center;
   padding: 10px;
 
   outline: none;
-  border: ${(props) => (props.error ? '2px solid yellow' : 'none')};
-  border-radius: 10px;
+  border: ${(props) => (props.error ? '2px solid red' : 'none')};
+  border-radius: 6px;
   font-size: 1.2rem;
   color: #d6d6ba;
 
-  box-shadow: 0px 12px 35px black;
+  /* box-shadow: 0px 2px 10px black; */
 
   &:focus {
-    background-color: #d6d6ba;
-    color: black;
+    background-color: rgb(91 97 91);
+    border: 0.2px solid gray;
+    color: #d6d6ba;
   }
 `
 
