@@ -66,6 +66,10 @@ export const ContainerItens = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: 0px 5px 15px black;
+
+  @media screen and (max-width: 993px) {
+    width: 100%;
+  }
 `
 export const ImgCategory = styled.img`
   width: 280px;
@@ -74,6 +78,11 @@ export const ImgCategory = styled.img`
   border-top-right-radius: 8px;
   box-shadow: 0px 5px 15px black;
   cursor: pointer;
+
+  @media screen and (max-width: 993px) {
+    width: 100%;
+    height: 150px;
+  }
 `
 export const OfferName = styled.p`
   display: flex;
@@ -84,6 +93,10 @@ export const OfferName = styled.p`
   justify-content: center;
   padding: 7px;
   box-shadow: 0px 5px 15px black;
+
+    @media screen and (max-width: 993px) {
+    width: 100%;
+  }
 `
 export const OfferPrice = styled.p`
   display: flex;
@@ -99,13 +112,17 @@ export const OfferPrice = styled.p`
   border-bottom-right-radius: 8px;
   padding: 10px;
   box-shadow: 0px 5px 15px black;
+
+    @media screen and (max-width: 993px) {
+    width: 100%;
+  }
 `
 export const Button = styled(Link)`
   background-color: #3f3f3f;
   width: 280px;
   margin-left: 55px;
   margin-right: 55px;
-    transition: 0.8s;
+  transition: 0.8s;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -131,5 +148,10 @@ export const Button = styled(Link)`
 
   &:active {
     opacity: 0.7;
+  }
+
+    @media screen and (max-width: 993px) {
+    width: 100%;
+    font-size: 1.2rem;
   }
 `

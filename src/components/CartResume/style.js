@@ -54,6 +54,9 @@ export const Container = styled.div`
     justify-content: space-between;
     font-size: 1.3rem;
     margin-top: 50px;
+    @media screen and (max-width: 993px) {
+      width: 50;
+    }
   }
 `
 
@@ -61,5 +64,9 @@ export const ButtonFinish = styled.div`
   Button {
     position: sticky;
     top: 340px;
+
+    @media screen and (max-width: 993px) {
+      display: flex;
+    }
   }
 `

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 import trashOpen from '../../assets/trash-open.png'
+import { Button } from '../../components/Button'
+
 export const Container = styled.div`
   margin-top: 35px;
   margin-left: 2.4%;
@@ -9,6 +11,10 @@ export const Container = styled.div`
     color: white;
     margin-top: 5px;
     width: 100%;
+
+    @media screen and (max-width: 993px) {
+      width: auto;
+    }
   }
 `
 export const EmpyCart = styled.div`
@@ -40,6 +46,11 @@ export const Header = styled.div`
     font-size: 1.3rem;
     color: #d6d6aa;
   }
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    justify-content: space-around;
+  }
 `
 
 export const Img = styled.img`
@@ -64,8 +75,16 @@ export const ProductDecription = styled.p`
   align-items: center;
   justify-content: center;
   color: #d6d6aa;
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    justify-content: space-around;
+  }
 `
 export const Trash = styled.button`
+  @media screen and (max-width: 993px) {
+    width: 0;
+  }
   width: 14px;
   display: flex;
   flex-direction: column;
@@ -82,6 +101,11 @@ export const Trash = styled.button`
 `
 
 export const Content = styled.div`
+  @media screen and (max-width: 993px) {
+    display: flex;
+    justify-content: space-around;
+  }
+
   display: grid;
   background: #3f3f3f;
   grid-template-columns: repeat(6, 1fr);
@@ -112,5 +136,41 @@ export const Content = styled.div`
   }
   button:active {
     opacity: 0.7;
+  }
+`
+export const ButtonStyle = styled(Button)`
+  margin-top: 1px;
+  margin-bottom: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 2px black;
+  @media screen and (max-width: 993px) {
+    display: none;
+  }
+`
+export const ButtonStyleTwo = styled(Button)`
+  margin-top: 1px;
+  margin-bottom: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 2px black;
+  display: none;
+  @media screen and (max-width: 993px) {
+    display: flex;
+  }
+`
+export const ButtonStyleThree = styled(Button)`
+  margin-top: 1px;
+  margin-bottom: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 2px black;
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+  }
+`
+export const ContainerButtom = styled.div`
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    justify-content: space-around
   }
 `

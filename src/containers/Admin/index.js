@@ -7,6 +7,7 @@ import {
   EditProducts,
   HomeInit,
   ListProducts,
+  NewCategory,
   NewProducts,
   Orders
 } from '../../containers'
@@ -21,6 +22,7 @@ export function Admin ({ match: { path } }) {
         {path === paths.ListProducts && <ListProducts />}
         {path === paths.NewProducts && <NewProducts />}
         {path === paths.EditProducts && <EditProducts />}
+        {path === paths.NewCategory && <NewCategory />}
       </ContainerItems>
       {path === paths.Home && <HomeInit />}
     </Container>

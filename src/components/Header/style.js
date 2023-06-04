@@ -1,3 +1,5 @@
+import BottomNavigation from '@mui/material/BottomNavigation'
+import BottomNavigationAction from '@mui/material/BottomNavigationAction'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -11,6 +13,49 @@ export const Container = styled.div`
   padding: 5px;
   /* align-items: center; */
   justify-content: space-between;
+
+  @media screen and (max-width: 993px) {
+    display: none;
+    width: 100%;
+  }
+`
+
+export const MenuDevice = styled.div`
+  display: none;
+  @media screen and (max-width: 993px) {
+    display: flex;
+    position: fixed;
+    bottom: 6px;
+    margin: 0;
+    padding: 5px;
+z-index: 1000;
+    /* width: 100%; */
+  }
+`
+export const BottomNavigationActionStyle = styled(BottomNavigationAction)`
+  /* background: black !important;
+  color: wheat; */
+  width: 5px !important;
+  .css-imwso6-MuiBottomNavigationAction-label.Mui-selected {
+    color: white;
+  }
+  &:active {
+    color: white !important;
+  }
+
+  &:active {
+    color: white !important;
+  }
+`
+export const BottomNavigationStyle = styled(BottomNavigation)`
+  background: black !important;
+  padding: 5px;
+  margin: 0;
+  border-radius: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100vw !important;
 `
 export const ContainerLeft = styled.div`
   display: flex;
@@ -34,6 +79,12 @@ export const PageLink = styled.button`
   font-size: 1.2rem;
 
   flex-direction: row;
+
+      @media screen and (max-width: 993px) {
+    display: flex;
+    z-index: 2000;
+
+  }
 
   img {
     width: 40px;
@@ -59,6 +110,15 @@ export const PageLink = styled.button`
     display: flex;
     margin-left: 27px;
     margin-bottom: 30px;
+
+    @media screen and (max-width: 993px) {
+    display: unset;
+    z-index: 2000;
+
+  }
+
+
+
   }
 `
 export const PageLinkAdmin = styled.button`
@@ -109,5 +169,8 @@ export const ContainerText = styled.div`
   p {
     color: white;
     font-size: 1.3rem;
+    @media screen and (max-width: 993px) {
+      display: none;
+    }
   }
 `

@@ -8,6 +8,10 @@ export const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 993px) {
+    width: 100%;
+  }
 `
 
 export const HomeImage = styled.img`
@@ -17,4 +21,13 @@ export const Wrapper = styled.div`
   display: flex;
 
   justify-content: space-evenly;
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    width: 100vw;
+    /* flex-direction: column-reverse; */
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 50px;
+  }
 `

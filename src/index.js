@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Flip, ToastContainer } from 'react-toastify'
 
+import { NewCategory } from './containers/Admin/NewCategory'
 import AppProvider from './hooks'
 import Routes from './routes/routes'
 import GlobalStyles from './styles/globalStyles'
@@ -25,7 +26,6 @@ root.render(
       pauseOnHover
       theme="colored"
     />
-
     <GlobalStyles />
   </>
 )

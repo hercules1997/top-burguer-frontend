@@ -3,6 +3,7 @@ const paths = {
   Login: '/login',
   Register: '/cadastro',
   Products: '/produtos',
+  NewCategory: '/categorias',
   ListProducts: '/listar-produtos',
   NewProducts: '/novo-produto',
   EditProducts: '/editar-produtos',
