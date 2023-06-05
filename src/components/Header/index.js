@@ -1,7 +1,4 @@
 import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp'
-import FastfoodRoundedIcon from '@mui/icons-material/FastfoodRounded'
-import HomeSharpIcon from '@mui/icons-material/HomeSharp'
-import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
@@ -17,16 +14,17 @@ import {
   ContainerRight,
   ContainerText,
   PageLinkAdmin,
-  MenuDevice,
-  BottomNavigationActionStyle,
-  BottomNavigationStyle
+  MenuHeader,
+  Icons,
+  FastfoodRoundedIconStyle,
+  HomeSharpIconStyle,
+  ContainerMenu
 } from './style'
 
 export function Header () {
   const { logout, userData } = useUser()
   const { cartProducts } = useCart()
   const [finalItems, setAllItems] = useState([])
-  const [value, setValue] = React.useState('recents')
 
   useEffect(() => {
     const sumAllItems = cartProducts.reduce((acc, current) => {
@@ -40,10 +38,6 @@ export function Header () {
     push,
     location: { pathname }
   } = useHistory()
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue)
-  }
 
   return (
     <>
@@ -94,52 +88,49 @@ export function Header () {
           </ContainerText>
         </ContainerRight>
       </Container>
-      <MenuDevice>
-        <BottomNavigationStyle
-          sx={{ width: 500 }}
-          value={value}
-          onChange={handleChange}
-        >
-          <BottomNavigationActionStyle
-            label="Minha Conta"
-            value="conta"
-            icon={<AccountCircleSharpIcon style={{ color: 'white' }} />}
-          />
-          <BottomNavigationActionStyle
-            label="Home"
-            value="home"
-            icon={<HomeSharpIcon style={{ color: 'white' }} />}
-          >
-            <PageLink onClick={() => push('/')} isActive={pathname === '/'}>
-              Home
-            </PageLink>
-          </BottomNavigationActionStyle>
 
-          <BottomNavigationActionStyle
-            label="Produtos"
-            value="produtos"
-            icon={<FastfoodRoundedIcon style={{ color: 'white' }} />}
-          />
-          <BottomNavigationActionStyle
-            label="Cart"
-            value="cart"
-            icon={
-              <ShoppingCartSharpIcon
-                style={{ color: 'white' }}
-                onClick={() => push('/carrinho')}
-              >
-                {finalItems > 0
-                  ? (
-                  <span className="notficationCart">{finalItems}</span>
-                    )
-                  : (
-                  <></>
-                    )}
-              </ShoppingCartSharpIcon>
-            }
-          ></BottomNavigationActionStyle>
-        </BottomNavigationStyle>
-      </MenuDevice>
+      <ContainerMenu>
+        <MenuHeader>
+          <Icons>
+            <PageLink>
+              <AccountCircleSharpIcon
+                style={{ color: 'white', fontSize: '35px' }}
+              />
+            </PageLink>
+          </Icons>
+          <Icons onClick={() => push('/')} isActive={pathname === '/'}>
+            <PageLink>
+              <HomeSharpIconStyle
+                isActive={pathname === '/'}
+                style={{ color: 'white', fontSize: '35px' }}
+              />
+            </PageLink>
+          </Icons>
+          <Icons>
+            <PageLink
+              onClick={() => push('/produtos')}
+              isActive={pathname.includes('/produtos')}
+            >
+              <FastfoodRoundedIconStyle
+                isActive={pathname.includes('/produtos')}
+                style={{ color: 'white', fontSize: '35px' }}
+              />
+            </PageLink>
+          </Icons>
+          <Icons>
+            <PageLink onClick={() => push('/carrinho')}>
+              <img src={iconCart} alt="Ícone de carrinho" />
+              {finalItems > 0
+                ? (
+                <span className="notficationCart">{finalItems}</span>
+                  )
+                : (
+                <></>
+                  )}
+            </PageLink>
+          </Icons>
+        </MenuHeader>
+      </ContainerMenu>
     </>
   )
 }

@@ -1,5 +1,5 @@
-import BottomNavigation from '@mui/material/BottomNavigation'
-import BottomNavigationAction from '@mui/material/BottomNavigationAction'
+import FastfoodRoundedIcon from '@mui/icons-material/FastfoodRounded'
+import HomeSharpIcon from '@mui/icons-material/HomeSharp'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -28,35 +28,11 @@ export const MenuDevice = styled.div`
     bottom: 6px;
     margin: 0;
     padding: 5px;
-z-index: 1000;
+    z-index: 1000;
     /* width: 100%; */
   }
 `
-export const BottomNavigationActionStyle = styled(BottomNavigationAction)`
-  /* background: black !important;
-  color: wheat; */
-  width: 5px !important;
-  .css-imwso6-MuiBottomNavigationAction-label.Mui-selected {
-    color: white;
-  }
-  &:active {
-    color: white !important;
-  }
 
-  &:active {
-    color: white !important;
-  }
-`
-export const BottomNavigationStyle = styled(BottomNavigation)`
-  background: black !important;
-  padding: 5px;
-  margin: 0;
-  border-radius: 50px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 100vw !important;
-`
 export const ContainerLeft = styled.div`
   display: flex;
 
@@ -80,10 +56,9 @@ export const PageLink = styled.button`
 
   flex-direction: row;
 
-      @media screen and (max-width: 993px) {
+  @media screen and (max-width: 993px) {
     display: flex;
     z-index: 2000;
-
   }
 
   img {
@@ -112,13 +87,9 @@ export const PageLink = styled.button`
     margin-bottom: 30px;
 
     @media screen and (max-width: 993px) {
-    display: unset;
-    z-index: 2000;
-
-  }
-
-
-
+      display: unset;
+      z-index: 2000;
+    }
   }
 `
 export const PageLinkAdmin = styled.button`
@@ -173,4 +144,45 @@ export const ContainerText = styled.div`
       display: none;
     }
   }
+`
+export const MenuHeader = styled.div`
+  display: none;
+  width: 90%;
+  height: 80px;
+  background: black;
+  z-index: 2000;
+  padding: 20px;
+  border-radius: 50px;
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+  }
+`
+export const Icons = styled.button`
+  background: transparent;
+  border: none;
+  width: 100%;
+  color: ${(props) => (props.isActive ? '#FA9600' : 'black')} !important;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+`
+
+export const ContainerMenu = styled.span`
+  display: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+export const FastfoodRoundedIconStyle = styled(FastfoodRoundedIcon)`
+  color: ${(props) => (props.isActive ? '#FA9600' : 'white')} !important;
+`
+export const HomeSharpIconStyle = styled(HomeSharpIcon)`
+  color: ${(props) => (props.isActive ? '#FA9600' : 'white')} !important;
 `
