@@ -61,4 +61,10 @@ export const ContainerProducts = styled.div`
   text-align: center;
   margin-top: 25px;
   box-shadow: 0 0 1px black;
+
+  @media screen and (max-width: 993px) {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 10px;
+  }
+
 `

@@ -7,6 +7,10 @@ export const Container = styled.div`
   display: flex;
   width: 400px;
   box-shadow: 0px 10px 20px black;
+
+    @media screen and (max-width: 993px) {
+    /* display: block; */
+  }
 `
 export const ProductPrice = styled.p`
   font-style: normal;
@@ -25,6 +29,11 @@ export const ContainerCard = styled.div`
   max-height: 200px;
   width: 280px;
   justify-content: space-between;
+/* 
+    @media screen and (max-width: 993px) {
+    display: block;
+ 
+  } */
 `
 
 export const Image = styled.img`
