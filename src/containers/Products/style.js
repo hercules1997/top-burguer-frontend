@@ -27,9 +27,11 @@ export const ContainerMenu = styled.div`
 `
 export const Menu = styled.button`
   cursor: pointer;
-  color: ${(props) => (props.isActiveCategory ? '#FA9600' : '#d6d6ba')};
+  color: ${(props) =>
+    props.isActiveCategory ? '#FA9600' : '#d6d6ba'} !important;
   border: none;
-  border-bottom: ${(props) => props.isActiveCategory && '3px solid #FA9600'};
+  border-bottom: ${(props) =>
+    props.isActiveCategory && '3px solid #FA9600'} !important;
   padding-bottom: 8px;
   margin-bottom: 10px;
   background-color: transparent;
@@ -64,7 +66,6 @@ export const ContainerProducts = styled.div`
 
   @media screen and (max-width: 993px) {
     grid-template-columns: repeat(1, 1fr);
-    padding: 10px;
+    padding: 20px;
   }
-
 `

@@ -147,12 +147,12 @@ export const ContainerText = styled.div`
 `
 export const MenuHeader = styled.div`
   display: none;
-  width: 90%;
+  width: 98%;
   height: 80px;
   background: black;
   z-index: 2000;
-  padding: 20px;
-  border-radius: 50px;
+  /* padding: 20px; */
+  border-radius: 20px;
 
   @media screen and (max-width: 993px) {
     display: flex;
@@ -167,7 +167,7 @@ export const Icons = styled.button`
   background: transparent;
   border: none;
   width: 100%;
-  color: ${(props) => (props.isActive ? '#FA9600' : 'black')} !important;
+  color: ${(props) => (props.isActive ? '#FA9600' : '#898989')} !important;
   display: flex;
   text-align: center;
   align-items: center;
@@ -181,8 +181,8 @@ export const ContainerMenu = styled.span`
   justify-content: center;
 `
 export const FastfoodRoundedIconStyle = styled(FastfoodRoundedIcon)`
-  color: ${(props) => (props.isActive ? '#FA9600' : 'white')} !important;
+  color: ${(props) => (props.isActive ? '#FA9600' : '#898989')} !important;
 `
 export const HomeSharpIconStyle = styled(HomeSharpIcon)`
-  color: ${(props) => (props.isActive ? '#FA9600' : 'white')} !important;
+  color: ${(props) => (props.isActive ? '#FA9600' : '#898989')} !important;
 `
