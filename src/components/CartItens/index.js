@@ -22,7 +22,8 @@ import {
   ContainerContent,
   Remove,
   Add,
-  Bag
+  Bag,
+  ContainerMaster
 } from './style'
 export function CartItens () {
   const { push } = useHistory()
@@ -32,77 +33,83 @@ export function CartItens () {
   const submitOrder = async () => {
     if (cartProducts.length > 0) {
       const order = cartProducts.map((product) => {
-        return { id: product.id, quantity: product.quantity }
+        return {
+          id: product.id,
+          quantity: product.quantity
+        }
       })
 
-      await toast.promise(api.post('orders', { products: order }), {
-        pending: 'realizando seu pedido ...',
-        success: 'Pedido realizado!',
-        error: 'Falha ao realizar o pedido, tente novamente!'
-      })
+      await toast.promise(
+        api.post('orders', {
+          products: order
+        }),
+        {
+          pending: 'realizando seu pedido ...',
+          success: 'Pedido realizado!',
+          error: 'Falha ao realizar o pedido, tente novamente!'
+        }
+      )
     } else {
       alert('Carrinho vazio')
     }
   }
 
   return (
-    <Container>
-      <Header>
-
-      </Header>
-      {cartProducts && cartProducts.length > 0
-        ? (
-            cartProducts.map((product) => (
-          <>
-            <ContainerContent>
-              <Trash onClick={() => deleteProducts(product.id)}>
-                <TrashAt />
-              </Trash>
-              <Content key={product.id}>
-                {/* <div className="img"> */}
+    <ContainerMaster>
+      <Container>
+        {cartProducts && cartProducts.length > 0
+          ? (
+              cartProducts.map((product) => (
+            <>
+              <ContainerContent>
+                <Trash onClick={() => deleteProducts(product.id)}>
+                  <TrashAt />
+                </Trash>
+                <Content key={product.id}>
                   <Img src={product.url} />
-                {/* </div> */}
-                <div className="decription">
-                  <div className="decriptAling">
-                    <ProductDecription>{product.name}</ProductDecription>
-
-                    <ProductDecription style={{ marginTop: '10px' }}>
-                      {formatCurrency(product.quantity * product.price)}
-                    </ProductDecription>
+                  <div className="decription">
+                    <div className="decriptAling">
+                      <ProductDecription> {product.name} </ProductDecription>
+                      <ProductDecription
+                        style={{
+                          marginTop: '10px'
+                        }}
+                      >
+                        {formatCurrency(product.quantity * product.price)}
+                      </ProductDecription>
+                    </div>
+                    <div className="quanty">
+                      <ProductDecription>
+                        <div className="quantity-container">
+                          <Remove onClick={() => decreseProducts(product.id)}>
+                          </Remove>
+                          <p> {product.quantity} </p>
+                          <Add onClick={() => increseProducts(product.id)}>
+                          </Add>
+                        </div>
+                      </ProductDecription>
+                    </div>
                   </div>
-                  <div className="quanty">
-                    <ProductDecription>
-                      <div className="quantity-container">
-                        <Remove onClick={() => decreseProducts(product.id)}>
-                          -
-                        </Remove>
-                        <p>{product.quantity}</p>
-                        <Add onClick={() => increseProducts(product.id)}>
-                          +
-                        </Add>
-                      </div>
-                    </ProductDecription>
-                  </div>
-                </div>
-              </Content>
-            </ContainerContent>
+                </Content>
+              </ContainerContent>
+            </>
+              ))
+            )
+          : (
+          <>
+            <EmpyCart>
+              <Bag src={cart} />
+              Sacola vazia
+            </EmpyCart>
           </>
-            ))
-          )
-        : (
-        <>
-          <EmpyCart>
-            <Bag src={cart} />
-            Sacola vazia
-          </EmpyCart>
-        </>
-          )}
+            )}
+      </Container>
       <ContainerButtom>
         <ButtonStyleThree onClick={() => push(paths.Products)}>
           Adicionar itens
         </ButtonStyleThree>
         <ButtonStyleTwo onClick={submitOrder}>Finalizar Pedido</ButtonStyleTwo>
       </ContainerButtom>
-    </Container>
+    </ContainerMaster>
   )
 }

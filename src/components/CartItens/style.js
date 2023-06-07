@@ -6,14 +6,26 @@ import styled from 'styled-components'
 
 import { Button } from '../../components/Button'
 
+export const ContainerMaster = styled.div`
+
+display: block;
+`
 export const Container = styled.div`
   margin-top: 45px;
-  margin-left: 2.4%;
   margin-bottom: 20px;
-  width: 70%;
-
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 
   @media screen and (max-width: 993px) {
+      grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+  @media screen and (max-width: 620px) {
+      grid-template-columns: repeat(1, 1fr);
     width: 100%;
     margin: 0;
     padding: 20px;
@@ -42,47 +54,25 @@ export const EmpyCart = styled.div`
 `
 
 export const Bag = styled(ShoppingBagTwoToneIcon)`
-color: #1e1e1c;
-font-size: 8rem !important; 
-`
-
-export const Header = styled.div`
-  display: flex;
-  width: 100%;
-
-  border-bottom: solid 1px gray;
-
-  margin-bottom: 10px;
-  text-align: center;
-  p {
-    font-size: 1.3rem;
-    color: #d6d6aa;
-  }
-
-  @media screen and (max-width: 993px) {
-    display: flex;
-    justify-content: space-around;
-  }
+  color: #1e1e1c;
+  font-size: 8rem !important;
 `
 
 export const Img = styled.img`
-  display: flex;
   background: #3f3f3f;
 
   width: 100px;
   height: 100px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  /* margin-left: 10px; */
-  justify-items: start;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
+
+  padding: 2px;
+
+  border-radius: 18px;
 `
 export const ProductDecription = styled.p`
   background: #3f3f3f;
+  background: red;
   display: flex;
+  flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -105,7 +95,6 @@ export const ProductDecription = styled.p`
 
 export const Content = styled.div`
   @media screen and (max-width: 993px) {
-
     padding: 10px;
   }
   display: flex;
@@ -141,12 +130,11 @@ export const Content = styled.div`
     }
     @media screen and (max-width: 524) {
       width: 70%;
-      flex-direction:row;
+      flex-direction: row;
       height: 100%;
     }
-
   }
-  
+
   .decriptAling {
     display: flex;
     align-items: end;
@@ -154,7 +142,7 @@ export const Content = styled.div`
     text-align: end;
   }
   .quanty {
-        align-items: end;
+    align-items: end;
     justify-content: end;
     text-align: end;
   }
@@ -180,7 +168,7 @@ export const ButtonStyle = styled(Button)`
   position: sticky;
   top: 50px;
   box-shadow: 0px 0px 2px black;
-width: 100%;
+  width: 100%;
   @media screen and (max-width: 993px) {
     display: none !important;
   }
