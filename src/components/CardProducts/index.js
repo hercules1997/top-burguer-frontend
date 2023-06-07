@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 
 import { Button } from '../../components'
 import { useCart } from '../../hooks/CartContext'
@@ -13,7 +13,7 @@ import {
 } from './style'
 export function CardProduct ({ product }) {
   const { putProductInCart } = useCart()
-  const { push } = useHistory()
+  // const { push } = useHistory()
 
   return (
     <Container>
@@ -24,7 +24,6 @@ export function CardProduct ({ product }) {
         <Button
           onClick={() => {
             putProductInCart(product)
-            push('/carrinho')
           }}
           style={{ padding: '10px', fontSize: '18px', marginTop: '0' }}
         >
