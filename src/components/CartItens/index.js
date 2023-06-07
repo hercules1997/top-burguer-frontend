@@ -15,14 +15,14 @@ import {
   ProductDecription,
   Trash,
   EmpyCart,
-  ButtonStyle,
   ContainerButtom,
   ButtonStyleTwo,
   TrashAt,
   ButtonStyleThree,
   ContainerContent,
   Remove,
-  Add
+  Add,
+  Bag
 } from './style'
 export function CartItens () {
   const { push } = useHistory()
@@ -48,12 +48,7 @@ export function CartItens () {
   return (
     <Container>
       <Header>
-        <p style={{ width: '100px' }}></p>
-        <p>Itens</p>
-        <p>Preço</p>
-        <p>Qto</p>
-        <p>Total</p>
-        <p></p>
+
       </Header>
       {cartProducts && cartProducts.length > 0
         ? (
@@ -64,9 +59,9 @@ export function CartItens () {
                 <TrashAt />
               </Trash>
               <Content key={product.id}>
-                <div className="img">
+                {/* <div className="img"> */}
                   <Img src={product.url} />
-                </div>
+                {/* </div> */}
                 <div className="decription">
                   <div className="decriptAling">
                     <ProductDecription>{product.name}</ProductDecription>
@@ -91,21 +86,20 @@ export function CartItens () {
                 </div>
               </Content>
             </ContainerContent>
-            <ButtonStyle onClick={submitOrder}>Finalizar Pedido</ButtonStyle>
           </>
             ))
           )
         : (
         <>
           <EmpyCart>
-            <img src={cart} />
-            Carrinho vazio
+            <Bag src={cart} />
+            Sacola vazia
           </EmpyCart>
         </>
           )}
       <ContainerButtom>
         <ButtonStyleThree onClick={() => push(paths.Products)}>
-          Ir para área de produtos
+          Adicionar itens
         </ButtonStyleThree>
         <ButtonStyleTwo onClick={submitOrder}>Finalizar Pedido</ButtonStyleTwo>
       </ContainerButtom>

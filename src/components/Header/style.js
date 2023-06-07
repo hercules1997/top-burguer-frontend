@@ -1,5 +1,6 @@
 import FastfoodRoundedIcon from '@mui/icons-material/FastfoodRounded'
 import HomeSharpIcon from '@mui/icons-material/HomeSharp'
+import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -71,9 +72,9 @@ export const PageLink = styled.button`
   }
 
   .notficationCart {
-    color: black;
+    color: white;
     width: 25px;
-    background: #fa9600;
+    background: red;
     border-radius: 50%;
     font-size: 1rem;
     padding: 2px;
@@ -92,6 +93,7 @@ export const PageLink = styled.button`
     }
   }
 `
+
 export const PageLinkAdmin = styled.button`
   display: flex;
   color: white;
@@ -185,4 +187,8 @@ export const FastfoodRoundedIconStyle = styled(FastfoodRoundedIcon)`
 `
 export const HomeSharpIconStyle = styled(HomeSharpIcon)`
   color: ${(props) => (props.isActive ? '#FA9600' : '#898989')} !important;
+`
+export const Bag = styled(ShoppingBagTwoToneIcon)`
+  color: ${(props) => (props.isActive ? '#FA9600' : '#898989')} !important;
+  font-size: 40px !important;
 `

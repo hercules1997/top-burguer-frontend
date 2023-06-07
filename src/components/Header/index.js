@@ -18,7 +18,8 @@ import {
   Icons,
   FastfoodRoundedIconStyle,
   HomeSharpIconStyle,
-  ContainerMenu
+  ContainerMenu,
+  Bag
 } from './style'
 
 export function Header () {
@@ -61,7 +62,7 @@ export function Header () {
         </ContainerLeft>
         <ContainerRight>
           <PageLink onClick={() => push('/carrinho')}>
-            <img src={iconCart} alt="Ícone de carrinho" />
+            <Bag isActive={pathname.includes('/carrinho')} />
             {finalItems > 0
               ? (
               <span className="notficationCart">{finalItems}</span>
@@ -119,7 +120,7 @@ export function Header () {
           </Icons>
           <Icons>
             <PageLink onClick={() => push('/carrinho')}>
-              <img src={iconCart} alt="Ícone de carrinho" />
+              <Bag isActive={pathname.includes('/carrinho')} />
               {finalItems > 0
                 ? (
                 <span className="notficationCart">{finalItems}</span>

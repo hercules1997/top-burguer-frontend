@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 
 import { useCart } from '../../hooks/CartContext'
+import apiTopBurger from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
+import { ButtonStyle } from '../CartItens/style'
 import { Container, ButtonFinish } from './style'
 
 export function CartResume () {
@@ -16,6 +19,22 @@ export function CartResume () {
 
     setFinalPrice(sumAllItems)
   }, [cartProducts, deliveryTax])
+
+  const submitOrder = async () => {
+    if (cartProducts.length > 0) {
+      const order = cartProducts.map((product) => {
+        return { id: product.id, quantity: product.quantity }
+      })
+
+      await toast.promise(apiTopBurger.post('orders', { products: order }), {
+        pending: 'realizando seu pedido ...',
+        success: 'Pedido realizado!',
+        error: 'Falha ao realizar o pedido, tente novamente!'
+      })
+    } else {
+      alert('Carrinho vazio')
+    }
+  }
 
   if (cartProducts.length > 0) {
     return (
@@ -35,6 +54,7 @@ export function CartResume () {
             <p>{formatCurrency(finalPrice + deliveryTax)}</p>
           </div>
         </Container>
+        <ButtonStyle onClick={submitOrder}>Finalizar Pedido</ButtonStyle>
       </ButtonFinish>
     )
   } else {

@@ -19,7 +19,7 @@ export const HomeImage = styled.img`
 `
 export const Wrapper = styled.div`
   display: flex;
-
+width: 100%;
   justify-content: space-evenly;
 
   @media screen and (max-width: 993px) {

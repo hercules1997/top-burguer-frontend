@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  @media screen and (max-width: 993px) {
+    margin-bottom: 80px;
+  }
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -54,9 +57,6 @@ export const Container = styled.div`
     justify-content: space-between;
     font-size: 1.3rem;
     margin-top: 50px;
-    @media screen and (max-width: 993px) {
-      width: 50;
-    }
   }
 `
 
