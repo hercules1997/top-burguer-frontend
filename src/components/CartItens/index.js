@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 import cart from '../../assets/cart.png'
-import close from '../../assets/trash-close.png'
 import paths from '../../constants/paths'
 import { useCart } from '../../hooks/CartContext'
 import api from '../../services/api'
@@ -19,7 +18,11 @@ import {
   ButtonStyle,
   ContainerButtom,
   ButtonStyleTwo,
-  ButtonStyleThree
+  TrashAt,
+  ButtonStyleThree,
+  ContainerContent,
+  Remove,
+  Add
 } from './style'
 export function CartItens () {
   const { push } = useHistory()
@@ -52,31 +55,42 @@ export function CartItens () {
         <p>Total</p>
         <p></p>
       </Header>
-
       {cartProducts && cartProducts.length > 0
         ? (
             cartProducts.map((product) => (
           <>
-            <Content key={product.id}>
-              <Img src={product.url} />
-              <ProductDecription>{product.name}</ProductDecription>
-              <ProductDecription>
-                {formatCurrency(product.price)}
-              </ProductDecription>
-              <ProductDecription>
-                <div className="quantity-container">
-                  <button onClick={() => decreseProducts(product.id)}>-</button>
-                  {product.quantity}
-                  <button onClick={() => increseProducts(product.id)}>+</button>
-                </div>
-              </ProductDecription>
-              <ProductDecription>
-                {formatCurrency(product.quantity * product.price)}
-              </ProductDecription>
+            <ContainerContent>
               <Trash onClick={() => deleteProducts(product.id)}>
-                <img src={close} />
+                <TrashAt />
               </Trash>
-            </Content>
+              <Content key={product.id}>
+                <div className="img">
+                  <Img src={product.url} />
+                </div>
+                <div className="decription">
+                  <div className="decriptAling">
+                    <ProductDecription>{product.name}</ProductDecription>
+
+                    <ProductDecription style={{ marginTop: '10px' }}>
+                      {formatCurrency(product.quantity * product.price)}
+                    </ProductDecription>
+                  </div>
+                  <div className="quanty">
+                    <ProductDecription>
+                      <div className="quantity-container">
+                        <Remove onClick={() => decreseProducts(product.id)}>
+                          -
+                        </Remove>
+                        <p>{product.quantity}</p>
+                        <Add onClick={() => increseProducts(product.id)}>
+                          +
+                        </Add>
+                      </div>
+                    </ProductDecription>
+                  </div>
+                </div>
+              </Content>
+            </ContainerContent>
             <ButtonStyle onClick={submitOrder}>Finalizar Pedido</ButtonStyle>
           </>
             ))
@@ -90,10 +104,10 @@ export function CartItens () {
         </>
           )}
       <ContainerButtom>
-        <ButtonStyleTwo onClick={submitOrder}>Finalizar Pedido</ButtonStyleTwo>
         <ButtonStyleThree onClick={() => push(paths.Products)}>
           Ir para área de produtos
         </ButtonStyleThree>
+        <ButtonStyleTwo onClick={submitOrder}>Finalizar Pedido</ButtonStyleTwo>
       </ContainerButtom>
     </Container>
   )

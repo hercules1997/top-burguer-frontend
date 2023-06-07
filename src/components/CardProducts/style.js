@@ -8,7 +8,7 @@ export const Container = styled.div`
   width: 400px;
   box-shadow: 0px 8px 10px black;
 
-    @media screen and (max-width: 993px) {
+  @media screen and (max-width: 993px) {
     /* display: block; */
     width: 100%;
   }
@@ -20,12 +20,10 @@ export const ProductPrice = styled.p`
   line-height: 21px;
   color: white;
   padding-top: 60px;
-      @media screen and (max-width: 993px) {
-  
-   padding-top: 40px;
-   padding-bottom: 10px;
+  @media screen and (max-width: 993px) {
+    padding-top: 40px;
+    padding-bottom: 10px;
   }
-  
 `
 
 export const ContainerCard = styled.div`
@@ -36,9 +34,8 @@ export const ContainerCard = styled.div`
   width: 280px;
   justify-content: space-between;
 
-    @media screen and (max-width: 993px) {
+  @media screen and (max-width: 993px) {
     width: 60%;
- 
   }
 `
 
@@ -53,10 +50,10 @@ export const Image = styled.img`
   text-align: center;
 
   border-radius: 30px;
-      @media screen and (max-width: 993px) {
+  @media screen and (max-width: 993px) {
     width: 40%;
     height: auto;
-   padding: 20px 10px;
+    padding: 20px 10px;
   }
 `
 export const ProductName = styled.p`

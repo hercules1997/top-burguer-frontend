@@ -1,3 +1,6 @@
+import AddCircleOutlineTwoToneIcon from '@mui/icons-material/AddCircleOutlineTwoTone'
+import HighlightOffTwoToneIcon from '@mui/icons-material/HighlightOffTwoTone'
+import RemoveCircleTwoToneIcon from '@mui/icons-material/RemoveCircleTwoTone'
 import styled from 'styled-components'
 
 import trashOpen from '../../assets/trash-open.png'
@@ -7,6 +10,10 @@ export const Container = styled.div`
   margin-top: 35px;
   margin-left: 2.4%;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 993px) {
+    /* display: flex; */
+  }
   Button {
     color: white;
     margin-top: 5px;
@@ -50,6 +57,9 @@ export const Header = styled.div`
   @media screen and (max-width: 993px) {
     display: flex;
     justify-content: space-around;
+    p {
+      display: none;
+    }
   }
 `
 
@@ -75,35 +85,26 @@ export const ProductDecription = styled.p`
   align-items: center;
   justify-content: center;
   color: #d6d6aa;
+  p {
+    border: 0.1px dashed wheat;
+    width: 25px;
+    border-radius: 50%;
+
+    padding: 2px;
+  }
 
   @media screen and (max-width: 993px) {
     display: flex;
-    justify-content: space-around;
-  }
-`
-export const Trash = styled.button`
-  @media screen and (max-width: 993px) {
-    width: 0;
-  }
-  width: 14px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  text-align: center;
-  align-items: center;
-  border-bottom: solid 1px gray;
-  img {
-    &:hover {
-      background-image: url('${trashOpen}');
-    }
+    justify-content: center;
+    padding-right: 20px;
+    padding-top: 2px;
   }
 `
 
 export const Content = styled.div`
   @media screen and (max-width: 993px) {
     display: flex;
-    justify-content: space-around;
+    padding: 10px;
   }
 
   display: grid;
@@ -121,6 +122,26 @@ export const Content = styled.div`
     align-items: center;
     justify-content: center;
     gap: 20px;
+    margin-top: 10px;
+  }
+
+  .img {
+    @media screen and (max-width: 993px) {
+      width: 30%;
+    }
+  }
+  .decription {
+    @media screen and (max-width: 993px) {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .decriptAling {
+    }
+    .quanty {
+    }
   }
 
   button {
@@ -155,22 +176,69 @@ export const ButtonStyleTwo = styled(Button)`
   display: none;
   @media screen and (max-width: 993px) {
     display: flex;
+    font-size: 15px;
+    width: 100%;
   }
 `
 export const ButtonStyleThree = styled(Button)`
   margin-top: 1px;
   margin-bottom: 5px;
   padding: 10px;
+
   box-shadow: 0px 0px 2px black;
 
   @media screen and (max-width: 993px) {
+    font-size: 15px;
     display: flex;
   }
 `
 export const ContainerButtom = styled.div`
-
   @media screen and (max-width: 993px) {
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
+  }
+`
+export const ContainerContent = styled.div`
+  @media screen and (max-width: 993px) {
+    position: relative;
+  }
+`
+export const Remove = styled(RemoveCircleTwoToneIcon)`
+  @media screen and (max-width: 993px) {
+
+    border-radius: 50%;
+  }
+`
+export const Add = styled(AddCircleOutlineTwoToneIcon)`
+  @media screen and (max-width: 993px) {
+    border-radius: 50%;
+  }
+`
+export const TrashAt = styled(HighlightOffTwoToneIcon)`
+  @media screen and (max-width: 993px) {
+    color: red !important;
+  }
+`
+export const Trash = styled.button`
+  background: transparent;
+  position: absolute;
+  /* justify-content: end;
+  align-items: end; */
+  right: -10px;
+  top: -14px;
+  @media screen and (max-width: 993px) {
+    width: 0;
+  }
+  width: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  text-align: center;
+  align-items: center;
+  img {
+    &:hover {
+      background-image: url('${trashOpen}');
+    }
   }
 `

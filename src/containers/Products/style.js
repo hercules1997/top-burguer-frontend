@@ -67,5 +67,7 @@ export const ContainerProducts = styled.div`
   @media screen and (max-width: 993px) {
     grid-template-columns: repeat(1, 1fr);
     padding: 20px;
+    margin-bottom: 60px;
+    gap:14px;
   }
 `
