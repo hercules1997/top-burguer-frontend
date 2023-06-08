@@ -19,9 +19,9 @@ export const HomeImage = styled.img`
 `
 export const Wrapper = styled.div`
   display: flex;
-width: 100%;
+  width: 100%;
   justify-content: space-evenly;
-
+  padding: 20px;
   @media screen and (max-width: 993px) {
     display: flex;
     width: 100vw;
@@ -29,5 +29,21 @@ width: 100%;
     flex-direction: column;
     padding: 20px;
     margin-bottom: 50px;
+  }
+`
+export const WrapperItens = styled.div`
+  width: 80%;
+  display: flex;
+
+
+  @media screen and (max-width: 993px) {
+    width: 100%;
+  }
+`
+export const WrapperResume = styled.div`
+  width: 20%;
+
+  @media screen and (max-width: 993px) {
+    width: 100%;
   }
 `

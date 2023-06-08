@@ -7,25 +7,27 @@ import styled from 'styled-components'
 import { Button } from '../../components/Button'
 
 export const ContainerMaster = styled.div`
-
-display: block;
+  padding: 10px;
+  display: block;
+  width: 100%;
 `
 export const Container = styled.div`
-  margin-top: 45px;
+  margin-top: 30px;
+
   margin-bottom: 20px;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 
-  @media screen and (max-width: 993px) {
-      grid-template-columns: repeat(2, 1fr);
+  @media screen and (max-width: 865px) {
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
     margin: 0;
     padding: 20px;
   }
-  @media screen and (max-width: 620px) {
-      grid-template-columns: repeat(1, 1fr);
+  @media screen and (max-width: 548px) {
+    grid-template-columns: repeat(1, 1fr);
     width: 100%;
     margin: 0;
     padding: 20px;
@@ -41,9 +43,10 @@ export const Container = styled.div`
   }
 `
 export const EmpyCart = styled.div`
+  display: flex;
+  margin: 0;
   color: #1e1e1c;
   font-size: 3rem;
-  display: flex;
   padding: 20px;
   background-color: #3f3f3f;
   justify-content: center;
@@ -51,6 +54,15 @@ export const EmpyCart = styled.div`
   text-align: center;
   box-shadow: 0px 0px 5px black;
   border-radius: 15px;
+`
+export const ContainerEmpyCart = styled.div`
+  display: block;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  width: 100vw;
+  background: red;
 `
 
 export const Bag = styled(ShoppingBagTwoToneIcon)`
@@ -60,7 +72,7 @@ export const Bag = styled(ShoppingBagTwoToneIcon)`
 
 export const Img = styled.img`
   background: #3f3f3f;
-
+width: 30%;
   width: 100px;
   height: 100px;
 
@@ -69,8 +81,8 @@ export const Img = styled.img`
   border-radius: 18px;
 `
 export const ProductDecription = styled.p`
-  background: #3f3f3f;
-  background: red;
+  /* background: #3f3f3f; */
+  /* background: red; */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -80,7 +92,7 @@ export const ProductDecription = styled.p`
   p {
     border: 0.1px dashed wheat;
     width: 25px;
-    border-radius: 50%;
+    border-radius: 12px;
 
     padding: 2px;
   }
@@ -92,6 +104,38 @@ export const ProductDecription = styled.p`
     padding-top: 2px;
   }
 `
+
+export const Decription = styled.div`
+  /* background: green; */
+  width: 70%;
+  @media screen and (max-width: 412) {
+    width: 70%;
+    display: flex;
+    /* flex-direction: column; */
+    height: 100%;
+  }
+  @media screen and (max-width: 524) {
+    width: 70%;
+    flex-direction: row;
+    height: 100%;
+  }
+
+    /* .decriptAling {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    text-align: end;
+    background: violet;
+  }
+  .quanty {
+    align-items: end;
+    justify-content: end;
+    text-align: end;
+    background: yellow;
+  } */
+`
+// export const Decription = styled.div``
+// export const Decription = styled.div``
 
 export const Content = styled.div`
   @media screen and (max-width: 993px) {
@@ -121,31 +165,8 @@ export const Content = styled.div`
       width: 30%;
     }
   }
-  .decription {
-    @media screen and (max-width: 412) {
-      width: 70%;
-      display: flex;
-      /* flex-direction: column; */
-      height: 100%;
-    }
-    @media screen and (max-width: 524) {
-      width: 70%;
-      flex-direction: row;
-      height: 100%;
-    }
-  }
 
-  .decriptAling {
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    text-align: end;
-  }
-  .quanty {
-    align-items: end;
-    justify-content: end;
-    text-align: end;
-  }
+
   button {
     padding: 2px;
     border: none;
@@ -179,8 +200,10 @@ export const ButtonStyleTwo = styled(Button)`
   padding: 10px;
   box-shadow: 0px 0px 2px black;
   display: none;
+  text-align: center;
   @media screen and (max-width: 993px) {
     display: flex;
+    text-align: center;
     font-size: 15px;
     width: 100%;
   }
@@ -189,15 +212,19 @@ export const ButtonStyleThree = styled(Button)`
   margin-top: 1px;
   margin-bottom: 5px;
   padding: 10px;
-
+width: 100%;
+text-align: center;
   box-shadow: 0px 0px 2px black;
 
   @media screen and (max-width: 993px) {
     font-size: 15px;
     display: flex;
+    text-align: center;
   }
 `
 export const ContainerButtom = styled.div`
+gap: 5px;
+
   @media screen and (max-width: 993px) {
     display: flex;
     justify-content: space-around;
@@ -209,13 +236,11 @@ export const ContainerContent = styled.div`
   }
 `
 export const Remove = styled(RemoveCircleTwoToneIcon)`
-  border-radius: 50%;
   cursor: pointer;
   @media screen and (max-width: 993px) {
   }
 `
 export const Add = styled(AddCircleOutlineTwoToneIcon)`
-  border-radius: 50%;
   cursor: pointer;
   @media screen and (max-width: 993px) {
   }

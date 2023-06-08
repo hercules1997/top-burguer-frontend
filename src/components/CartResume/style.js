@@ -12,7 +12,7 @@ export const Container = styled.div`
   position: sticky;
   top: 100px;
 
-  margin-top: 75px;
+  margin-top: 40px;
   margin-bottom: 15px;
   border-radius: 12px;
   background: #3f3f3f;

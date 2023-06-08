@@ -2,7 +2,7 @@ import React from 'react'
 
 import ImgLogoCart from '../../assets/imgLogoCart.png'
 import { CartItens, CartResume } from '../../components'
-import { Container, HomeImage, Wrapper } from './style'
+import { Container, HomeImage, Wrapper, WrapperItens, WrapperResume } from './style'
 
 export function Cart () {
   return (
@@ -10,8 +10,12 @@ export function Cart () {
       <HomeImage src={ImgLogoCart} alt="Logo do carrinho" />
 
       <Wrapper>
-        <CartItens />
-        <CartResume />
+        <WrapperItens>
+          <CartItens />
+        </WrapperItens>
+        <WrapperResume>
+          <CartResume />
+        </WrapperResume>
       </Wrapper>
     </Container>
   )

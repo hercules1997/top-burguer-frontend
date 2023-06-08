@@ -10,7 +10,6 @@ import formatCurrency from '../../utils/formatCurrency'
 import {
   Container,
   Img,
-  Header,
   Content,
   ProductDecription,
   Trash,
@@ -23,7 +22,9 @@ import {
   Remove,
   Add,
   Bag,
-  ContainerMaster
+  ContainerMaster,
+  ContainerEmpyCart,
+  Decription
 } from './style'
 export function CartItens () {
   const { push } = useHistory()
@@ -67,41 +68,39 @@ export function CartItens () {
                 </Trash>
                 <Content key={product.id}>
                   <Img src={product.url} />
-                  <div className="decription">
+                  <Decription>
                     <div className="decriptAling">
                       <ProductDecription> {product.name} </ProductDecription>
-                      <ProductDecription
-                        style={{
-                          marginTop: '10px'
-                        }}
-                      >
+                      <ProductDecription>
                         {formatCurrency(product.quantity * product.price)}
                       </ProductDecription>
                     </div>
                     <div className="quanty">
                       <ProductDecription>
                         <div className="quantity-container">
-                          <Remove onClick={() => decreseProducts(product.id)}>
-                          </Remove>
+                          <Remove
+                            onClick={() => decreseProducts(product.id)}
+                          ></Remove>
                           <p> {product.quantity} </p>
-                          <Add onClick={() => increseProducts(product.id)}>
-                          </Add>
+                          <Add
+                            onClick={() => increseProducts(product.id)}
+                          ></Add>
                         </div>
                       </ProductDecription>
                     </div>
-                  </div>
+                  </Decription>
                 </Content>
               </ContainerContent>
             </>
               ))
             )
           : (
-          <>
+          <ContainerEmpyCart>
             <EmpyCart>
               <Bag src={cart} />
               Sacola vazia
             </EmpyCart>
-          </>
+          </ContainerEmpyCart>
             )}
       </Container>
       <ContainerButtom>
