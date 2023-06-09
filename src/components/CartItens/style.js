@@ -45,34 +45,40 @@ export const Container = styled.div`
 export const EmpyCart = styled.div`
   display: flex;
   margin: 0;
+
   color: #1e1e1c;
   font-size: 3rem;
   padding: 20px;
-  background-color: #3f3f3f;
+  /* background-color: #3f3f3f; */
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-shadow: 0px 0px 5px black;
+  /* box-shadow: 0px 0px 2px black; */
   border-radius: 15px;
+  @media screen and (max-width: 993px) {
+    font-size: 2rem;
+  }
 `
 export const ContainerEmpyCart = styled.div`
-  display: block;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   text-align: center;
   width: 100vw;
-  background: red;
 `
 
 export const Bag = styled(ShoppingBagTwoToneIcon)`
   color: #1e1e1c;
   font-size: 8rem !important;
+  @media screen and (max-width: 993px) {
+    font-size: 4rem !important;
+  }
 `
 
 export const Img = styled.img`
   background: #3f3f3f;
-width: 30%;
+  width: 30%;
   width: 100px;
   height: 100px;
 
@@ -120,7 +126,7 @@ export const Decription = styled.div`
     height: 100%;
   }
 
-    /* .decriptAling {
+  /* .decriptAling {
     display: flex;
     align-items: end;
     justify-content: end;
@@ -166,7 +172,6 @@ export const Content = styled.div`
     }
   }
 
-
   button {
     padding: 2px;
     border: none;
@@ -184,36 +189,29 @@ export const Content = styled.div`
 `
 export const ButtonStyle = styled(Button)`
   margin-top: 1px;
-  margin-bottom: 5px;
+  background: #79c800e0;
+  margin-bottom: 20px;
   padding: 10px;
-  position: sticky;
-  top: 50px;
+  font-size: 1.2rem;
   box-shadow: 0px 0px 2px black;
   width: 100%;
-  @media screen and (max-width: 993px) {
-    display: none !important;
+
+  &:hover {
+    background: rgb(163 250 31);
+    text-shadow: 0 0 10px black;
+    font-size: 1.3rem;
   }
 `
 export const ButtonStyleTwo = styled(Button)`
-  margin-top: 1px;
-  margin-bottom: 5px;
-  padding: 10px;
-  box-shadow: 0px 0px 2px black;
-  display: none;
-  text-align: center;
   @media screen and (max-width: 993px) {
-    display: flex;
-    text-align: center;
-    font-size: 15px;
-    width: 100%;
   }
 `
 export const ButtonStyleThree = styled(Button)`
   margin-top: 1px;
   margin-bottom: 5px;
   padding: 10px;
-width: 100%;
-text-align: center;
+  width: 100%;
+  text-align: center;
   box-shadow: 0px 0px 2px black;
 
   @media screen and (max-width: 993px) {
@@ -223,7 +221,7 @@ text-align: center;
   }
 `
 export const ContainerButtom = styled.div`
-gap: 5px;
+  gap: 5px;
 
   @media screen and (max-width: 993px) {
     display: flex;

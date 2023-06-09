@@ -58,6 +58,6 @@ export function CartResume () {
       </ButtonFinish>
     )
   } else {
-    ;<div></div>
+    <div style={{ display: 'none' }}></div>
   }
 }

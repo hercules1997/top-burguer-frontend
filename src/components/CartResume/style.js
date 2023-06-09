@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   @media screen and (max-width: 993px) {
-    margin-bottom: 80px;
+    margin-bottom: 10px;
   }
   display: flex;
   flex-direction: column;
@@ -65,8 +65,8 @@ export const ButtonFinish = styled.div`
     position: sticky;
     top: 340px;
 
-    @media screen and (max-width: 993px) {
-      display: flex;
-    }
+    /* @media screen and (max-width: 993px) {
+      display: none;
+    } */
   }
 `
