@@ -1,8 +1,7 @@
-import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import iconCart from '../../assets/iconCart.png'
+// import iconCart from '../../assets/iconCart.png'
 import person from '../../assets/person.png'
 import { useCart } from '../../hooks/CartContext'
 import { useUser } from '../../hooks/UserContext'
@@ -19,7 +18,8 @@ import {
   FastfoodRoundedIconStyle,
   HomeSharpIconStyle,
   ContainerMenu,
-  Bag
+  Bag,
+  AccountCircleSharpIconStyle
 } from './style'
 
 export function Header () {
@@ -94,7 +94,9 @@ export function Header () {
         <MenuHeader>
           <Icons>
             <PageLink>
-              <AccountCircleSharpIcon
+              <AccountCircleSharpIconStyle
+                onClick={() => push('/usuario')}
+                isActive={pathname === '/usuario'}
                 style={{ color: 'white', fontSize: '35px' }}
               />
             </PageLink>

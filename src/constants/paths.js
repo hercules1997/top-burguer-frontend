@@ -8,7 +8,8 @@ const paths = {
   NewProducts: '/novo-produto',
   EditProducts: '/editar-produtos',
   Order: '/pedidos',
-  Cart: '/carrinho'
+  Cart: '/carrinho',
+  User: '/usuario'
 }
 
 export default paths
