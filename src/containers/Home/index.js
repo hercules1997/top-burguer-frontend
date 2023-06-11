@@ -2,12 +2,12 @@ import React from 'react'
 
 import ImgHomeBurguer from '../../assets/ImgHomeBurguer.png'
 import { CategoryCarousel, OffersCarousel } from '../../components'
-import { Container, HomeImage, ContainerItens } from './style'
+import { Container, ContainerItens } from './style'
 
 export function Home () {
   return (
     <Container>
-      <HomeImage src={ImgHomeBurguer} />
+      <img src={ImgHomeBurguer} />
 
       <ContainerItens>
         <OffersCarousel />

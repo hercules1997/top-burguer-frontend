@@ -1,3 +1,4 @@
+import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp'
 import HighlightOffTwoToneIcon from '@mui/icons-material/HighlightOffTwoTone'
 import styled from 'styled-components'
 
@@ -29,7 +30,11 @@ export const ButtonClose = styled(HighlightOffTwoToneIcon)`
     top: 50px;
   }
 `
-export const ContainerUser = styled.div``
+export const ContainerUser = styled.div`
+  p {
+    margin-left: 20px;
+  }
+`
 export const Header = styled.p`
   margin-top: 6%;
   margin-left: 18px;
@@ -42,6 +47,7 @@ export const Header = styled.p`
 export const ContainerLinks = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 `
 export const Links = styled.a`
   justify-content: start;
@@ -86,4 +92,9 @@ export const ContainerText = styled.div`
       display: none;
     }
   }
+`
+export const AccountCircle = styled(AccountCircleSharpIcon)`
+  color: #898989 !important;
+  font-size: 90px !important;
+  margin-left: 50px;
 `
