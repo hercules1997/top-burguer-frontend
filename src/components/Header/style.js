@@ -185,9 +185,11 @@ export const ContainerMenu = styled.span`
 `
 export const FastfoodRoundedIconStyle = styled(FastfoodRoundedIcon)`
   color: ${(props) => (props.isActive ? '#FA9600' : '#898989')} !important;
+  font-size: 40px !important;
 `
 export const HomeSharpIconStyle = styled(HomeSharpIcon)`
   color: ${(props) => (props.isActive ? '#FA9600' : '#898989')} !important;
+  font-size: 40px !important;
 `
 export const Bag = styled(ShoppingBagTwoToneIcon)`
   color: ${(props) => (props.isActive ? '#FA9600' : '#898989')} !important;

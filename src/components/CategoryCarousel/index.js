@@ -24,7 +24,7 @@ export function CategoryCarousel () {
     { width: 1300, itemsToShow: 4 }
   ]
   const carouselRef = useRef(null)
-  const items = 5
+  const items = ++categories.length
   const totalPages = Math.ceil(categories.length / items)
   let resetTimeout
 
@@ -37,16 +37,16 @@ export function CategoryCarousel () {
         itemsToShow={items}
         breakPoints={brackPoints}
         enableAutoPlay
-        autoPlaySpeed={6000}
+        autoPlaySpeed={4000}
         easing="cubic-bezier(1,.15,.55,1.54)"
         tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
-        transitionMs={300}
+        transitionMs={1000}
         onNextEnd={({ index }) => {
           clearTimeout(resetTimeout)
-          if (index + 0 === totalPages) {
+          if (index === totalPages) {
             resetTimeout = setTimeout(() => {
               carouselRef.current.goTo(0)
-            }, 700)
+            }, 1700)
           }
         }}
       >

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
-// import iconCart from '../../assets/iconCart.png'
-import person from '../../assets/person.png'
 import { useCart } from '../../hooks/CartContext'
 import { useUser } from '../../hooks/UserContext'
 import {
@@ -73,7 +71,10 @@ export function Header () {
           </PageLink>
           <div className="barra"></div>
           <PageLink>
-            <img src={person} alt="logo pessoa" />
+            <AccountCircleSharpIconStyle
+              onClick={() => push('/usuario')}
+              isActive={pathname === '/usuario'}
+            />
           </PageLink>
 
           <ContainerText>
@@ -97,16 +98,12 @@ export function Header () {
               <AccountCircleSharpIconStyle
                 onClick={() => push('/usuario')}
                 isActive={pathname === '/usuario'}
-                style={{ color: 'white', fontSize: '35px' }}
               />
             </PageLink>
           </Icons>
           <Icons onClick={() => push('/')} isActive={pathname === '/'}>
             <PageLink>
-              <HomeSharpIconStyle
-                isActive={pathname === '/'}
-                style={{ color: 'white', fontSize: '35px' }}
-              />
+              <HomeSharpIconStyle isActive={pathname === '/'} />
             </PageLink>
           </Icons>
           <Icons>
@@ -116,7 +113,6 @@ export function Header () {
             >
               <FastfoodRoundedIconStyle
                 isActive={pathname.includes('/produtos')}
-                style={{ color: 'white', fontSize: '35px' }}
               />
             </PageLink>
           </Icons>

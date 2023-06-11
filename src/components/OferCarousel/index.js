@@ -44,7 +44,7 @@ export function OffersCarousel () {
 
   // MOVIMENTAÇÃO DO CARROUSEL
   const carouselRef = useRef(null)
-  const items = 5
+  const items = offers.length++
   const totalPages = Math.ceil(offers.length / items)
   let resetTimeout
   return (
@@ -59,13 +59,13 @@ export function OffersCarousel () {
         autoPlaySpeed={3000}
         easing="cubic-bezier(1,.15,.55,1.54)"
         tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
-        transitionMs={200}
+        transitionMs={2000}
         onNextEnd={({ index }) => {
           clearTimeout(resetTimeout)
-          if (index + 0 === totalPages) {
+          if (index === totalPages) {
             resetTimeout = setTimeout(() => {
               carouselRef.current.goTo(0)
-            }, 1500)
+            }, 2000)
           }
         }}
       >
