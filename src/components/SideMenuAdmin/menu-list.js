@@ -8,34 +8,35 @@ import paths from '../../constants/paths'
 const listLinks = [
   {
     id: 1,
-    label: 'Pedidos',
-    link: paths.Order,
-    icon: ShoppingBag
-  },
-  {
-    id: 2,
-    label: 'Listar Produtos',
-    link: paths.ListProducts,
-    icon: ListAltIcon
-  },
-  {
-    id: 3,
-    label: 'Novo Produto',
-    link: paths.NewProducts,
-    icon: AddCircleIcon
-  },
-  {
-    id: 4,
     label: 'Página Inicial',
     link: paths.HomeInit,
     icon: HomeIcon
   },
   {
-    id: 5,
-    label: 'Categorias',
-    link: paths.NewCategory,
-    icon: CategoryIcon
+    id: 2,
+    label: 'Pedidos',
+    link: paths.Order,
+    icon: ShoppingBag
+  },
+  {
+    id: 3,
+    label: 'Listar Produtos',
+    link: paths.ListProducts,
+    icon: ListAltIcon
+  },
+  {
+    id: 4,
+    label: 'Novo Produto',
+    link: paths.NewProducts,
+    icon: AddCircleIcon
   }
+
+  // {
+  //   id: 5,
+  //   label: 'Categorias',
+  //   link: paths.NewCategory,
+  //   icon: CategoryIcon
+  // }
 ]
 
 export default listLinks
