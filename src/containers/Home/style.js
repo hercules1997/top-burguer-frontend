@@ -1,7 +1,24 @@
 import styled from 'styled-components'
 
+export const Loading = styled.div`
+  background: rgb(47, 47, 47);
+  display: flex;
+  color: yellow;
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  font-size: 3rem;
+  width: 100%;
+  align-items: center;
+  z-index: 10000;
+
+  span {
+    align-items: center;
+    justify-content: center;
+  }
+`
 export const Container = styled.div`
-  background: rgb(47, 47, 47); 
+  background: rgb(47, 47, 47);
   box-shadow: 0px 12px 35px black;
   display: flex;
   flex-direction: column;
