@@ -3,13 +3,14 @@ import styled from 'styled-components'
 export const Loading = styled.div`
   background: rgb(47, 47, 47);
   display: flex;
-  color: yellow;
+  color: gray;
   height: 100vh;
   text-align: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2.2rem;
   width: 100%;
   align-items: center;
+  position: fixed;
   z-index: 10000;
 
   span {
