@@ -24,6 +24,11 @@ export const ContainerMenu = styled.div`
   text-align: center;
   align-items: center;
   box-shadow: 0px 1px 2px black;
+  @media screen and (max-width: 1274px) {
+    overflow-x: 50px;
+    scroll-behavior: 200px;
+    width: 100%;
+  }
 `
 export const Menu = styled.button`
   cursor: pointer;
@@ -47,6 +52,11 @@ export const Menu = styled.button`
     border-bottom: solid 3px white;
     color: white;
   }
+  @media screen and (max-width: 1274px) {
+    overflow-x: 50px;
+    scroll-behavior: 200px;
+    width: 100%;
+  }
 `
 export const Logo = styled.img`
   width: 220px;
@@ -68,12 +78,12 @@ export const ContainerProducts = styled.div`
     grid-template-columns: repeat(2, 1fr);
     padding: 20px;
     margin-bottom: 60px;
-    gap:14px;
+    gap: 14px;
   }
   @media screen and (max-width: 703px) {
     grid-template-columns: repeat(1, 1fr);
     padding: 20px;
     margin-bottom: 60px;
-    gap:14px;
+    gap: 14px;
   }
 `

@@ -2,6 +2,7 @@ import React from 'react'
 
 import ImgLogoCart from '../../assets/imgLogoCart.png'
 import { CartItens, CartResume } from '../../components'
+import IsloadingSpinner from '../../components/IsloadingSpinner'
 import { useCart } from '../../hooks/CartContext'
 import {
   Container,
@@ -16,6 +17,8 @@ export function Cart () {
 
   return (
     <Container>
+      <IsloadingSpinner />
+
       <HomeImage src={ImgLogoCart} alt="Logo do carrinho" />
 
       <Wrapper>

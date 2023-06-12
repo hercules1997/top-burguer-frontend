@@ -51,8 +51,7 @@ export const Image = styled.img`
 
   border-radius: 30px;
   @media screen and (max-width: 993px) {
-    width: 40%;
-    height: auto;
+
     padding: 20px 10px;
   }
 `
