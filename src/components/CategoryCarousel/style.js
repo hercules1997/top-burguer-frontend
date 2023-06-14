@@ -74,12 +74,16 @@ export const ImgCategory = styled.img`
   box-shadow: 0px 8px 12px black;
 
   cursor: pointer;
+  @media screen and (max-width: 993px) {
+    width: 100%;
+    height: 150px;
+  }
 `
 
 export const Button = styled(Link)`
   background-color: #3f3f3f;
   /* margin-left: 50px; */
- 
+
   width: 280px;
   height: 50px;
   display: flex;
@@ -106,5 +110,9 @@ export const Button = styled(Link)`
 
   &:active {
     opacity: 0.7;
+  }
+  @media screen and (max-width: 993px) {
+    width: 100%;
+    font-size: 1.2rem;
   }
 `
