@@ -18,6 +18,7 @@ export function OffersCarousel () {
   const [offers, setOffers] = useState([])
   const { putProductInCart } = useCart()
   const { push } = useHistory()
+  const [isPaused, setIsPaused] = useState(false)
 
   useEffect(() => {
     async function loadOffers () {
@@ -44,34 +45,48 @@ export function OffersCarousel () {
 
   // MOVIMENTAÇÃO DO CARROUSEL
   const carouselRef = useRef(null)
-  const items = offers.length++
-  const totalPages = Math.ceil(offers.length / items)
+  const items = offers.length
+  const totalPages = Math.ceil(offers.length - 1)
   let resetTimeout
+
+  const handleMouseEnter = () => {
+    setIsPaused(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsPaused(false)
+  }
+
+  const settings = {
+    itemsToShow: items,
+    enableAutoPlay: !isPaused,
+    autoPlaySpeed: 5000,
+    transitionMs: 400,
+    breakPoints: brackPoints,
+    easing: 'cubic-bezier(1,.15,.55,1.54)',
+    tiltEasing: 'cubic-bezier(0.110, 1, 1.000, 0.210)',
+    onNextEnd: ({ index }) => {
+      clearTimeout(resetTimeout)
+      if (index === totalPages) {
+        resetTimeout = setTimeout(() => {
+          carouselRef.current.goTo(0)
+        }, 2000)
+      }
+    }
+  }
+
   return (
     <Container>
       <h1>OFERTAS</h1>
 
-      <Carousel
-        ref={carouselRef}
-        itemsToShow={items}
-        breakPoints={brackPoints}
-        enableAutoPlay
-        autoPlaySpeed={3000}
-        easing="cubic-bezier(1,.15,.55,1.54)"
-        tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
-        transitionMs={2000}
-        onNextEnd={({ index }) => {
-          clearTimeout(resetTimeout)
-          if (index === totalPages) {
-            resetTimeout = setTimeout(() => {
-              carouselRef.current.goTo(0)
-            }, 2000)
-          }
-        }}
-      >
+      <Carousel ref={carouselRef} {...settings}>
         {offers &&
           offers.map((product) => (
-            <ContainerItens key={product.id}>
+            <ContainerItens
+              key={product.id}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <ImgCategory src={product.url} alt="Fotos da categorias" />
               <OfferName>{product.name}</OfferName>
               <OfferPrice>{product.formatedPrice}</OfferPrice>

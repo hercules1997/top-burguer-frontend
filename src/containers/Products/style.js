@@ -1,3 +1,4 @@
+import Carousel from 'react-elastic-carousel'
 import styled from 'styled-components'
 
 import logo from '../../assets/ImgProductsBurguer.png'
@@ -85,5 +86,49 @@ export const ContainerProducts = styled.div`
     padding: 20px;
     margin-bottom: 60px;
     gap: 14px;
+  }
+`
+export const CarouselStyle = styled(Carousel)`
+  .rec.rec-dot {
+    background: transparent;
+    border: 1px solid gray;
+    @media screen and (min-width: 1142px) {
+      display: none;
+    }
+  }
+  .rec.rec-dot:hover {
+    background: black;
+    border: 1px solid #d6d6ba;
+    box-shadow: 0px 0px 12px white;
+  }
+  .rec.rec-dot_active {
+    background: white;
+    box-shadow: 0px 0px 12px white;
+  }
+
+  .rec.rec-arrow {
+    background-color: transparent;
+    margin-left: 30px;
+    margin-right: 30px;
+    height: 100%;
+    border-radius: 0;
+    color: #3f3f3f;
+  }
+
+  .rec.rec-arrow:hover {
+    background-color: #3f3f3f;
+    color: white;
+  }
+  .rec.rec-arrow:disabled {
+    visibility: hidden;
+  }
+  .rec.rec-arrow:active {
+    opacity: 0.1;
+  }
+  .rec.rec-arrow-right {
+    border-right: solid 0.5px #3f3f3f;
+  }
+  .rec.rec-arrow-left {
+    border-left: solid 1px #3f3f3f;
   }
 `

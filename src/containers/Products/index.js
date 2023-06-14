@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useState, useRef } from 'react'
-import Carousel from 'react-elastic-carousel'
 
 import ImgProductsBurguer from '../../assets/ImgProductsBurguer.png'
 import { CardProduct } from '../../components'
@@ -12,7 +11,8 @@ import {
   HomeImage,
   ContainerMenu,
   Menu,
-  ContainerProducts
+  ContainerProducts,
+  CarouselStyle
 } from './style'
 
 export function Products ({ location: { state } }) {
@@ -29,7 +29,6 @@ export function Products ({ location: { state } }) {
   useEffect(() => {
     async function loadCategories () {
       const { data } = await apiTopBurger.get('categories')
-
       const newCategory = [{ id: 0, name: 'Todos' }, ...data]
 
       setCategories(newCategory)
@@ -77,7 +76,7 @@ export function Products ({ location: { state } }) {
         <HomeImage src={ImgProductsBurguer} />
 
         <ContainerMenu>
-          <Carousel
+          <CarouselStyle
             ref={carouselRef}
             breakPoints={brackPoints}
             easing="cubic-bezier(1,.15,.55,1.54)"
@@ -96,7 +95,7 @@ export function Products ({ location: { state } }) {
                   {category.name}
                 </Menu>
               ))}
-          </Carousel>
+          </CarouselStyle>
         </ContainerMenu>
         <ContainerProducts>
           {filterProducts &&
