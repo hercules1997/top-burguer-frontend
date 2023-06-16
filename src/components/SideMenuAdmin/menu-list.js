@@ -1,6 +1,6 @@
 import { ShoppingBag } from '@mui/icons-material'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
-// import CategoryIcon from '@mui/icons-material/Category'
+import CategoryIcon from '@mui/icons-material/Category'
 import HomeIcon from '@mui/icons-material/Home'
 import ListAltIcon from '@mui/icons-material/ListAlt'
 
@@ -29,14 +29,14 @@ const listLinks = [
     label: 'Novo Produto',
     link: paths.NewProducts,
     icon: AddCircleIcon
-  }
+  },
 
-  // {
-  //   id: 5,
-  //   label: 'Categorias',
-  //   link: paths.NewCategory,
-  //   icon: CategoryIcon
-  // }
+  {
+    id: 5,
+    label: 'Categorias',
+    link: paths.NewCategory,
+    icon: CategoryIcon
+  }
 ]
 
 export default listLinks
