@@ -30,12 +30,17 @@ const listLinks = [
     link: paths.NewProducts,
     icon: AddCircleIcon
   },
-
   {
     id: 5,
-    label: 'Categorias',
-    link: paths.NewCategory,
+    label: 'Listar Categorias',
+    link: paths.ListCategory,
     icon: CategoryIcon
+  },
+  {
+    id: 6,
+    label: 'Nova categoria',
+    link: paths.NewCategory,
+    icon: AddCircleIcon
   }
 ]
 
