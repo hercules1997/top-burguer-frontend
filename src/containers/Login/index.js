@@ -8,6 +8,7 @@ import * as Yup from 'yup'
 import ImgBurguer from '../../assets/backgroundBurger.jpg'
 import logoBurguer from '../../assets/logoBurger.png'
 import { Button, ErrorMessage } from '../../components'
+import paths from '../../constants/paths'
 import { useUser } from '../../hooks/UserContext'
 import apiTopBurger from '../../services/api'
 import {
@@ -55,9 +56,9 @@ export function Login () {
     putUserData(data)
     setTimeout(() => {
       if (data.admin) {
-        history.push('/pedidos')
+        history.push(paths.Order)
       } else {
-        history.push('/')
+        history.push(paths.HomeInit)
       }
     }, 1000)
   }
@@ -92,7 +93,7 @@ export function Login () {
           <Button type="submit">Entrar</Button>
           <SingLink>
             Não tem cadastro ainda?
-            <Link to="/cadastro">Cadastre-se agora!</Link>
+            <Link to={paths.Register}>Cadastre-se agora!</Link>
           </SingLink>
         </form>
       </ContainerItens>

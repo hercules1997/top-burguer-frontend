@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
+import paths from '../../constants/paths'
 import { useCart } from '../../hooks/CartContext'
 import { useUser } from '../../hooks/UserContext'
 import {
@@ -43,24 +44,27 @@ export function Header () {
       <Container>
         <ContainerLeft>
           <PageLinkAdmin
-            onClick={() => push('/pedidos')}
+            onClick={() => push(paths.ListProducts)}
             isAdmin={userData.admin}
           >
             Administrador
           </PageLinkAdmin>
-          <PageLink onClick={() => push('/')} isActive={pathname === '/'}>
+          <PageLink
+            onClick={() => push(paths.HomeInit)}
+            isActive={pathname === paths.HomeInit}
+          >
             Home
           </PageLink>
           <PageLink
-            onClick={() => push('/produtos')}
-            isActive={pathname.includes('/produtos')}
+            onClick={() => push(paths.Products)}
+            isActive={pathname.includes(paths.Products)}
           >
             Ver Produtos
           </PageLink>
         </ContainerLeft>
         <ContainerRight>
-          <PageLink onClick={() => push('/carrinho')}>
-            <Bag isActive={pathname.includes('/carrinho')} />
+          <PageLink onClick={() => push(paths.Cart)}>
+            <Bag isActive={pathname.includes(paths.Cart)} />
             {finalItems > 0
               ? (
               <span className="notficationCart">{finalItems}</span>
@@ -72,8 +76,8 @@ export function Header () {
           <div className="barra"></div>
           <PageLink>
             <AccountCircleSharpIconStyle
-              onClick={() => push('/usuario')}
-              isActive={pathname === '/usuario'}
+              onClick={() => push(paths.User)}
+              isActive={pathname === paths.User}
             />
           </PageLink>
 
@@ -82,7 +86,7 @@ export function Header () {
             <PageLinkExit
               onClick={() => {
                 logout()
-                push('/login')
+                push(paths.Login)
               }}
             >
               Sair
@@ -96,29 +100,32 @@ export function Header () {
           <Icons>
             <PageLink>
               <AccountCircleSharpIconStyle
-                onClick={() => push('/usuario')}
-                isActive={pathname === '/usuario'}
+                onClick={() => push(paths.User)}
+                isActive={pathname === paths.User}
               />
             </PageLink>
           </Icons>
-          <Icons onClick={() => push('/')} isActive={pathname === '/'}>
+          <Icons
+            onClick={() => push(paths.HomeInit)}
+            isActive={pathname === paths.HomeInit}
+          >
             <PageLink>
-              <HomeSharpIconStyle isActive={pathname === '/'} />
+              <HomeSharpIconStyle isActive={pathname === paths.HomeInit} />
             </PageLink>
           </Icons>
           <Icons>
             <PageLink
-              onClick={() => push('/produtos')}
-              isActive={pathname.includes('/produtos')}
+              onClick={() => push(paths.Products)}
+              isActive={pathname.includes(paths.Products)}
             >
               <FastfoodRoundedIconStyle
-                isActive={pathname.includes('/produtos')}
+                isActive={pathname.includes(paths.Products)}
               />
             </PageLink>
           </Icons>
           <Icons>
-            <PageLink onClick={() => push('/carrinho')}>
-              <Bag isActive={pathname.includes('/carrinho')} />
+            <PageLink onClick={() => push(paths.Cart)}>
+              <Bag isActive={pathname.includes(paths.Cart)} />
               {finalItems > 0
                 ? (
                 <span className="notficationCart">{finalItems}</span>
