@@ -2,12 +2,14 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
 import ImgBurguer from '../../assets/backgroundCadastro.jpg'
 import logoBurguer from '../../assets/logoBurger.png'
 import { ErrorMessage } from '../../components'
+import paths from '../../constants/paths'
 import apiTopBurger from '../../services/api'
 import { Input } from '../Login/style'
 import {
@@ -21,6 +23,8 @@ import {
 } from './style'
 
 export function Register () {
+  const history = useHistory()
+
   const schema = Yup.object().shape({
     name: Yup.string().required('Seu nome é obrigatório'),
     email: Yup.string()
@@ -54,6 +58,13 @@ export function Register () {
 
       if (status === 200 || status === 201) {
         toast.success('Cadasro criado com sucesso!')
+        setTimeout(() => {
+          if (status === 201 || status === 200) {
+            history.push(paths.Login)
+          } else {
+            history.push(paths.Register)
+          }
+        }, 1000)
       } else if (status === 409) {
         toast.warning('E-mail já cadastrado! Faça login para continuar')
       } else {
@@ -110,7 +121,7 @@ export function Register () {
 
           <ButtonStyle type="submit">Cadastrar</ButtonStyle>
           <SingLink>
-            Já possui conta? <Link to="/login">Acesse!</Link>
+            Já possui conta? <Link to={paths.Login}>Acesse!</Link>
           </SingLink>
         </form>
       </ContainerItens>

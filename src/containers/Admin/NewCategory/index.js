@@ -5,7 +5,7 @@ import { Container } from './style'
 export function NewCategory () {
   return (
     <Container>
-      <h1>ola</h1>
+      <h1>Helo</h1>
     </Container>
   )
 }

@@ -21,7 +21,9 @@ function AllRoutes () {
         <PrivateRoute component={Admin} path={paths.NewProducts} isAdmin />
         <PrivateRoute component={Admin} path={paths.EditProducts} isAdmin />
         <PrivateRoute component={Admin} path={paths.HomeInit} isAdmin />
+        <PrivateRoute component={Admin} path={paths.ListCategory} isAdmin />
         <PrivateRoute component={Admin} path={paths.NewCategory} isAdmin />
+        <PrivateRoute component={Admin} path={paths.EditCategory} isAdmin />
       </Switch>
     </Router>
   )
