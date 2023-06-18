@@ -9,6 +9,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
+  padding-bottom: 100px;
 
   .rec.rec-dot {
     background: transparent;
@@ -31,6 +32,9 @@ export const Container = styled.div`
     height: 100%;
     border-radius: 0;
     color: #3f3f3f;
+    @media screen and (max-width: 993px) {
+      margin: 0;
+    }
   }
 
   .rec.rec-arrow:hover {
@@ -53,6 +57,9 @@ export const Container = styled.div`
   h1 {
     font-size: 3rem;
     color: #d6d6ba;
+    @media screen and (max-width: 993px) {
+      font-size: 1.5rem;
+    }
   }
 `
 
@@ -65,6 +72,9 @@ export const ContainerItens = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: 0px 5px 15px black;
+  @media screen and (max-width: 993px) {
+    margin-top: 0;
+  }
 `
 
 export const ImgCategory = styled.img`
@@ -76,7 +86,6 @@ export const ImgCategory = styled.img`
   cursor: pointer;
   @media screen and (max-width: 993px) {
     width: 100%;
-    height: 150px;
   }
 `
 

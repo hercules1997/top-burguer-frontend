@@ -1,11 +1,16 @@
 import React from 'react'
-import './LoadingSpinner.css'
 
+import iconBurguer from '../../../assets/iconburger.png'
+import { LoadingSpinnerLoading, Spinner } from './LoadingSpinner.js'
 const LoadingSpinner = () => {
   return (
-    <div className="loading-spinner">
-      <div className="spinner"></div>
-    </div>
+    <LoadingSpinnerLoading>
+      <span>
+        <img src={iconBurguer} /> <p>Carregando...</p>
+      </span>
+
+      <Spinner></Spinner>
+    </LoadingSpinnerLoading>
   )
 }
 

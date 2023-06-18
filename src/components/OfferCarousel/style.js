@@ -10,6 +10,14 @@ export const Container = styled.div`
   justify-content: center;
   gap: 20px;
 
+  h1 {
+    font-size: 3rem;
+    color: #d6d6ba;
+    @media screen and (max-width: 993px) {
+      font-size: 1.5rem;
+    }
+  }
+
   /* 
   Configuração das setas
   */
@@ -20,6 +28,10 @@ export const Container = styled.div`
     height: 100%;
     border-radius: 0;
     color: #3f3f3f;
+
+    @media screen and (max-width: 993px) {
+      margin: 0;
+    }
   }
 
   .rec.rec-arrow:hover {
@@ -69,6 +81,7 @@ export const ContainerItens = styled.div`
 
   @media screen and (max-width: 993px) {
     width: 100%;
+    /* height: 200px; */
   }
 `
 export const ImgCategory = styled.img`
@@ -81,7 +94,7 @@ export const ImgCategory = styled.img`
 
   @media screen and (max-width: 993px) {
     width: 100%;
-    height: 150px;
+
   }
 `
 export const OfferName = styled.p`
@@ -94,7 +107,7 @@ export const OfferName = styled.p`
   padding: 7px;
   box-shadow: 0px 5px 15px black;
 
-    @media screen and (max-width: 993px) {
+  @media screen and (max-width: 993px) {
     width: 100%;
   }
 `
@@ -113,7 +126,7 @@ export const OfferPrice = styled.p`
   padding: 10px;
   box-shadow: 0px 5px 15px black;
 
-    @media screen and (max-width: 993px) {
+  @media screen and (max-width: 993px) {
     width: 100%;
   }
 `
@@ -150,7 +163,7 @@ export const Button = styled(Link)`
     opacity: 0.7;
   }
 
-    @media screen and (max-width: 993px) {
+  @media screen and (max-width: 993px) {
     width: 100%;
     font-size: 1.2rem;
   }
