@@ -2,7 +2,14 @@ import React from 'react'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 import paths from '../../constants/paths'
-import { Container, ContainerItems, PageLink } from './style'
+import {
+  Container,
+  ContainerItems,
+  ContainerMenu,
+  Icons,
+  MenuHeader,
+  PageLink
+} from './style'
 
 export function HeaderPublic () {
   const history = useHistory()
@@ -17,6 +24,21 @@ export function HeaderPublic () {
           </PageLink>
         </ContainerItems>
       </Container>
+
+      <ContainerMenu>
+        <MenuHeader>
+          <Icons>
+            <PageLink onClick={() => history.push(paths.Login)}>
+              Entrar
+            </PageLink>
+          </Icons>
+          <Icons>
+            <PageLink onClick={() => history.push(paths.Register)}>
+              Cadastra-se
+            </PageLink>
+          </Icons>
+        </MenuHeader>
+      </ContainerMenu>
     </>
   )
 }

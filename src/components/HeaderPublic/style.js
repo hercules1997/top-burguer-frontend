@@ -43,3 +43,42 @@ export const PageLink = styled.button`
     display: flex;
   }
 `
+export const ContainerMenu = styled.span`
+  display: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+export const MenuHeader = styled.div`
+  display: none;
+  width: 98%;
+  height: 80px;
+  background: black;
+  z-index: 2000;
+  /* padding: 20px; */
+  border-radius: 20px;
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+  }
+`
+export const Icons = styled.button`
+  background: transparent;
+  border: none;
+  width: 100%;
+  color: wheat;
+  font-size: 1.5rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  &:hover {
+  color: orange;
+  border-bottom: 1px solid orange;
+}
+`
