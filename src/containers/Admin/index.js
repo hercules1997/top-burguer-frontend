@@ -28,8 +28,8 @@ export function Admin ({ match: { path } }) {
         {path === paths.ListCategory && <ListCategory />}
         {path === paths.EditCategory && <EditCategory />}
         {path === paths.NewCategory && <NewCategory />}
+        {path === paths.Home && <HomeInit />}
       </ContainerItems>
-      {path === paths.Home && <HomeInit />}
     </Container>
   )
 }

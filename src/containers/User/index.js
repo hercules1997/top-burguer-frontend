@@ -1,6 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 
+import paths from '../../constants/paths'
 import { useUser } from '../../hooks/UserContext'
 import {
   AccountCircle,
@@ -38,7 +39,7 @@ export function User () {
         <PageLinkExit
           onClick={() => {
             logout()
-            push('/login')
+            push(paths.Login)
           }}
         >
           Sair

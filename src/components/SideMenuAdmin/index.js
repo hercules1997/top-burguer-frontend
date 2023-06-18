@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 
+import paths from '../../constants/paths'
 import { useUser } from '../../hooks/UserContext'
 import listLinks from './menu-list'
 import {
@@ -31,7 +32,7 @@ export function SideMenuAdmin ({ path }) {
       <ContainerLogout
         onClick={() => {
           logout()
-          push('/login')
+          push(paths.Login)
         }}
       >
         <ListLink style={{ color: '#fa9600' }}>

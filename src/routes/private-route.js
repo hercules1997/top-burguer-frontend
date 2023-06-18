@@ -9,7 +9,7 @@ export function PrivateRoute ({ component, isAdmin, ...rest }) {
   const user = localStorage.getItem('topBurguer:userData')
 
   if (!user) {
-    return <Redirect to="/login" />
+    return <Redirect to={paths.Login} />
   }
 
   if (isAdmin && !JSON.parse(user).admin) {

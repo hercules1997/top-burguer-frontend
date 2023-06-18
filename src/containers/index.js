@@ -1,5 +1,6 @@
 export * from './Home'
 export * from './Login'
+export * from './Public'
 export * from './Products'
 export * from './Register'
 export * from './Cart'

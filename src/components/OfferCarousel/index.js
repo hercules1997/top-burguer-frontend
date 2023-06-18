@@ -46,7 +46,8 @@ export function OffersCarousel () {
   // MOVIMENTAÇÃO DO CARROUSEL
   const carouselRef = useRef(null)
   const items = offers.length
-  const totalPages = Math.ceil(offers.length - 1)
+
+  const totalPages = Math.ceil(items - 1)
   let resetTimeout
 
   const handleMouseEnter = () => {
