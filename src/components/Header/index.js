@@ -86,7 +86,7 @@ export function Header () {
             <PageLinkExit
               onClick={() => {
                 logout()
-                push(paths.Login)
+                push(paths.Public)
               }}
             >
               Sair
