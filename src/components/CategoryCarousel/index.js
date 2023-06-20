@@ -57,7 +57,7 @@ export function CategoryCarousel () {
 
   return (
     <Container>
-      <h1>CARTEGORIAS</h1>
+      <h1>CATEGORIAS</h1>
 
       <Carousel ref={carouselRef} {...settings}>
         {categories &&
