@@ -23,22 +23,23 @@ export const ContainerItems = styled.div`
   display: flex;
   width: 100%;
   gap: 30px;
- justify-content: end;
-margin-right: 8%;
+  justify-content: end;
+  margin-right: 8%;
 `
 
 export const PageLink = styled.button`
   display: flex;
   background: none;
-  color: wheat;
+     color: #d6d6ba;
+
   border: none;
   cursor: pointer;
   align-items: center;
 
-&:hover {
-  color: orange;
-  border-bottom: 1px solid orange;
-}
+  &:hover {
+    color: orange;
+    border-bottom: 1px solid orange;
+  }
   @media screen and (max-width: 993px) {
     display: flex;
   }
@@ -71,14 +72,15 @@ export const Icons = styled.button`
   background: transparent;
   border: none;
   width: 100%;
-  color: wheat;
+
+
   font-size: 1.5rem;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: space-around;
   &:hover {
-  color: orange;
-  border-bottom: 1px solid orange;
-}
+    color: orange;
+    border-bottom: 1px solid orange;
+  }
 `
