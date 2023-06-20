@@ -5,6 +5,8 @@ import logo from '../../assets/ImgProductsBurguer.png'
 
 export const Container = styled.div`
   background-color: #2f2f2f;
+  background: black;
+
   background-color: url('${logo}');
   min-height: 100vh;
   display: flex;
@@ -18,13 +20,15 @@ export const ContainerMenu = styled.div`
   display: flex;
   justify-content: center;
   background-color: #2f2f2f;
+  background: black;
+
   gap: 50px;
   width: 100%;
   margin-top: 25px;
   padding-top: 15px;
   text-align: center;
   align-items: center;
-  box-shadow: 0px 1px 2px black;
+  box-shadow: 0px 0.5px 1px gray;
   @media screen and (max-width: 1274px) {
     overflow-x: 50px;
     scroll-behavior: 200px;
@@ -41,6 +45,8 @@ export const Menu = styled.button`
   padding-bottom: 8px;
   margin-bottom: 10px;
   background-color: transparent;
+
+
   text-align: center;
   align-items: center;
   /* transition: 0.2s; */

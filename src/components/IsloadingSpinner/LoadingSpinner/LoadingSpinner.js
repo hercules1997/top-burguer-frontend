@@ -1,15 +1,32 @@
 import styled from 'styled-components'
 export const Spinner = styled.div`
   width: 120px;
-  height:120px;
+  height: 20px;
   color: white;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border-radius: 50%;
-  border: 4px dashed #ccc;
-  border-top-color: #f0cd03;
-  animation: spinner-rotate 0.4s infinite linear;
+
+  gap: 5px;
+  div {
+  width: 18px;
+  height: 18px;
+
+  background-color: #B4B297;
+  border-radius: 7px;
+  display: inline-block;
+  animation: bounce 1s infinite ease-in-out both;
+}
+
+.bounce1 {
+  animation-delay: -0.42s;
+}
+.bounce2 {
+  animation-delay: -0.32s;
+}
+.bounce3 {
+  animation-delay: -0.22s;
+}
+.bounce4 {
+  animation-delay: -0.12s;
+}
 `
 
 export const LoadingSpinnerLoading = styled.div`
@@ -17,10 +34,16 @@ export const LoadingSpinnerLoading = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+
   width: 100vw;
-  background-color: #2f2f2f;
+  background-color: black;
   position: fixed;
   z-index: 11;
+
+
+  flex-direction: column;
+
+  font-size: 20px;
 
   span {
     display: flex;
@@ -33,43 +56,18 @@ export const LoadingSpinnerLoading = styled.div`
   }
 
   img {
-    width: 40px;
+    width: 60%;
+    margin-bottom: 10px;
   }
 
-  @keyframes spinner-rotate {
-    0% {
-      transform: rotate(0deg);
-    }
 
-    10% {
-      transform: rotate(10deg);
-    }
-    20% {
-      transform: rotate(15deg);
-    }
-    30% {
-      transform: rotate(20deg);
-    }
-    40% {
-      transform: rotate(60deg);
-    }
-    50% {
-      transform: rotate(65deg);
-    }
-    60% {
-      transform: rotate(110deg);
-    }
-    70% {
-      transform: rotate(150deg);
-    }
-    80% {
-      transform: rotate(200deg);
-    }
-    90% {
-      transform: rotate(210deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  @keyframes bounce {
+  0%, 60%, 80%, 100% {
+    transform: scale(0);
   }
+  30% {
+    transform: scale(1);
+  }
+}
+  
 `

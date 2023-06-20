@@ -31,6 +31,7 @@ export const ContainerItens = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #444444;
+  background: black;
 
   width: 40%;
   justify-content: center;
@@ -123,7 +124,7 @@ export const SingLink = styled.p`
     margin-left: 20px;
     text-decoration: none;
     &:hover {
-      color: #000;
+      color: orange;
     }
   }
 `

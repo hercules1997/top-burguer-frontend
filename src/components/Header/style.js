@@ -7,6 +7,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   background: black;
   display: flex;
+  box-shadow: 0px 0.5px 1px gray;
   font-size: 1.1rem;
   position: sticky;
   top: 0;
@@ -153,6 +154,7 @@ export const MenuHeader = styled.div`
   width: 98%;
   height: 80px;
   background: black;
+
   z-index: 2000;
   /* padding: 20px; */
   border-radius: 20px;

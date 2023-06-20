@@ -5,6 +5,7 @@ import ImgLogoCart from '../../assets/imgLogoCart.png'
 export const Container = styled.div`
   background-image: url('${ImgLogoCart}');
   background: #2f2f2f;
+  background: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

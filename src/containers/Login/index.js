@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
 import ImgBurguer from '../../assets/backgroundBurger.jpg'
-import logoBurguer from '../../assets/logoBurger.png'
+import logoBurguer from '../../assets/topBurger.png'
 import { Button, ErrorMessage } from '../../components'
 import paths from '../../constants/paths'
 import { useUser } from '../../hooks/UserContext'

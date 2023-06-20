@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
 import ImgBurguer from '../../assets/backgroundCadastro.jpg'
-import logoBurguer from '../../assets/logoBurger.png'
+import logoBurguer from '../../assets/topBurger.png'
 import { ErrorMessage } from '../../components'
 import paths from '../../constants/paths'
 import apiTopBurger from '../../services/api'
