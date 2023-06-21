@@ -18,13 +18,19 @@ export const Container = styled.div`
     z-index: 900;
   }
 `
-export const ContainerItems = styled.div``
+export const ContainerItems = styled.div`
+margin-top: 80px;
+  @media screen and (max-width: 993px) {
+    margin: 0;
+  }
+
+`
 export const ButtonClose = styled(HighlightOffTwoToneIcon)`
   display: flex;
   position: absolute;
   right: 30px;
   cursor: pointer;
-  top: 90px;
+  top: 150px;
   font-size: 2.5rem !important;
 
   @media screen and (max-width: 993px) {

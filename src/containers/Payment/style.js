@@ -18,7 +18,6 @@ export const Container = styled.div`
 
 export const HomeImage = styled.img`
   box-shadow: 0px 12px 35px black;
-  height: 250px;
 `
 
 export const ContainerResume = styled.div`
@@ -26,13 +25,13 @@ export const ContainerResume = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   background: rgb(18 18 18);
   box-shadow: 0 0 1.2px white;
   height: 320px;
-padding: 20px;
+  padding: 20px;
   border-radius: 12px;
   @media screen and (max-width: 993px) {
     width: 100%;
@@ -50,7 +49,9 @@ export const Wampper = styled.div`
   border-radius: 8px;
 
   @media screen and (max-width: 993px) {
-    width: 100%;
+   p {
+    text-align: start;
+   }
   }
 `
 
@@ -62,6 +63,7 @@ export const ContainerFormData = styled.div`
 
   @media screen and (max-width: 993px) {
     width: 100%;
+    margin-top: 20px;
   }
 `
 
@@ -75,6 +77,8 @@ export const FormPayment = styled.div`
   box-shadow: 0 0 1.2px white;
   gap: 5px;
   @media screen and (max-width: 993px) {
+
+    width: 100%;
   }
 `
 export const ContainerItems = styled.div`
@@ -87,6 +91,7 @@ export const ContainerItems = styled.div`
   align-items: center;
   justify-items: center;
   @media screen and (max-width: 993px) {
+    flex-direction: column;
     width: 100%;
   }
 `

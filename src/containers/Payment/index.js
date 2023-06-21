@@ -54,14 +54,22 @@ export function Payment () {
   const submitOrder = async () => {
     if (cartProducts.length > 0) {
       const order = cartProducts.map((product) => {
-        return { id: product.id, quantity: product.quantity }
+        return {
+          id: product.id,
+          quantity: product.quantity
+        }
       })
 
-      await toast.promise(apiTopBurger.post('orders', { products: order }), {
-        pending: 'realizando seu pedido ...',
-        success: 'Pedido realizado!',
-        error: 'Falha ao realizar o pedido, tente novamente!'
-      })
+      await toast.promise(
+        apiTopBurger.post('orders', {
+          products: order
+        }),
+        {
+          pending: 'realizando seu pedido ...',
+          success: 'Pedido realizado!',
+          error: 'Falha ao realizar o pedido, tente novamente!'
+        }
+      )
       history.push(paths.StatusOrders)
     } else {
       alert('Carrinho vazio')
@@ -71,51 +79,50 @@ export function Payment () {
   return (
     <Container>
       <IsloadingSpinner />
-
       <HomeImage src={ImgLogoCart} alt="Logo do carrinho" />
-
       <ContainerItems>
         <ContainerResume>
-          <Wampper style={{ color: 'white' }}>
-            <p>Total de Itens adicionados</p>
-            <p>{finalItems}</p>
+          <Wampper
+            style={{
+              color: 'white'
+            }}
+          >
+            <p> Total de Itens adicionados </p>
+            <p>
+              {finalItems} un
+            </p>
           </Wampper>
-          <Wampper style={{ color: 'white' }}>
-            <p>Valor total a pagar</p>
-            <p>{formatCurrency(finalPrice + deliveryTax)}</p>
+          <Wampper
+            style={{
+              color: 'white'
+            }}
+          >
+            <p> Valor total a pagar </p>{' '}
+            <p> {formatCurrency(finalPrice + deliveryTax)} </p>{' '}
           </Wampper>
-
           <ButtonStyle
-            style={{ background: 'rgb(250, 150, 0)', color: 'white' }}
+            style={{
+              background: 'rgb(250, 150, 0)',
+              color: 'white'
+            }}
             onClick={() => history.push(paths.Cart)}
           >
-            Voltar para sacola
-          </ButtonStyle>
+            Voltar para sacola{' '}
+          </ButtonStyle>{' '}
         </ContainerResume>
-
         <ContainerFormData>
           <FormPayment>
-            <Label>Número do cartão</Label>
+            <Label> Número do cartão </Label>{' '}
             <Input type="number" placeholder="6542 1548 4778 5471" />
-
-            <Label>Nome impresso no cartão</Label>
+            <Label> Nome impresso no cartão </Label>{' '}
             <Input type="name" placeholder="Ex: Carlos A Souza" />
-
-            <Label>Vencimento</Label>
+            <Label> Vencimento </Label>{' '}
             <Input type="number" placeholder="08/22" />
-
-            <Label>CVV</Label>
-            <Input type="number" placeholder="255" />
-
-            <ButtonStyle
-              onClick={
-                (submitOrder)}
-            >
-              Pagar
-            </ButtonStyle>
-          </FormPayment>
-        </ContainerFormData>
-      </ContainerItems>
+            <Label> CVV </Label> <Input type="number" placeholder="255" />
+            <ButtonStyle onClick={submitOrder}> Pagar </ButtonStyle>{' '}
+          </FormPayment>{' '}
+        </ContainerFormData>{' '}
+      </ContainerItems>{' '}
     </Container>
   )
 }
