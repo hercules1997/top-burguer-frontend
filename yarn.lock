@@ -1676,6 +1676,18 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
+"@mercadopago/sdk-js@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@mercadopago/sdk-js/-/sdk-js-0.0.2.tgz#59c4ef1ccf5ea3b22731a916c269436e1b3e6049"
+  integrity sha512-d29DyM00f250lbXCtUm5f4UHM4ro6/0Sm3nuIJK7cFckX8orZfs2oXIBW4GwSHRSiVjPBdge6qj2yhsCCyySgw==
+
+"@mercadopago/sdk-react@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@mercadopago/sdk-react/-/sdk-react-0.0.11.tgz#61a9fae10171ac283dfac40ee8c54d0728fc5dd7"
+  integrity sha512-q+E4I+2pWSJ+ArWVXvVArHEQ1ZQFux8TuDnrEPJ2Bcn+6JiP21gkjQ0eoy5UXcYvh4LUICfYtZ2m4T0OgVMy9A==
+  dependencies:
+    "@mercadopago/sdk-js" "^0.0.2"
+
 "@mui/base@5.0.0-alpha.123":
   version "5.0.0-alpha.123"
   resolved "https://registry.yarnpkg.com/@mui/base/-/base-5.0.0-alpha.123.tgz#2319b3f025342ffc738f38b1070d2140421c216e"

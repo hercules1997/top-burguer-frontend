@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { toast } from 'react-toastify'
 
+import paths from '../../constants/paths'
 import { useCart } from '../../hooks/CartContext'
 import apiTopBurger from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
@@ -10,6 +12,7 @@ import { Container, ButtonFinish } from './style'
 export function CartResume () {
   const [finalPrice, setFinalPrice] = useState(0)
   const [deliveryTax] = useState(10)
+  const history = useHistory()
 
   const { cartProducts } = useCart()
   useEffect(() => {
@@ -54,10 +57,19 @@ export function CartResume () {
             <p>{formatCurrency(finalPrice + deliveryTax)}</p>
           </div>
         </Container>
-        <ButtonStyle onClick={submitOrder}>Finalizar Pedido</ButtonStyle>
+
+        {/* DESATIVÇÃO DO BOTÃO DE FINALIZAR PEDIDO PARA CRIAR A TELA DE PAGAMENTO */}
+        {/* //TODO PASSAR ESSA RESPONSABILIDADE DESSE BOTÃO PARA A TELA DE PAGAMENTO */}
+        <ButtonStyle onClick={submitOrder} style={{ display: 'none' }}>
+          Finalizar Pedido
+        </ButtonStyle>
+
+        <ButtonStyle onClick={() => history.push(paths.Payment)}>
+          Finalizar
+        </ButtonStyle>
       </ButtonFinish>
     )
   } else {
-    <div style={{ display: 'none' }}></div>
+    ;<div style={{ display: 'none' }}></div>
   }
 }

@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
 import { ErrorMessage } from '../../../components'
+import paths from '../../../constants/paths'
 import apiTopBurguer from '../../../services/api'
 import {
   Container,
@@ -63,7 +64,7 @@ export function NewProducts (props) {
     })
 
     setTimeout(() => {
-      push('/listar-produtos')
+      push(paths.ListProducts)
     }, 3000)
   }
 
