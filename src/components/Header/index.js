@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import paths from '../../constants/paths'
 import { useCart } from '../../hooks/CartContext'
 import { useUser } from '../../hooks/UserContext'
+import apiTopBurger from '../../services/api'
 import {
   Container,
   ContainerLeft,
@@ -18,13 +19,15 @@ import {
   HomeSharpIconStyle,
   ContainerMenu,
   Bag,
-  AccountCircleSharpIconStyle
+  AccountCircleSharpIconStyle,
+  ReceiptLongTwoToneIconStyle
 } from './style'
 
 export function Header () {
   const { logout, userData } = useUser()
   const { cartProducts } = useCart()
   const [finalItems, setAllItems] = useState([])
+  const [orders, setOrders] = useState([])
 
   useEffect(() => {
     const sumAllItems = cartProducts.reduce((acc, current) => {
@@ -33,6 +36,16 @@ export function Header () {
 
     setAllItems(sumAllItems)
   }, [cartProducts])
+
+  useEffect(() => {
+    async function loadOrders () {
+      const { data } = await apiTopBurger.get('orders')
+
+      setOrders(data)
+    }
+
+    loadOrders()
+  }, [])
 
   const {
     push,
@@ -63,6 +76,25 @@ export function Header () {
           </PageLink>
         </ContainerLeft>
         <ContainerRight>
+          <PageLink
+            style={{ marginRight: '25px' }}
+            onClick={() => push(paths.StatusOrders)}
+            isActive={pathname.includes(paths.StatusOrders)}
+          >
+            <ReceiptLongTwoToneIconStyle
+              isActive={pathname.includes(paths.StatusOrders)}
+            />
+            {orders &&
+              orders.map((row) => <div key={row.orderId}>{row.orderId}</div>)}
+
+            {orders.length > 0
+              ? (
+              <span className="notficationCart">{orders.length}</span>
+                )
+              : (
+              <></>
+                )}
+          </PageLink>
           <PageLink onClick={() => push(paths.Cart)}>
             <Bag isActive={pathname.includes(paths.Cart)} />
             {finalItems > 0
@@ -80,7 +112,6 @@ export function Header () {
               isActive={pathname === paths.User}
             />
           </PageLink>
-
           <ContainerText>
             <p>Olá, {userData.name}</p>
             <PageLinkExit
@@ -121,6 +152,26 @@ export function Header () {
               <FastfoodRoundedIconStyle
                 isActive={pathname.includes(paths.Products)}
               />
+            </PageLink>
+          </Icons>
+          <Icons>
+            <PageLink
+              onClick={() => push(paths.StatusOrders)}
+              isActive={pathname.includes(paths.StatusOrders)}
+            >
+              <ReceiptLongTwoToneIconStyle
+                isActive={pathname.includes(paths.StatusOrders)}
+              />
+              {orders &&
+                orders.map((row) => <div key={row.orderId}>{row.orderId}</div>)}
+
+              {orders.length > 0
+                ? (
+                <span className="notficationCart">{orders.length}</span>
+                  )
+                : (
+                <></>
+                  )}
             </PageLink>
           </Icons>
           <Icons>

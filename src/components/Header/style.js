@@ -1,6 +1,7 @@
 import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp'
 import FastfoodRoundedIcon from '@mui/icons-material/FastfoodRounded'
 import HomeSharpIcon from '@mui/icons-material/HomeSharp'
+import ReceiptLongTwoToneIcon from '@mui/icons-material/ReceiptLongTwoTone'
 import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone'
 import styled from 'styled-components'
 
@@ -198,6 +199,10 @@ export const Bag = styled(ShoppingBagTwoToneIcon)`
   font-size: 40px !important;
 `
 export const AccountCircleSharpIconStyle = styled(AccountCircleSharpIcon)`
+  color: ${(props) => (props.isActive ? '#FA9600' : '#898989')} !important;
+  font-size: 40px !important;
+`
+export const ReceiptLongTwoToneIconStyle = styled(ReceiptLongTwoToneIcon)`
   color: ${(props) => (props.isActive ? '#FA9600' : '#898989')} !important;
   font-size: 40px !important;
 `
